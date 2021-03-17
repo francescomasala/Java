@@ -29,7 +29,7 @@ public class MainOra1 {
         // Immette una linea per differenziare i get* dalla differenzaIn*
         System.out.println();
 
-            // Esecuzione di tutti i metodi Set*
+        // Esecuzione di tutti i metodi Set*
         //System.out.println("[~] Esecuzione di setOre");
         //ora.setOre(23);
         //System.out.println("[~] Esecuzione di getMinuti");
@@ -39,7 +39,7 @@ public class MainOra1 {
 
         //System.out.println();
 
-            // Esecuzione di tutti i metodi get*
+        // Esecuzione di tutti i metodi get*
         //System.out.println("[~] Esecuzione di getOre: " +
         //        ora.getOre());
         //System.out.println("[~] Esecuzione di getMinuti: " +

@@ -1,4 +1,5 @@
 package it.tn.buonarroti.masala.byteScuola;
+
 /**
  * @author francesco.masala
  */

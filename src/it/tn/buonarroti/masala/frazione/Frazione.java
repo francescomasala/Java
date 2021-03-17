@@ -28,17 +28,17 @@ public class Frazione {
     }
 
     @Override
-    public String toString(){
+    public String toString() {
         String s = "";
         s = numeratore.toString() + "/" + denominatore.toString();
         return s;
     }
 
     //da rivedere
-    private void semplifica(){
-        for (int i = 0; i < numeratore; i++){
-            if(denominatore%i==0 && numeratore%i==0){
-                numeratore = numeratore/i;
+    private void semplifica() {
+        for (int i = 0; i < numeratore; i++) {
+            if (denominatore % i == 0 && numeratore % i == 0) {
+                numeratore = numeratore / i;
                 denominatore = denominatore / i;
             }
         }

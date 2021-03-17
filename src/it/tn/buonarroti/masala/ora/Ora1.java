@@ -130,13 +130,13 @@ public class Ora1 {
         }
         return differenza;
     }
-    
+
     public String differenzaInOreMinutiSecondi() {
         String stringDifferenza = null;
         Integer ore = differenzaInOre(), minuti = differenzaInMinuti(), secondi = differenzaInSecondi();
         stringDifferenza = "Ore: " + ore.toString() + "\nMinuti: " + minuti.toString() +
                 "\nSecondi: " + secondi.toString();
         return stringDifferenza;
-        
+
     }
 }

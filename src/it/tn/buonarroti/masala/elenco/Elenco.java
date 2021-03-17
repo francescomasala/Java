@@ -31,4 +31,17 @@ public class Elenco {
         }
         return localNominativo;
     }
+
+    public String[] trovaDaIniziale(char c) {
+        String[] risultato = new String[numeroElementi];
+        Integer elementiTrovati = 0;
+
+        for (int i = 0; i < numeroElementi; i++) {
+            if (nominativi[i].charAt(0) == c) {
+                risultato[elementiTrovati] = nominativi[1];
+                elementiTrovati++;
+            }
+        }
+        return risultato;
+    }
 }

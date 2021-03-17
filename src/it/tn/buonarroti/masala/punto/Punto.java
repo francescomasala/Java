@@ -29,23 +29,23 @@ public class Punto {
     }
 
     //Metodi della classe
-    public String toString(){
+    public String toString() {
         return "(" + x + ", " + y + ")";
     }
 
-    public void traslaX(Double x){
+    public void traslaX(Double x) {
         this.x += x;
     }
 
-    public void traslaY(Double y){
+    public void traslaY(Double y) {
         this.y += y;
     }
 
-    public Double distanzaDaOrigine(){
+    public Double distanzaDaOrigine() {
         return Math.sqrt(Math.pow(this.x, 2) + Math.pow(this.y, 2));
     }
 
-    public Double distanzaDaPunto(Punto punto){
+    public Double distanzaDaPunto(Punto punto) {
         return Math.sqrt(Math.pow((this.x - punto.x), 2) + Math.pow((this.y - punto.y), 2));
     }
 }
