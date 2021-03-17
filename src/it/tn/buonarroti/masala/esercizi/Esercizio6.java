@@ -34,6 +34,7 @@ public class Esercizio6 {
                 Max_value = array[i];
             }
         }
+        usr_input.close();
         // Prints Max Value
         System.out.println("Valore massimo all'interno dell'array: " + Max_value);
     }

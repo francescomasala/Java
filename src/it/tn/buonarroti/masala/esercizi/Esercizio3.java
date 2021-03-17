@@ -41,6 +41,7 @@ public class Esercizio3 {
         //Esecuzione terminata, stampa valore minimo all'utente
         System.out.println();
         System.out.println("Numero minimo: " + numeroMinimo);
+        input.close();
 
     }
 }

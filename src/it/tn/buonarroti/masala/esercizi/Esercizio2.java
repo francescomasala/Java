@@ -49,5 +49,6 @@ public class Esercizio2 {
         // Final part of the algorithm
         String min_phrase = "Il numero minore di tutti è: " + min;
         System.out.println(min_phrase);
+        usr_input.close();
     }
 }

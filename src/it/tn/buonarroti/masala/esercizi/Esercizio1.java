@@ -37,5 +37,7 @@ public class Esercizio1 {
             System.out.println("Risultato 1:" + ris_1);
             System.out.println("Risultato 2:" + ris_2);
         }
+
+        usr_input.close();
     }
 }

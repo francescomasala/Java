@@ -36,7 +36,6 @@ public class Frazione {
 
     //da rivedere
     private void semplifica(){
-
         for (int i = 0; i < numeratore; i++){
             if(denominatore%i==0 && numeratore%i==0){
                 numeratore = numeratore/i;

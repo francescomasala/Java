@@ -72,5 +72,6 @@ public class Esercizio4 {
             i_1 = 1;
             i_0++;
         }
+        usr_input.close();
     }
 }

@@ -21,5 +21,6 @@ public class MainDado {
             DadoDue d2Due = new DadoDue(6, "legno", "blu", 4.0f, 2.0d);
             Integer[] tiro = d2Due.tiroCompleto(35);
         }
+        usr_input.close();
     }
 }

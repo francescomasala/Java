@@ -1,4 +1,4 @@
-package it.tn.buonarroti.masala.Byte;
+package it.tn.buonarroti.masala.byte;
 
 /**
  * @author francesco.masala
@@ -25,7 +25,7 @@ public class Byte {
     /**
      * @param b
      */
-    public Byte(Boolean[] b) {
+    public Byte(final Boolean[] b) {
         int i;
         for (i = 0; i < 8; i++) {
             this.b[i] = b[i];
@@ -40,12 +40,11 @@ public class Byte {
     }
 
     /**
-     * Causa condivisione di memoria tra parametro ed attributo\n
-     * DA EVITARE
+     * Causa condivisione di memoria tra parametro ed attributo\n DA EVITARE
      *
      * @param b
      */
-    public void setB(Boolean[] b) {
+    public void setB(final Boolean[] b) {
         this.b = b;
     }
 
@@ -76,7 +75,7 @@ public class Byte {
     /**
      * @param b
      */
-    public void setArray(Boolean[] b) {
+    public void setArray(final Boolean[] b) {
         // this.b (Att) viene inizializzato a 0
         int i;
         for (i = 0; i < 8; i++) {
@@ -88,16 +87,14 @@ public class Byte {
      * Modify a determined value of the array "b"
      *
      * @param num   Position in the inxex of the array
-     * @param value Value (in bool) of the segment of the array
-     *              modArray("IndexPos", Boolean.VALUE);
+     * @param value Value (in bool) of the segment of the array modArray("IndexPos",
+     *              Boolean.VALUE);
      *              <p>
-     *              First:
-     *              [false][false][true][false][true][false][true][false]
+     *              First: [false][false][true][false][true][false][true][false]
      *              <p>
-     *              After:
-     *              [false][false][false][false][true][false][true][false]
+     *              After: [false][false][false][false][true][false][true][false]
      */
-    public void modArray(int num, Boolean value) {
+    public void modArray(final int num, final Boolean value) {
         this.b[num - 1] = value;
     }
 

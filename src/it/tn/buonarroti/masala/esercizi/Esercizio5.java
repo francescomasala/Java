@@ -37,5 +37,6 @@ public class Esercizio5 {
             i--;
 
         }
+        input.close();
     }
 }

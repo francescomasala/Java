@@ -1,4 +1,4 @@
-package it.tn.buonarroti.masala.Byte;
+package it.tn.buonarroti.masala.byte;
 
 /**
  * @author francesco.masala
@@ -9,7 +9,6 @@ public class MainByte {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // TODO code application logic here
         Byte b = new Byte();
 
         //System.out.println(b.getB());
