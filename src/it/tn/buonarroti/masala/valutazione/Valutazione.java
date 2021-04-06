@@ -33,27 +33,67 @@ public class Valutazione {
         return null;
     }
 
+    /**
+     * Effettua un ordinamento crescente per alunno
+     */
     public void ordinamentoCrescente() {
 
     }
 
+    /**
+     * Effettua un ordinamento decrescente per voto
+     */
     public void ordinamentoDecrescente() {
 
     }
 
+    /**
+     * Effettua una query all'interno dell'array Alunni e restituisce una stringa con l'alunno ed il rispettivo voto
+     *
+     * @param Alunno Nome dell'alunno
+     */
     public String ricercaPerAlunno(String Alunno) {
 
         return null;
     }
 
+    /**
+     * Effettua una query all'interno dell'array Voti e restituisce una stringa contenente tutti gli alunni con quel
+     * voto
+     *
+     * @param Voto Nome dell'alunno
+     */
     public String ricercaPerVoto(Float Voto) {
+        Boolean queryExec = Boolean.FALSE;
+        Integer index = 0; // Variabile locale per l'indice
+        String output = null;
 
-        return null;
+        for (index = 0; this.voti[index] == Voto; index++) {
+            queryExec = Boolean.TRUE;
+            output = output + "\n" + this.voti[index];
+        }
+        if (queryExec) {
+            return output;
+        } else {
+            return "La ricerca non ha portato alcun risultato.\n";
+        }
     }
 
+    /**
+     * Effettua una media globale dei voti di tutti gli alunni
+     */
     public Float mediaDeiVoti() {
+        Integer index = 0; // Variabile locale per l'indice
+        Float media = null;// Variabile per contenere la media
 
-        return null;
+        while (index <= this.indice) {
+            media = this.voti[index];
+            index++;
+        }
+
+        media = media / index;
+
+        return media;
     }
 
     public String nAlunniSufficientiEInsufficienti() {
