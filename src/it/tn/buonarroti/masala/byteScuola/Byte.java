@@ -23,7 +23,6 @@ public class Byte {
     // Costruttore con parametri
 
     /**
-     * @param b
      */
     public Byte(final Boolean[] b) {
         int i;
@@ -33,7 +32,6 @@ public class Byte {
     }
 
     /**
-     * @return
      */
     public Boolean[] getB() {
         return b;
@@ -42,38 +40,34 @@ public class Byte {
     /**
      * Causa condivisione di memoria tra parametro ed attributo\n DA EVITARE
      *
-     * @param b
      */
     public void setB(final Boolean[] b) {
         this.b = b;
     }
 
     /**
-     * @return
      */
     public String outputString() {
         int i;
-        String s = "";
+        StringBuilder s = new StringBuilder();
         for (i = 0; i < 8; i++) {
-            s = s + "[" + this.b[i] + "]";
+            s.append("[").append(this.b[i]).append("]");
         }
-        return s;
+        return s.toString();
     }
 
     /**
-     * @return
      */
     public String outputStringInt() {
         int i;
-        String s = "";
+        StringBuilder s = new StringBuilder();
         for (i = 0; i < 8; i++) {
-            s = s + "[" + (this.b[i] ? "1" : "0") + "]";
+            s.append("[").append(this.b[i] ? "1" : "0").append("]");
         }
-        return s;
+        return s.toString();
     }
 
     /**
-     * @param b
      */
     public void setArray(final Boolean[] b) {
         // this.b (Att) viene inizializzato a 0
@@ -99,13 +93,12 @@ public class Byte {
     }
 
     /**
-     * @return
      */
     public int toDecimal() {
         int i;
         int output = 0;
         for (i = 0; i < 8; i++) {
-            if (b[i] == true) {
+            if (b[i]) {
                 output += Math.pow(2, 7 - i);
             }
         }

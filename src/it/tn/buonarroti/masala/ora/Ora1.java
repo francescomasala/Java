@@ -79,7 +79,7 @@ public class Ora1 {
         Integer oraAttuale
                 = new GregorianCalendar().get(GregorianCalendar.HOUR_OF_DAY);
         // Creo la variabile differenza
-        Integer differenza;
+        int differenza;
         // Se validaOra() è falso deve ritornare il valore "-1"
         if (Objects.equals(validaOra(), Boolean.FALSE)) {
             differenza = -1;
@@ -94,11 +94,11 @@ public class Ora1 {
 
     public Integer differenzaInMinuti() {
         // Creo l'oggetto oraAttuale da GregorianCalendar
-        Integer minutoAttuale
+        int minutoAttuale
                 = new GregorianCalendar().get(GregorianCalendar.MINUTE);
         Integer differenzaOre = differenzaInOre();
         // Creo la variabile differenza
-        Integer differenza;
+        int differenza;
         // Se validaOra() è falso deve ritornare il valore "-1"
         if (Objects.equals(validaOra(), Boolean.FALSE)) {
             differenza = -1;
@@ -113,11 +113,11 @@ public class Ora1 {
 
     public Integer differenzaInSecondi() {
         // Creo l'oggetto oraAttuale da GregorianCalendar
-        Integer secondoAttuale
+        int secondoAttuale
                 = new GregorianCalendar().get(GregorianCalendar.SECOND);
         Integer differenzaMinuti = differenzaInMinuti();
         // Creo la variabile differenza
-        Integer differenza;
+        int differenza;
         // Se validaOra() è falso deve ritornare il valore "-1"
         if (Objects.equals(validaOra(), Boolean.FALSE)) {
             differenza = -1;

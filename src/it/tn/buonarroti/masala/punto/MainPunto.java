@@ -4,10 +4,10 @@ public class MainPunto {
     public static void main(String[] args) {
 
         Punto punto = new Punto(3.0, 5.0);
-        System.out.println(punto.toString());
+        System.out.println(punto);
 
         punto.traslaX(2.0);
-        System.out.println(punto.toString());
+        System.out.println(punto);
 
         System.out.println(punto.distanzaDaOrigine());
 

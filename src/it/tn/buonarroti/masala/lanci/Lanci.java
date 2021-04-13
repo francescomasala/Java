@@ -9,9 +9,8 @@ import java.util.Random;
  */
 
 public class Lanci {
-    private Integer numLanci;
     private Integer numFacce;
-    private Integer arrLanci[];
+    private Integer[] arrLanci;
     private Integer indexLanci;
 
     public Lanci (){
@@ -31,7 +30,6 @@ public class Lanci {
      */
     public void InitThrow(Integer Facce, Integer Lanci){
         this.numFacce = Facce;
-        this.numLanci = Lanci;
     }
 
     /**

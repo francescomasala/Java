@@ -72,7 +72,7 @@ public class DadoUno {
         int numbers;    // Numero in uscita dal dado
         int val = 1;
         int i_2 = 1;
-        String risposta;
+        StringBuilder risposta;
 
         // Ciclo for per inizializzare l'array
         for (i = 0; i < nFacce; i++) {
@@ -101,16 +101,16 @@ public class DadoUno {
         }
 
         // Assegno una stringa contenente il valore piu' frequente e le sue uscite
-        risposta = ("Il valore più frequente " + val
-                + " numero uscite " + max + "\n" + "\n");
+        risposta = new StringBuilder(("Il valore più frequente " + val
+                + " numero uscite " + max + "\n" + "\n"));
 
         // Concateno a ** risposta ** il numero di volte in cui una faccia del dado e' uscita
         while (i_2 <= nFacce) {
             String list = ("La faccia del dado: " + i_2 + " e' uscita : " + ctr[i_2 - 1] + " volte" + "\n");
-            risposta += list;
+            risposta.append(list);
             i_2++;
         }
-        return risposta;
+        return risposta.toString();
     }
 
 }

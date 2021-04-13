@@ -17,7 +17,7 @@ public class Frazione {
         Integer val1 = a;
         Integer val2 = b;
 
-        while (val1 != val2) {
+        while (!val1.equals(val2)) {
             if (val1 < val2) {
                 val1 += a;
             } else {
@@ -29,7 +29,7 @@ public class Frazione {
 
     @Override
     public String toString() {
-        String s = "";
+        String s;
         s = numeratore.toString() + "/" + denominatore.toString();
         return s;
     }
@@ -49,8 +49,7 @@ public class Frazione {
         Integer mcd = MCD(frazione.denominatore, denominatore);
         Integer somma = ((mcd / denominatore) * numeratore) + (mcd / frazione.denominatore) * numeratore;
 
-        Frazione returnFraz = new Frazione(somma, mcd);
-        return returnFraz;
+        return new Frazione(somma, mcd);
     }
 
     public Frazione Differenza(Frazione frazione) {
@@ -58,24 +57,21 @@ public class Frazione {
         Integer mcd = MCD(frazione.denominatore, denominatore);
         Integer differenza = Math.abs(((mcd / denominatore) * numeratore) - (mcd / frazione.denominatore) * numeratore);
 
-        Frazione returnFraz = new Frazione(differenza, mcd);
-        return returnFraz;
+        return new Frazione(differenza, mcd);
     }
 
     public Frazione Prodotto(Frazione frazione) {
 
         Integer num = numeratore * frazione.numeratore;
         Integer den = denominatore * frazione.denominatore;
-        Frazione returnFraz = new Frazione(num, den);
-        return returnFraz;
+        return new Frazione(num, den);
     }
 
     public Frazione Divisione(Frazione frazione) {
 
         Integer num = numeratore * frazione.denominatore;
         Integer den = denominatore * frazione.numeratore;
-        Frazione returnFraz = new Frazione(num, den);
-        return returnFraz;
+        return new Frazione(num, den);
 
     }
 

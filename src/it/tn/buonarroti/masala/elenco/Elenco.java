@@ -4,27 +4,27 @@ public class Elenco {
 
     //Attributi
     private final String[] nominativi;
-    private Integer numeroElementi;
+    private Integer numElementi;
     private Integer maxElementi;
 
     //Costruttore
     public Elenco(Integer maxElementi) {
         this.nominativi = new String[maxElementi];
-        numeroElementi = 0;
+        numElementi = 0;
     }
 
-    public Integer getNumeroElementi() {
-        return numeroElementi;
+    public Integer getNumElementi() {
+        return numElementi;
     }
 
     public void aggiungiNominativo(String Nominativo) {
-        this.nominativi[this.numeroElementi] = Nominativo;
-        this.numeroElementi++;
+        this.nominativi[this.numElementi] = Nominativo;
+        this.numElementi++;
     }
 
     public String trovaDaIntex(Integer Indice) {
         String localNominativo;
-        if (Indice >= 0 && Indice < numeroElementi) {
+        if (Indice >= 0 && Indice < numElementi) {
             localNominativo = this.nominativi[Indice];
         } else {
             localNominativo = "Errore: spazio nullo";
@@ -33,10 +33,10 @@ public class Elenco {
     }
 
     public String[] trovaDaIniziale(char c) {
-        String[] risultato = new String[numeroElementi];
-        Integer elementiTrovati = 0;
+        String[] risultato = new String[numElementi];
+        int elementiTrovati = 0;
 
-        for (int i = 0; i < numeroElementi; i++) {
+        for (int i = 0; i < numElementi; i++) {
             if (nominativi[i].charAt(0) == c) {
                 risultato[elementiTrovati] = nominativi[1];
                 elementiTrovati++;

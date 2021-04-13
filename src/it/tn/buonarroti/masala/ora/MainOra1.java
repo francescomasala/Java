@@ -5,7 +5,7 @@ package it.tn.buonarroti.masala.ora;
  */
 public class MainOra1 {
     public static void main(String[] args) {
-        Ora1 ora = new Ora1(10, 25, 00);
+        Ora1 ora = new Ora1(10, 25, 0);
 
         // Esecuzione di tutti i metodi get*
         System.out.println("[~] Esecuzione di getOre: " +

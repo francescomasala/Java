@@ -12,8 +12,8 @@ public class Valutazione {
     private Float[] voti;
     private String[] alunni;
 
-    public Valutazione(Integer lunghezzaMax) {
-        lunghezzaMax = this.lunghezzaMax;
+    public Valutazione() {
+        Integer lunghezzaMax = this.lunghezzaMax;
     }
 
     /**
@@ -25,7 +25,8 @@ public class Valutazione {
      *               <blockquote>
      *               <pre>
      *                             aggiungiValutazione(Mario Rossi, 7.75);
-     *                             </pre></blockquote>
+     *               </pre>
+     *               </blockquote>
      */
     public Boolean aggiungiValutazione(String alunno, Float voto) {
 
@@ -64,16 +65,16 @@ public class Valutazione {
      * @param Voto Nome dell'alunno
      */
     public String ricercaPerVoto(Float Voto) {
-        Boolean queryExec = Boolean.FALSE;
-        Integer index = 0; // Variabile locale per l'indice
-        String output = null;
+        boolean queryExec = Boolean.FALSE;
+        int index = 0; // Variabile locale per l'indice
+        StringBuilder output = null;
 
-        for (index = 0; this.voti[index] == Voto; index++) {
+        for (index = 0; this.voti[index].equals(Voto); index++) {
             queryExec = Boolean.TRUE;
-            output = output + "\n" + this.voti[index];
+            output.append("\n").append(this.voti[index]);
         }
         if (queryExec) {
-            return output;
+            return output.toString();
         } else {
             return "La ricerca non ha portato alcun risultato.\n";
         }

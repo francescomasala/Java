@@ -78,15 +78,14 @@ public class Date {
             case 7:
             case 9:
             case 11:
-                return 30;
-            case 2:
-                return 28;
             case 4:
             case 6:
             case 8:
             case 10:
             case 12:
                 return 30;
+            case 2:
+                return 28;
             default:
                 return 0;
         }

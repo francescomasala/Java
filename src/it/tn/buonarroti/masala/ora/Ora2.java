@@ -52,7 +52,7 @@ public class Ora2 {
             Integer secondiAttributi = secondiDaMezzanotte(this.ore, this.minuti, this.secondi);
 
             //Calcola differenza
-            Integer differenza = secondiParametri - secondiAttributi;
+            int differenza = secondiParametri - secondiAttributi;
 
             //Ritorna differenza
             if (differenza > 0) return differenza;
@@ -70,7 +70,7 @@ public class Ora2 {
             Integer secondiAttributi = secondiDaMezzanotte(this.ore, this.minuti, this.secondi);
 
             //Calcola differenza
-            Integer differenza = secondiParametri - secondiAttributi;
+            int differenza = secondiParametri - secondiAttributi;
             differenza = differenza / 60;
 
             //Ritorna differenza
@@ -89,7 +89,7 @@ public class Ora2 {
             Integer secondiAttributi = secondiDaMezzanotte(this.ore, this.minuti, this.secondi);
 
             //Calcola differenza
-            Integer differenza = secondiParametri - secondiAttributi;
+            int differenza = secondiParametri - secondiAttributi;
             differenza = differenza / 3600;
 
             //Ritorna differenza
@@ -157,7 +157,7 @@ public class Ora2 {
             Integer secondiParametri = secondiDaMezzanotte(ora.getOre(), ora.getMinuti(), ora.getSecondi());
             Integer secondiAttributi = secondiDaMezzanotte(this.ore, this.minuti, this.secondi);
 
-            Integer differenza = Math.abs(secondiParametri - secondiAttributi);
+            int differenza = Math.abs(secondiParametri - secondiAttributi);
 
             //Ritrasforma in secondi
             Ora2 oraReturn = new Ora2(0, 0, 0);
@@ -170,8 +170,7 @@ public class Ora2 {
 
         } else {
 
-            Ora2 oraNulla = new Ora2(0, 0, 0);
-            return oraNulla;
+            return new Ora2(0, 0, 0);
 
         }
     }
@@ -204,7 +203,7 @@ public class Ora2 {
     private Boolean validaOra(Integer ore, Integer minuti, Integer secondi) {
 
         //Controlla orario, le ore tra 0->23, i minuti tra 0->59, i secondi da 0->59
-        return (ore <= 23 && ore >= 0) && (minuti <= 59 && minuti >= 0) && (secondi <= 59 && minuti >= 0);
+        return (ore <= 23 && ore >= 0) && (minuti <= 59 && minuti >= 0) && (secondi <= 59 && secondi >= 0);
 
     }
 

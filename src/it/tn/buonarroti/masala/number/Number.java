@@ -33,7 +33,7 @@ public class Number {
     }
 
     public Integer mcd(int num2) {
-        Integer result = 0;
+        int result = 0;
         Integer one = num;
         Integer two = num2;
         Integer max;
@@ -43,7 +43,7 @@ public class Number {
             max = two;
         }
         // Controllo parità dei numeri
-        if (one == two) {
+        if (one.equals(two)) {
             // Se sono uguali restituisci num
             result = num;
             // Se sono diversi effetta
