@@ -52,7 +52,7 @@ public class Valutazione {
      * Effettua un ordinamento crescente per alunno
      */
     public void ordinamentoCrescente() {
-        Arrays.sort(alunni);
+        Arrays.sort(this.alunni);
     }
 
     /**
