@@ -2,6 +2,9 @@ package it.tn.buonarroti.masala.valutazione;
 
 import it.tn.buonarroti.masala.exceptions.DesiredIndexSmallerThanDeclared;
 
+import java.util.Arrays;
+import java.util.Objects;
+
 /**
  * @author Francesco Masala (mail@francescomasala.me)
  */
@@ -9,7 +12,7 @@ import it.tn.buonarroti.masala.exceptions.DesiredIndexSmallerThanDeclared;
 public class Valutazione {
     private Integer lunghezzaMax;
     private Integer indice = 0;
-    private Float[] voti;
+    private float[] voti;
     private String[] alunni;
 
     public Valutazione() {
@@ -29,23 +32,38 @@ public class Valutazione {
      *               </blockquote>
      */
     public Boolean aggiungiValutazione(String alunno, Float voto) {
+        Boolean result;
 
+        if (this.indice < lunghezzaMax) {
+            alunni[indice] = alunno;
+            voti[indice] = voto;
+            this.incrementIndex();
+            result = Boolean.TRUE;
+        } else {
+            result = Boolean.FALSE;
+        }
 
-        return null;
+        return result;
     }
 
     /**
      * Effettua un ordinamento crescente per alunno
      */
     public void ordinamentoCrescente() {
-
+        Arrays.sort(alunni);
     }
 
     /**
      * Effettua un ordinamento decrescente per voto
      */
     public void ordinamentoDecrescente() {
+        float[] cloneVoti = this.voti;
 
+        Arrays.sort(cloneVoti);
+
+        for (int index = 0; index < this.indice; index++) {
+            this.voti[index] = cloneVoti[this.indice - index];
+        }
     }
 
     /**
@@ -54,8 +72,15 @@ public class Valutazione {
      * @param Alunno Nome dell'alunno
      */
     public String ricercaPerAlunno(String Alunno) {
+        String result = "";
 
-        return null;
+        for (int index = 0; index < this.indice; index++) {
+            if (this.alunni[index].equals(Alunno)) {
+                result += "Alunno: " + this.alunni[index] + "\n" +
+                        "Voto: " + this.voti[index] + "\n";
+            }
+        }
+        return result;
     }
 
     /**
@@ -66,15 +91,15 @@ public class Valutazione {
      */
     public String ricercaPerVoto(Float Voto) {
         boolean queryExec = Boolean.FALSE;
-        int index = 0; // Variabile locale per l'indice
-        StringBuilder output = null;
+        String query = "Alunni con il seguente voto:" + "\n";
+        int index; // Variabile locale per l'indice
 
-        for (index = 0; this.voti[index].equals(Voto); index++) {
+        for (index = 0; Objects.equals(this.voti[index], Voto); index++) {
             queryExec = Boolean.TRUE;
-            output.append("\n").append(this.voti[index]);
+            query += this.voti[index] + "\n";
         }
         if (queryExec) {
-            return output.toString();
+            return query;
         } else {
             return "La ricerca non ha portato alcun risultato.\n";
         }
@@ -92,7 +117,7 @@ public class Valutazione {
             index++;
         }
 
-        media = media / index;
+        media /= index;
 
         return media;
     }
@@ -105,7 +130,23 @@ public class Valutazione {
     @Override
     public String toString() {
 
-        return null;
+        String ris = "";
+        ris += "ARR. VOT: ";
+
+        for (int i = 0; i < indice; i++) {
+            ris += voti[i] + " ";
+        }
+
+        ris += "ARR. STD: ";
+
+        for (int i = 0; i < indice; i++) {
+            ris += alunni[i] + " ";
+        }
+
+        ris += "LUN. MAX: " + lunghezzaMax;
+        ris += "IND. ARR: " + indice;
+
+        return ris;
     }
 
     private void incrementIndex() {
