@@ -15,8 +15,10 @@ public class Valutazione {
     private float[] voti;
     private String[] alunni;
 
-    public Valutazione() {
-        Integer lunghezzaMax = this.lunghezzaMax;
+    public Valutazione(Integer lunghezza) {
+        this.lunghezzaMax = lunghezza;
+        this.alunni = new String[lunghezza];
+        this.voti = new float[lunghezza];
     }
 
     /**
