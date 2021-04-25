@@ -3,7 +3,6 @@ package it.tn.buonarroti.masala.valutazione;
 import it.tn.buonarroti.masala.exceptions.DesiredIndexSmallerThanDeclared;
 
 import java.util.Arrays;
-import java.util.Objects;
 
 /**
  * @author Francesco Masala (mail@francescomasala.me)
@@ -16,9 +15,9 @@ public class Valutazione {
     private String[] alunni;
 
     public Valutazione(Integer lunghezza) {
-        this.lunghezzaMax = lunghezza;
-        this.alunni = new String[lunghezza];
-        this.voti = new float[lunghezza];
+        this.lunghezzaMax = lunghezza + 1;
+        this.alunni = new String[lunghezza + 1];
+        this.voti = new float[lunghezza + 1];
     }
 
     /**
@@ -29,13 +28,12 @@ public class Valutazione {
      *
      *               <blockquote>
      *               <pre>
-     *                             aggiungiValutazione(Mario Rossi, 7.75);
+     *                             aggiungiValutazione(Mario Rossi, 7.75f);
      *               </pre>
      *               </blockquote>
      */
     public Boolean aggiungiValutazione(String alunno, Float voto) {
         Boolean result;
-
         if (this.indice < lunghezzaMax) {
             alunni[indice] = alunno;
             voti[indice] = voto;
@@ -44,7 +42,6 @@ public class Valutazione {
         } else {
             result = Boolean.FALSE;
         }
-
         return result;
     }
 
@@ -71,13 +68,13 @@ public class Valutazione {
     /**
      * Effettua una query all'interno dell'array Alunni e restituisce una stringa con l'alunno ed il rispettivo voto
      *
-     * @param Alunno Nome dell'alunno
+     * @param alunno Nome dell'alunno
      */
-    public String ricercaPerAlunno(String Alunno) {
+    public String ricercaPerAlunno(String alunno) {
         String result = "";
 
         for (int index = 0; index < this.indice; index++) {
-            if (this.alunni[index].equals(Alunno)) {
+            if (this.alunni[index].equals(alunno)) {
                 result += "Alunno: " + this.alunni[index] + "\n" +
                         "Voto: " + this.voti[index] + "\n";
             }
@@ -89,10 +86,11 @@ public class Valutazione {
      * Effettua una query all'interno dell'array Voti e restituisce una stringa contenente tutti gli alunni con quel
      * voto
      *
-     * @param Voto Nome dell'alunno
+     * @param voto Nome dell'alunno
      */
-    public String ricercaPerVoto(Float Voto) {
-        boolean queryExec = Boolean.FALSE;
+    public String ricercaPerVoto(Float voto) {
+        /*
+        Boolean queryExec = Boolean.FALSE;
         String query = "Alunni con il seguente voto:" + "\n";
         int index; // Variabile locale per l'indice
 
@@ -105,6 +103,16 @@ public class Valutazione {
         } else {
             return "La ricerca non ha portato alcun risultato.\n";
         }
+        */
+        String result = "";
+
+        for (int index = 0; index < this.indice; index++) {
+            if (this.voti[index] == voto) {
+                result += "Alunno: " + this.alunni[index] + "\n" +
+                        "Voto: " + this.voti[index] + "\n";
+            }
+        }
+        return result;
     }
 
     /**
@@ -112,10 +120,10 @@ public class Valutazione {
      */
     public Float mediaDeiVoti() {
         Integer index = 0; // Variabile locale per l'indice
-        Float media = null;// Variabile per contenere la media
+        Float media = 0.0f;// Variabile per contenere la media
 
         while (index <= this.indice) {
-            media = this.voti[index];
+            media = media + this.voti[index];
             index++;
         }
 
@@ -125,8 +133,45 @@ public class Valutazione {
     }
 
     public String nAlunniSufficientiEInsufficienti() {
+        String result = "";
+        Integer sufficienti = 0, insufficienti = 0;
 
-        return null;
+        for (int index = 0; index < this.indice; index++) {
+            if (this.voti[index] < 6.0f) {
+                insufficienti++;
+            } else {
+                sufficienti++;
+            }
+        }
+        result += "Alunni sufficienti: " + sufficienti + "\n" +
+                "Alunni insufficienti: " + insufficienti + "\n";
+        return result;
+    }
+
+    public String AlunniSufficientiEInsufficienti() {
+        String result = "Alunni sufficienti: \n";
+        Integer indexOne = 0, indexTwo = 0;
+        String[] sufficienti = new String[this.lunghezzaMax];
+        String[] insufficienti = new String[this.lunghezzaMax];
+
+        for (int index = 0; index < this.indice; index++) {
+            if (this.voti[index] < 6.0f) {
+                insufficienti[indexOne] = this.alunni[index];
+                indexOne++;
+            } else {
+                sufficienti[indexTwo] = this.alunni[index];
+                indexTwo++;
+            }
+        }
+
+        for (int index = 0; index != indexOne; index++) {
+            result += sufficienti[index] + "\n";
+        }
+        result += "Alunni insufficienti: \n";
+        for (int index = 0; index != indexTwo; index++) {
+            result += sufficienti[index] + "\n";
+        }
+        return result;
     }
 
     @Override
