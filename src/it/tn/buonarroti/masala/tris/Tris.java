@@ -3,26 +3,28 @@ package it.tn.buonarroti.masala.tris;
 import java.util.Objects;
 
 public class Tris {
-    private boolean[][] gioco;
-    private int nMossa;
+    private Character[][] griglia;
+    private Character charVincitore;
+    private Boolean giocatore;
+    private int turno;
 
-    public Tris() {
+    public Tris(Character cGiocatore) {
+
+    }
+
+    public String layout(){
+        return null;
+    }
+
+    public Boolean getGiocatore() {
+        return this.giocatore;
+    }
+
+    private void setGiocatore() {
 
     }
 
     public Boolean mossaG(int row, int col) {
-        Boolean result = Boolean.FALSE;
-        if (this.giocoValido() == Boolean.TRUE) {
-            if ((row >= 0 && row < 3) && (col >= 0 && col < 3)) {
-                if (Objects.equals(this.gioco[row][col], null)) {
-                    this.gioco[row][col] = Boolean.TRUE;
-                    result = Boolean.TRUE;
-                }
-            }
-        }
-        if ((Objects.equals(this.giocoValido(), Boolean.TRUE) && (Objects.equals(result, Boolean.TRUE)))){
-            this.mossaC();
-        }
         return true;
     }
 
@@ -34,9 +36,12 @@ public class Tris {
         return true;
     }
 
-    public Integer vincitore() {
+    public Character trisVincitore() {
+        return null;
+    }
 
-        return 0;
+    public String messaggioVincitore() {
+        return null;
     }
 
     public String toString(){

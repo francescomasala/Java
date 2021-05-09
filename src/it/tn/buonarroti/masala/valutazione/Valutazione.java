@@ -11,13 +11,13 @@ import java.util.Arrays;
 public class Valutazione {
     private Integer lunghezzaMax;
     private Integer indice = 0;
-    private float[] voti;
+    private Float[] voti;
     private String[] alunni;
 
     public Valutazione(Integer lunghezza) {
         this.lunghezzaMax = lunghezza + 1;
         this.alunni = new String[lunghezza + 1];
-        this.voti = new float[lunghezza + 1];
+        this.voti = new Float[lunghezza + 1];
     }
 
     /**
@@ -56,7 +56,7 @@ public class Valutazione {
      * Effettua un ordinamento decrescente per voto
      */
     public void ordinamentoDecrescente() {
-        float[] cloneVoti = this.voti;
+        Float[] cloneVoti = this.voti;
 
         Arrays.sort(cloneVoti);
 
