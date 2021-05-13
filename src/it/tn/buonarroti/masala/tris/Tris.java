@@ -10,7 +10,7 @@ public class Tris {
 
     }
 
-    public Boolean mossaG(int row, int col) {
+    public Boolean mossaGiocatore(int row, int col) {
         Boolean result = Boolean.FALSE;
         if (this.giocoValido() == Boolean.TRUE) {
             if ((row >= 0 && row < 3) && (col >= 0 && col < 3)) {
@@ -20,27 +20,36 @@ public class Tris {
                 }
             }
         }
-        if ((Objects.equals(this.giocoValido(), Boolean.TRUE) && (Objects.equals(result, Boolean.TRUE)))){
-            this.mossaC();
+        if ((Objects.equals(this.giocoValido(), Boolean.TRUE) && (Objects.equals(result, Boolean.TRUE)))) {
+            this.mossaComputer();
         }
         return true;
     }
 
-    private void mossaC() {
+    private void mossaComputer() {
 
     }
 
-    public boolean giocoValido() {
+    private Boolean controllaScacchiera() {
+
+        return Boolean.FALSE;
+    }
+
+    public Boolean giocoValido() {
         return true;
     }
 
-    public Integer vincitore() {
+    public Integer stabilisciVincitore() {
 
         return 0;
     }
 
-    public String toString(){
+    public String toString() {
         return "";
+    }
+
+    public void turnoGioco() {
+
     }
 
 }
