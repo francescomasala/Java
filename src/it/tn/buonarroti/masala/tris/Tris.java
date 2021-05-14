@@ -3,49 +3,53 @@ package it.tn.buonarroti.masala.tris;
 import java.util.Objects;
 
 public class Tris {
-    private Character[][] griglia;
-    private Character charVincitore;
-    private Boolean giocatore;
-    private int turno;
+    private boolean[][] gioco;
+    private int nMossa;
 
-    public Tris(Character cGiocatore) {
+    public Tris() {
 
     }
 
-    public String layout(){
-        return null;
-    }
-
-    public Boolean getGiocatore() {
-        return this.giocatore;
-    }
-
-    private void setGiocatore() {
-
-    }
-
-    public Boolean mossaG(int row, int col) {
+    public Boolean mossaGiocatore(int row, int col) {
+        Boolean result = Boolean.FALSE;
+        if (this.giocoValido() == Boolean.TRUE) {
+            if ((row >= 0 && row < 3) && (col >= 0 && col < 3)) {
+                if (Objects.equals(this.gioco[row][col], null)) {
+                    this.gioco[row][col] = Boolean.TRUE;
+                    result = Boolean.TRUE;
+                }
+            }
+        }
+        if ((Objects.equals(this.giocoValido(), Boolean.TRUE) && (Objects.equals(result, Boolean.TRUE)))) {
+            this.mossaComputer();
+        }
         return true;
     }
 
-    private void mossaC() {
+    private void mossaComputer() {
 
     }
 
-    public boolean giocoValido() {
+    private Boolean controllaScacchiera() {
+
+        return Boolean.FALSE;
+    }
+
+    public Boolean giocoValido() {
         return true;
     }
 
-    public Character trisVincitore() {
-        return null;
+    public Integer stabilisciVincitore() {
+
+        return 0;
     }
 
-    public String messaggioVincitore() {
-        return null;
-    }
-
-    public String toString(){
+    public String toString() {
         return "";
+    }
+
+    public void turnoGioco() {
+
     }
 
 }
