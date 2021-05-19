@@ -1,7 +1,7 @@
 package it.tn.buonarroti.masala.dado;
 
 /**
- * @author francesco.masala
+ * @author Francesco Masala (francesco.masala@buonarroti.tn.it)
  */
 public class DadoUno {
     private Integer nFacce;

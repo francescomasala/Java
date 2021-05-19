@@ -1,5 +1,8 @@
 package it.tn.buonarroti.masala.elenco;
 
+/**
+ * @author Francesco Masala (francesco.masala@buonarroti.tn.it)
+ */
 public class Elenco {
 
     //Attributi

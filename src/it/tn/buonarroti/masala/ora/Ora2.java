@@ -3,6 +3,9 @@ package it.tn.buonarroti.masala.ora;
 import java.util.Calendar;
 import java.util.GregorianCalendar;
 
+/**
+ * @author Francesco Masala (francesco.masala@buonarroti.tn.it)
+ */
 public class Ora2 {
 
     //ATTRIBUTI

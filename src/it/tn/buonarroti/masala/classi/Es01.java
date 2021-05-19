@@ -1,7 +1,7 @@
 package it.tn.buonarroti.masala.classi;
 
 /**
- * @author francesco.masala
+ * @author Francesco Masala (francesco.masala@buonarroti.tn.it)
  */
 public class Es01 {
     // Float var

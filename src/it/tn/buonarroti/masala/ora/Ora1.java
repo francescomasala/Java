@@ -4,7 +4,7 @@ import java.util.GregorianCalendar;
 import java.util.Objects;
 
 /**
- * @author Francesco Masala
+ * @author Francesco Masala (francesco.masala@buonarroti.tn.it)
  */
 public class Ora1 {
 

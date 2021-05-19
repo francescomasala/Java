@@ -1,7 +1,7 @@
 package it.tn.buonarroti.masala.byteScuola;
 
 /**
- * @author francesco.masala
+ * @author Francesco Masala (francesco.masala@buonarroti.tn.it)
  */
 public class Byte {
     private Boolean[] b = new Boolean[8];

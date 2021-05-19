@@ -1,5 +1,8 @@
 package it.tn.buonarroti.masala.frazione;
 
+/**
+ * @author Francesco Masala (francesco.masala@buonarroti.tn.it)
+ */
 public class Frazione {
     //Attributi
     private Integer numeratore;
