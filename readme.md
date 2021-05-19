@@ -1,7 +1,7 @@
 **Repository dedicated to class Exerc.**
 
 Tree of the directory:
-`
+```
  ├───.idea
  │   ├───artifacts
  │   ├───inspectionProfiles
@@ -34,6 +34,6 @@ Tree of the directory:
             ├───trisGui
             │   └───helper
             └───valutazione
-`
+```
 
 You can see the javadoc on [this website](https://java-classe.francescomasala.me/)
