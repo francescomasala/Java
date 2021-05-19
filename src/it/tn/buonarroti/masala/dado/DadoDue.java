@@ -1,7 +1,7 @@
 package it.tn.buonarroti.masala.dado;
 
 /**
- * @author GIACOMO.BERTI & Francesco.Masala
+ * @author Giacomo Berti (giacomo.berti@buonarroti.tn.it) and Francesco Masala (francesco.masala@buonarroti.tn.it)
  * @lastupdate 20/01/2021
  */
 public class DadoDue {

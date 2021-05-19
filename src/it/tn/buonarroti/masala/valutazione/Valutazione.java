@@ -5,7 +5,7 @@ import it.tn.buonarroti.masala.exceptions.DesiredIndexSmallerThanDeclared;
 import java.util.Arrays;
 
 /**
- * @author Francesco Masala (mail@francescomasala.me)
+ * @author Francesco Masala (francesco.masala@buonarroti.tn.it)
  */
 
 public class Valutazione {

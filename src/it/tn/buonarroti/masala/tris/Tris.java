@@ -2,6 +2,9 @@ package it.tn.buonarroti.masala.tris;
 
 import java.util.Objects;
 
+/**
+ * @author Francesco Masala (francesco.masala@buonarroti.tn.it)
+ */
 public class Tris {
     private boolean[][] gioco;
     private int nMossa;
@@ -9,6 +12,7 @@ public class Tris {
     public Tris() {
 
     }
+
 
     public Boolean mossaGiocatore(int row, int col) {
         Boolean result = Boolean.FALSE;
