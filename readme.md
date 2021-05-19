@@ -6,9 +6,7 @@ Tree of the directory:
  │   ├───artifacts
  │   ├───inspectionProfiles
  │   ├───scopes
- │   └───shelf
- │       ├───Uncommitted_changes_before_Update_at_5_19_2021_1_55_PM_[Default_Changelist]
- │       └───Uncommitted_changes_before_Update_at_5_19_2021_6_17_PM_[Default_Changelist]
+ |
  ├───manifest
  │   └───META-INF
  └───src
