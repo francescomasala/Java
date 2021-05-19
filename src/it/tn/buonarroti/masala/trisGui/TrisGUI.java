@@ -1,5 +1,7 @@
 package it.tn.buonarroti.masala.trisGui;
 
+import it.tn.buonarroti.masala.trisGui.helper.GameAssistant;
+
 import javax.swing.*;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
@@ -27,33 +29,18 @@ public class TrisGUI extends JDialog {
         setContentPane(contentPane);
         setModal(true);
         getRootPane().setDefaultButton(mainbutton);
+        mainbutton.setText("Premi qua per giocare!");
+        this.changeButtonText("Cliccami!");
         //Short mossa = 0;
 
-        row1col1.setEnabled(false);
-        row1col2.setEnabled(false);
-        row1col3.setEnabled(false);
-        row2col1.setEnabled(false);
-        row2col2.setEnabled(false);
-        row2col3.setEnabled(false);
-        row3col1.setEnabled(false);
-        row3col2.setEnabled(false);
-        row3col3.setEnabled(false);
+        this.blocksVisibility(false);
 
         mainbutton.addActionListener(e -> {
-            giocatoreUno = JOptionPane.showInputDialog("Nome del primo giocatore: ");
-            giocatoreDue = JOptionPane.showInputDialog("Nome del secondo giocatore: ");
+            it.tn.buonarroti.masala.trisGui.helper.GameAssistant ga = new GameAssistant();
+            ga.askPlayersNames();
 
             mainbutton.setVisible(false);
-
-            row1col1.setEnabled(true);
-            row1col2.setEnabled(true);
-            row1col3.setEnabled(true);
-            row2col1.setEnabled(true);
-            row2col2.setEnabled(true);
-            row2col3.setEnabled(true);
-            row3col1.setEnabled(true);
-            row3col2.setEnabled(true);
-            row3col3.setEnabled(true);
+            blocksVisibility(true);
         });
 
         row1col1.addActionListener(e -> {
@@ -72,7 +59,6 @@ public class TrisGUI extends JDialog {
             } catch (InterruptedException interruptedException) {
                 interruptedException.printStackTrace();
             }
-
         });
 
         row1col2.addActionListener(e -> {
@@ -228,7 +214,6 @@ public class TrisGUI extends JDialog {
         });
     }
 
-
     public static void main(String[] args) {
         TrisGUI dialog = new TrisGUI();
         dialog.pack();
@@ -236,15 +221,7 @@ public class TrisGUI extends JDialog {
         System.exit(0);
     }
 
-    private void onCancel() {
-        dispose();
-    }
-
-    private void createUIComponents() {
-        // TODO: place custom component creation code here
-    }
-
-    public void annunciaVincitore() throws InterruptedException {
+    private void annunciaVincitore() throws InterruptedException {
         // Caso di default se nessuna situazione accade
         Character vincitore;
 
@@ -282,14 +259,13 @@ public class TrisGUI extends JDialog {
         }
 
         switch (vincitore) {
-
             case '1':
-                JOptionPane.showMessageDialog(null, giocatoreUno + " ha vinto il gioco!");
+                JOptionPane.showMessageDialog(null, this.getGiocatoreDue() + " ha vinto il gioco!");
                 dispose();
                 Thread.sleep(10000);
                 break;
             case '2':
-                JOptionPane.showMessageDialog(null, giocatoreDue + " ha vinto il gioco!");
+                JOptionPane.showMessageDialog(null, this.getGiocatoreDue() + " ha vinto il gioco!");
                 dispose();
                 Thread.sleep(10000);
                 break;
@@ -301,5 +277,49 @@ public class TrisGUI extends JDialog {
             case 'd':
                 break;
         }
+    }
+
+    private void blocksVisibility(Boolean value) {
+        row1col1.setEnabled(value);
+        row1col2.setEnabled(value);
+        row1col3.setEnabled(value);
+        row2col1.setEnabled(value);
+        row2col2.setEnabled(value);
+        row2col3.setEnabled(value);
+        row3col1.setEnabled(value);
+        row3col2.setEnabled(value);
+        row3col3.setEnabled(value);
+    }
+
+    private void changeButtonText(String value) {
+        row1col1.setText(value);
+        row1col2.setText(value);
+        row1col3.setText(value);
+        row2col1.setText(value);
+        row2col2.setText(value);
+        row2col3.setText(value);
+        row3col1.setText(value);
+        row3col2.setText(value);
+        row3col3.setText(value);
+    }
+
+    public String getGiocatoreUno() {
+        return this.giocatoreUno;
+    }
+
+    public void setGiocatoreUno(String giocatoreUno) {
+        this.giocatoreUno = giocatoreUno;
+    }
+
+    public String getGiocatoreDue() {
+        return this.giocatoreDue;
+    }
+
+    public void setGiocatoreDue(String giocatoreDue) {
+        this.giocatoreDue = giocatoreDue;
+    }
+
+    private void onCancel() {
+        dispose();
     }
 }
