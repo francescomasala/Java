@@ -56,6 +56,12 @@ public class Ora1 {
         this.secondi = secondi;
     }
 
+
+    /**
+     * Controlla se l'ora inserita è valida
+     *
+     * @return Se l'ora è valida dovrebbe restituire un valore boolean.TRUE
+     */
     private Boolean validaOra() {
         Boolean check = Boolean.TRUE;
         // Creo una variabile booleana ed imposto TRUE come default
@@ -74,6 +80,11 @@ public class Ora1 {
         return check;
     }
 
+    /**
+     * Calcola la differenza in ore tra l'ora inserita all'interno della classe e l'ora attuale
+     *
+     * @return La differenza in intero
+     */
     public Integer differenzaInOre() {
         // Creo l'oggetto oraAttuale da GregorianCalendar
         Integer oraAttuale
@@ -92,6 +103,11 @@ public class Ora1 {
         return differenza;
     }
 
+    /**
+     * Calcola la differenza in minuti tra l'ora inserita all'interno della classe e l'ora attuale
+     *
+     * @return La differenza in intero
+     */
     public Integer differenzaInMinuti() {
         // Creo l'oggetto oraAttuale da GregorianCalendar
         int minutoAttuale
@@ -111,6 +127,11 @@ public class Ora1 {
         return differenza;
     }
 
+    /**
+     * Calcola la differenza in secondi tra l'ora inserita all'interno della classe e l'ora attuale
+     *
+     * @return La differenza in intero
+     */
     public Integer differenzaInSecondi() {
         // Creo l'oggetto oraAttuale da GregorianCalendar
         int secondoAttuale
@@ -131,6 +152,11 @@ public class Ora1 {
         return differenza;
     }
 
+    /**
+     * Calcola la differenza in ore, minuti e secondi tra l'ora inserita all'interno della classe e l'ora attuale
+     *
+     * @return La differenza in una stringa
+     */
     public String differenzaInOreMinutiSecondi() {
         String stringDifferenza = null;
         Integer ore = differenzaInOre(), minuti = differenzaInMinuti(), secondi = differenzaInSecondi();
