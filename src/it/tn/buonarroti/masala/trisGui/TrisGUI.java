@@ -260,12 +260,12 @@ public class TrisGUI extends JDialog {
 
         switch (vincitore) {
             case '1':
-                JOptionPane.showMessageDialog(null, this.getGiocatoreDue() + " ha vinto il gioco!");
+                JOptionPane.showMessageDialog(null, this.giocatoreUno + " ha vinto il gioco!");
                 dispose();
                 Thread.sleep(10000);
                 break;
             case '2':
-                JOptionPane.showMessageDialog(null, this.getGiocatoreDue() + " ha vinto il gioco!");
+                JOptionPane.showMessageDialog(null, this.giocatoreDue + " ha vinto il gioco!");
                 dispose();
                 Thread.sleep(10000);
                 break;
