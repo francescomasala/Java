@@ -1,6 +1,7 @@
 package it.tn.buonarroti.masala.trisGui;
 
 import it.tn.buonarroti.masala.trisGui.helper.GameAssistant;
+import lombok.*;
 
 import javax.swing.*;
 import java.awt.event.WindowAdapter;
@@ -20,8 +21,8 @@ public class TrisGUI extends JDialog {
     private JButton row3col3;
     private JButton mainbutton;
     private JLabel Title;
-    private String giocatoreUno;
-    private String giocatoreDue;
+    @Getter @Setter private String giocatoreUno;
+    @Getter @Setter private String giocatoreDue;
     private boolean turno = false;
 
 
@@ -301,22 +302,6 @@ public class TrisGUI extends JDialog {
         row3col1.setText(value);
         row3col2.setText(value);
         row3col3.setText(value);
-    }
-
-    public String getGiocatoreUno() {
-        return this.giocatoreUno;
-    }
-
-    public void setGiocatoreUno(String giocatoreUno) {
-        this.giocatoreUno = giocatoreUno;
-    }
-
-    public String getGiocatoreDue() {
-        return this.giocatoreDue;
-    }
-
-    public void setGiocatoreDue(String giocatoreDue) {
-        this.giocatoreDue = giocatoreDue;
     }
 
     private void onCancel() {
