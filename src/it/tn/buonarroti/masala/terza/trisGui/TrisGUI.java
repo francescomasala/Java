@@ -45,16 +45,8 @@ public class TrisGUI extends JDialog {
             } else {
                 row1col1.setText("O");
             }
-
-            GameLogic.turno = !GameLogic.turno;
             row1col1.setEnabled(false);
-
-            GameLogic.setMossa(GameLogic.getMossa()+1);
-            try {
-                annunciaVincitore();
-            } catch (InterruptedException interruptedException) {
-                interruptedException.printStackTrace();
-            }
+            this.setGameLogic();
         });
 
         row1col2.addActionListener(e -> {
@@ -63,16 +55,8 @@ public class TrisGUI extends JDialog {
             } else {
                 row1col2.setText("O");
             }
-
-            GameLogic.turno = !GameLogic.turno;
             row1col2.setEnabled(false);
-
-            GameLogic.setMossa(GameLogic.getMossa()+1);
-            try {
-                annunciaVincitore();
-            } catch (InterruptedException interruptedException) {
-                interruptedException.printStackTrace();
-            }
+            this.setGameLogic();
         });
 
         row1col3.addActionListener(e -> {
@@ -81,16 +65,8 @@ public class TrisGUI extends JDialog {
             } else {
                 row1col3.setText("O");
             }
-
-            GameLogic.turno = !GameLogic.turno;
             row1col3.setEnabled(false);
-
-            GameLogic.setMossa(GameLogic.getMossa()+1);
-            try {
-                annunciaVincitore();
-            } catch (InterruptedException interruptedException) {
-                interruptedException.printStackTrace();
-            }
+            this.setGameLogic();
         });
 
         row2col1.addActionListener(e -> {
@@ -99,16 +75,8 @@ public class TrisGUI extends JDialog {
             } else {
                 row2col1.setText("O");
             }
-
-            GameLogic.turno = !GameLogic.turno;
             row2col1.setEnabled(false);
-
-            GameLogic.setMossa(GameLogic.getMossa()+1);
-            try {
-                annunciaVincitore();
-            } catch (InterruptedException interruptedException) {
-                interruptedException.printStackTrace();
-            }
+            this.setGameLogic();
         });
 
         row2col2.addActionListener(e -> {
@@ -117,16 +85,8 @@ public class TrisGUI extends JDialog {
             } else {
                 row2col2.setText("O");
             }
-
-            GameLogic.turno = !GameLogic.turno;
             row2col2.setEnabled(false);
-
-            GameLogic.setMossa(GameLogic.getMossa()+1);
-            try {
-                annunciaVincitore();
-            } catch (InterruptedException interruptedException) {
-                interruptedException.printStackTrace();
-            }
+            this.setGameLogic();
         });
 
         row2col3.addActionListener(e -> {
@@ -135,16 +95,8 @@ public class TrisGUI extends JDialog {
             } else {
                 row2col3.setText("O");
             }
-
-            GameLogic.turno = !GameLogic.turno;
             row2col3.setEnabled(false);
-
-            GameLogic.setMossa(GameLogic.getMossa()+1);
-            try {
-                annunciaVincitore();
-            } catch (InterruptedException interruptedException) {
-                interruptedException.printStackTrace();
-            }
+            this.setGameLogic();
         });
 
         row3col1.addActionListener(e -> {
@@ -153,16 +105,8 @@ public class TrisGUI extends JDialog {
             } else {
                 row3col1.setText("O");
             }
-
-            GameLogic.turno = !GameLogic.turno;
             row3col1.setEnabled(false);
-
-            GameLogic.setMossa(GameLogic.getMossa()+1);
-            try {
-                annunciaVincitore();
-            } catch (InterruptedException interruptedException) {
-                interruptedException.printStackTrace();
-            }
+            this.setGameLogic();
         });
 
         row3col2.addActionListener(e -> {
@@ -171,16 +115,8 @@ public class TrisGUI extends JDialog {
             } else {
                 row3col2.setText("O");
             }
-
-            GameLogic.turno = !GameLogic.turno;
             row3col2.setEnabled(false);
-
-            GameLogic.setMossa(GameLogic.getMossa()+1);
-            try {
-                annunciaVincitore();
-            } catch (InterruptedException interruptedException) {
-                interruptedException.printStackTrace();
-            }
+            this.setGameLogic();
         });
 
         row3col3.addActionListener(e -> {
@@ -189,16 +125,8 @@ public class TrisGUI extends JDialog {
             } else {
                 row3col3.setText("O");
             }
-
-            GameLogic.turno = !GameLogic.turno;
             row3col3.setEnabled(false);
-
-            GameLogic.setMossa(GameLogic.getMossa()+1);
-            try {
-                annunciaVincitore();
-            } catch (InterruptedException interruptedException) {
-                interruptedException.printStackTrace();
-            }
+            this.setGameLogic();
         });
 
         // call onCancel() when cross is clicked
@@ -219,24 +147,15 @@ public class TrisGUI extends JDialog {
 
     private void annunciaVincitore() throws InterruptedException {
 
-        if (!row1col1.getText().equals("Cliccami!")) GameLogic.valoriTris[0][0] =
-                ((row1col1.getText().equals("X")) ? '1' : '2');
-        if (!row1col2.getText().equals("Cliccami!")) GameLogic.valoriTris[0][1] =
-                ((row1col2.getText().equals("X")) ? '1' : '2');
-        if (!row1col3.getText().equals("Cliccami!")) GameLogic.valoriTris[0][2] =
-                ((row1col3.getText().equals("X")) ? '1' : '2');
-        if (!row2col1.getText().equals("Cliccami!")) GameLogic.valoriTris[1][0] =
-                ((row2col1.getText().equals("X")) ? '1' : '2');
-        if (!row2col2.getText().equals("Cliccami!")) GameLogic.valoriTris[1][1] =
-                ((row2col2.getText().equals("X")) ? '1' : '2');
-        if (!row2col3.getText().equals("Cliccami!")) GameLogic.valoriTris[1][2] =
-                ((row2col3.getText().equals("X")) ? '1' : '2');
-        if (!row3col1.getText().equals("Cliccami!")) GameLogic.valoriTris[2][0] =
-                ((row3col1.getText().equals("X")) ? '1' : '2');
-        if (!row3col2.getText().equals("Cliccami!")) GameLogic.valoriTris[2][1] =
-                ((row3col2.getText().equals("X")) ? '1' : '2');
-        if (!row3col3.getText().equals("Cliccami!")) GameLogic.valoriTris[2][2] =
-                ((row3col3.getText().equals("X")) ? '1' : '2');
+        GameLogic.comboCheck(row1col1);
+        GameLogic.comboCheck(row1col2);
+        GameLogic.comboCheck(row1col3);
+        GameLogic.comboCheck(row2col1);
+        GameLogic.comboCheck(row2col2);
+        GameLogic.comboCheck(row2col3);
+        GameLogic.comboCheck(row3col1);
+        GameLogic.comboCheck(row3col2);
+        GameLogic.comboCheck(row3col3);
 
         GameLogic.setVincitore('d');
         GameLogic.boardCheck();
@@ -270,4 +189,20 @@ public class TrisGUI extends JDialog {
     private void onCancel() {
         dispose();
     }
+
+    private void setGameLogic(){
+        GameLogic.turno = !GameLogic.turno;
+        GameLogic.setMossa(GameLogic.getMossa()+1);
+        try {
+            this.annunciaVincitore();
+        } catch (InterruptedException interruptedException) {
+            interruptedException.printStackTrace();
+        }
+    }
+
+    // assert dominance and become ungovernable
+    // We cum on watermelons
+    // become ungovernable
+    // Chic_luke + Fra + Arvy 2021
+
 }

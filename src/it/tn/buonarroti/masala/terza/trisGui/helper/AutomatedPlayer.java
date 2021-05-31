@@ -1,4 +1,4 @@
 package it.tn.buonarroti.masala.terza.trisGui.helper;
 
-public class ComputerVirtPlayer {
+public class AutomatedPlayer {
 }

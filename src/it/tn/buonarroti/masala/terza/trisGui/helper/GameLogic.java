@@ -4,6 +4,8 @@ import lombok.AccessLevel;
 import lombok.Getter;
 import lombok.Setter;
 
+import javax.swing.*;
+
 public class GameLogic {
     public static final Character[][] valoriTris = new Character[3][3];
     @Getter(AccessLevel.PUBLIC)
@@ -43,5 +45,11 @@ public class GameLogic {
             System.out.println();
         }
 
+    }
+    public static void comboCheck(JButton button){
+        if (!button.getText().equals("Cliccami!")) {
+            GameLogic.valoriTris[0][0] =
+                    ((button.getText().equals("X")) ? '1' : '2');
+        }
     }
 }
