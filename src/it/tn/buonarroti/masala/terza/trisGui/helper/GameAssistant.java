@@ -1,7 +1,6 @@
 package it.tn.buonarroti.masala.terza.trisGui.helper;
 
 import lombok.NonNull;
-import sun.security.util.SecurityConstants;
 
 import javax.swing.*;
 
@@ -21,17 +20,17 @@ public class GameAssistant {
         switch (vincitore) {
             case '1':
                 JOptionPane.showMessageDialog(null, GameLogic.getGiocatoreUno() + " ha vinto il gioco!");
-                Thread.sleep(10000);
+                Thread.sleep(1000);
                 System.exit(1);
                 break;
             case '2':
                 JOptionPane.showMessageDialog(null, GameLogic.getGiocatoreDue() + " ha vinto il gioco!");
-                Thread.sleep(10000);
+                Thread.sleep(1000);
                 System.exit(1);
                 break;
             case 'p':
                 JOptionPane.showMessageDialog(null, "Pareggio!");
-                Thread.sleep(10000);
+                Thread.sleep(1000);
                 System.exit(1);
                 break;
             case 'd':

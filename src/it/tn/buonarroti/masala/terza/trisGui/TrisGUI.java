@@ -1,9 +1,10 @@
 package it.tn.buonarroti.masala.terza.trisGui;
 
 // Core backbone packages
-import it.tn.buonarroti.masala.terza.trisGui.helper.*;
 
-// Core GUI packages
+import it.tn.buonarroti.masala.terza.trisGui.helper.GameAssistant;
+import it.tn.buonarroti.masala.terza.trisGui.helper.GameLogic;
+
 import javax.swing.*;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
@@ -23,21 +24,17 @@ public class TrisGUI extends JDialog {
     private JLabel Title;
 
 
-
     public TrisGUI() {
         setContentPane(contentPane);
         setModal(true);
         getRootPane().setDefaultButton(mainbutton);
         mainbutton.setText("Premi qua per giocare!");
         this.changeButtonText("Cliccami!");
-        //Short mossa = 0;
-
         this.blocksVisibility(false);
 
         mainbutton.addActionListener(e -> {
             GameAssistant ga = new GameAssistant();
             ga.askPlayersNames();
-
             mainbutton.setVisible(false);
             blocksVisibility(true);
         });
@@ -222,34 +219,27 @@ public class TrisGUI extends JDialog {
 
     private void annunciaVincitore() throws InterruptedException {
 
-        if (!row1col1.getText().equals("Cliccami!")) GameLogic.valoriTris[0][0] = ((row1col1.getText().equals("X")) ? '1' : '2');
-        if (!row1col2.getText().equals("Cliccami!")) GameLogic.valoriTris[0][1] = ((row1col2.getText().equals("X")) ? '1' : '2');
-        if (!row1col3.getText().equals("Cliccami!")) GameLogic.valoriTris[0][2] = ((row1col3.getText().equals("X")) ? '1' : '2');
-        if (!row2col1.getText().equals("Cliccami!")) GameLogic.valoriTris[1][0] = ((row2col1.getText().equals("X")) ? '1' : '2');
-        if (!row2col2.getText().equals("Cliccami!")) GameLogic.valoriTris[1][1] = ((row2col2.getText().equals("X")) ? '1' : '2');
-        if (!row2col3.getText().equals("Cliccami!")) GameLogic.valoriTris[1][2] = ((row2col3.getText().equals("X")) ? '1' : '2');
-        if (!row3col1.getText().equals("Cliccami!")) GameLogic.valoriTris[2][0] = ((row3col1.getText().equals("X")) ? '1' : '2');
-        if (!row3col2.getText().equals("Cliccami!")) GameLogic.valoriTris[2][1] = ((row3col2.getText().equals("X")) ? '1' : '2');
-        if (!row3col3.getText().equals("Cliccami!")) GameLogic.valoriTris[2][2] = ((row3col3.getText().equals("X")) ? '1' : '2');
+        if (!row1col1.getText().equals("Cliccami!")) GameLogic.valoriTris[0][0] =
+                ((row1col1.getText().equals("X")) ? '1' : '2');
+        if (!row1col2.getText().equals("Cliccami!")) GameLogic.valoriTris[0][1] =
+                ((row1col2.getText().equals("X")) ? '1' : '2');
+        if (!row1col3.getText().equals("Cliccami!")) GameLogic.valoriTris[0][2] =
+                ((row1col3.getText().equals("X")) ? '1' : '2');
+        if (!row2col1.getText().equals("Cliccami!")) GameLogic.valoriTris[1][0] =
+                ((row2col1.getText().equals("X")) ? '1' : '2');
+        if (!row2col2.getText().equals("Cliccami!")) GameLogic.valoriTris[1][1] =
+                ((row2col2.getText().equals("X")) ? '1' : '2');
+        if (!row2col3.getText().equals("Cliccami!")) GameLogic.valoriTris[1][2] =
+                ((row2col3.getText().equals("X")) ? '1' : '2');
+        if (!row3col1.getText().equals("Cliccami!")) GameLogic.valoriTris[2][0] =
+                ((row3col1.getText().equals("X")) ? '1' : '2');
+        if (!row3col2.getText().equals("Cliccami!")) GameLogic.valoriTris[2][1] =
+                ((row3col2.getText().equals("X")) ? '1' : '2');
+        if (!row3col3.getText().equals("Cliccami!")) GameLogic.valoriTris[2][2] =
+                ((row3col3.getText().equals("X")) ? '1' : '2');
 
         GameLogic.setVincitore('d');
-        if (GameLogic.getMossa() == 9) GameLogic.setVincitore('p');
-        for (int i = 0; i < 3; i++) {
-            // Tris verticale
-            if (GameLogic.valoriTris[0][i] == GameLogic.valoriTris[1][i] && GameLogic.valoriTris[1][i] == GameLogic.valoriTris[2][i] && GameLogic.valoriTris[0][i] != null) {
-                GameLogic.setVincitore(GameLogic.valoriTris[0][i]);
-                // Tris orizzontale
-            } else if (GameLogic.valoriTris[i][0] == GameLogic.valoriTris[i][1] && GameLogic.valoriTris[i][1] == GameLogic.valoriTris[i][2] && GameLogic.valoriTris[i][0] != null) {
-                GameLogic.setVincitore(GameLogic.valoriTris[i][0]);
-            }
-        }
-        // Tris diagonale
-        if (GameLogic.valoriTris[1][1] != ' ') if (GameLogic.valoriTris[0][0] == GameLogic.valoriTris[1][1] && GameLogic.valoriTris[1][1] == GameLogic.valoriTris[2][2]) {
-            GameLogic.setVincitore(GameLogic.valoriTris[1][1]);
-        } else if (GameLogic.valoriTris[0][2] == GameLogic.valoriTris[1][1] && GameLogic.valoriTris[1][1] == GameLogic.valoriTris[2][0]) {
-            GameLogic.setVincitore(GameLogic.valoriTris[1][1]);
-        }
-
+        GameLogic.boardCheck();
         GameAssistant.dialogPopupWinnerGUI(GameLogic.getVincitore());
     }
 
