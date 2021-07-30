@@ -1,9 +1,18 @@
 package it.tn.buonarroti.masala.terza.vacanze.primo;
 
+import lombok.Getter;
+import lombok.Setter;
+
 public class Orario {
-    private final int hours;
-    private final int minutes;
-    private final int seconds;
+    @Getter
+    @Setter
+    private int hours;
+    @Getter
+    @Setter
+    private int minutes;
+    @Getter
+    @Setter
+    private int seconds;
 
     public Orario() {
         hours = java.time.LocalTime.now().getHour();
@@ -12,19 +21,21 @@ public class Orario {
     }
 
     public int HoursAfterMidnight() {
-        int totaltime = hours;
-
+        int totaltime;
+        totaltime = hours;
         return totaltime;
     }
 
     public int MinutesAfterMidnight() {
-        int totaltime = (hours * 60) + minutes;
+        int totaltime;
+        totaltime = (hours * 60) + minutes;
 
         return totaltime;
     }
 
     public int printSecondsAfterMidnight() {
-        int totaltime = this.MinutesAfterMidnight() + seconds;
+        int totaltime;
+        totaltime = (this.MinutesAfterMidnight() * 60) + seconds;
 
         return totaltime;
     }
