@@ -23,6 +23,7 @@ public class Byte {
     // Costruttore con parametri
 
     /**
+     *
      */
     public Byte(final Boolean[] b) {
         int i;
@@ -32,6 +33,7 @@ public class Byte {
     }
 
     /**
+     *
      */
     public Boolean[] getB() {
         return b;
@@ -39,13 +41,13 @@ public class Byte {
 
     /**
      * Causa condivisione di memoria tra parametro ed attributo\n DA EVITARE
-     *
      */
     public void setB(final Boolean[] b) {
         this.b = b;
     }
 
     /**
+     *
      */
     public String outputString() {
         int i;
@@ -57,6 +59,7 @@ public class Byte {
     }
 
     /**
+     *
      */
     public String outputStringInt() {
         int i;
@@ -68,6 +71,7 @@ public class Byte {
     }
 
     /**
+     *
      */
     public void setArray(final Boolean[] b) {
         // this.b (Att) viene inizializzato a 0
@@ -93,6 +97,7 @@ public class Byte {
     }
 
     /**
+     *
      */
     public int toDecimal() {
         int i;

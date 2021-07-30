@@ -190,9 +190,9 @@ public class TrisGUI extends JDialog {
         dispose();
     }
 
-    private void setGameLogic(){
+    private void setGameLogic() {
         GameLogic.turno = !GameLogic.turno;
-        GameLogic.setMossa(GameLogic.getMossa()+1);
+        GameLogic.setMossa(GameLogic.getMossa() + 1);
         try {
             this.annunciaVincitore();
         } catch (InterruptedException interruptedException) {

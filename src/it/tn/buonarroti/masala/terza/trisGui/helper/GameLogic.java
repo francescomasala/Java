@@ -8,6 +8,7 @@ import javax.swing.*;
 
 public class GameLogic {
     public static final Character[][] valoriTris = new Character[3][3];
+    public static boolean turno;
     @Getter(AccessLevel.PUBLIC)
     @Setter(AccessLevel.PUBLIC)
     private static Character vincitore;
@@ -20,7 +21,6 @@ public class GameLogic {
     @Getter(AccessLevel.PUBLIC)
     @Setter(AccessLevel.PUBLIC)
     private static String giocatoreDue;
-    public static boolean turno;
 
     public static void boardCheck() {
         if (GameLogic.getMossa() == 9) GameLogic.setVincitore('p');
@@ -46,7 +46,8 @@ public class GameLogic {
         }
 
     }
-    public static void comboCheck(JButton button){
+
+    public static void comboCheck(JButton button) {
         if (!button.getText().equals("Cliccami!")) {
             GameLogic.valoriTris[0][0] =
                     ((button.getText().equals("X")) ? '1' : '2');

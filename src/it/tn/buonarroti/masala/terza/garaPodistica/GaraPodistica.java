@@ -5,9 +5,9 @@ package it.tn.buonarroti.masala.terza.garaPodistica;
  */
 public class GaraPodistica {
 
-    private String nome[];
-    private Integer tempoImpiegato[];
-    private Integer numeroMaxPartecipanti;
+    private final String[] nome;
+    private final Integer[] tempoImpiegato;
+    private final Integer numeroMaxPartecipanti;
     private Integer numeroEffettivoPartecipanti;
 
     /**

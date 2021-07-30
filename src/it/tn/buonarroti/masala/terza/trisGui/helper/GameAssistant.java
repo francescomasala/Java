@@ -6,16 +6,6 @@ import javax.swing.*;
 
 
 public class GameAssistant {
-    public void askPlayersNames() {
-        GameLogic.setGiocatoreUno(JOptionPane.showInputDialog("Nome del primo giocatore: "));
-        while (GameLogic.getGiocatoreUno() == null) {
-            GameLogic.setGiocatoreUno(JOptionPane.showInputDialog("Nome del primo giocatore non valido, reinserire: "));
-        }
-        GameLogic.setGiocatoreDue(JOptionPane.showInputDialog("Nome del secondo giocatore: "));
-        while (GameLogic.getGiocatoreDue() == null) {
-            GameLogic.setGiocatoreDue(JOptionPane.showInputDialog("Nome del secondo giocatore non valido, reinserire: "));
-        }
-    }
     public static void dialogPopupWinnerGUI(@NonNull Character vincitore) throws InterruptedException {
         switch (vincitore) {
             case '1':
@@ -35,6 +25,17 @@ public class GameAssistant {
                 break;
             case 'd':
                 break;
+        }
+    }
+
+    public void askPlayersNames() {
+        GameLogic.setGiocatoreUno(JOptionPane.showInputDialog("Nome del primo giocatore: "));
+        while (GameLogic.getGiocatoreUno() == null) {
+            GameLogic.setGiocatoreUno(JOptionPane.showInputDialog("Nome del primo giocatore non valido, reinserire: "));
+        }
+        GameLogic.setGiocatoreDue(JOptionPane.showInputDialog("Nome del secondo giocatore: "));
+        while (GameLogic.getGiocatoreDue() == null) {
+            GameLogic.setGiocatoreDue(JOptionPane.showInputDialog("Nome del secondo giocatore non valido, reinserire: "));
         }
     }
 }

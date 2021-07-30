@@ -3,16 +3,17 @@ package it.tn.buonarroti.masala.terza.valutazione;
 import it.tn.buonarroti.masala.terza.exceptions.DesiredIndexSmallerThanDeclared;
 
 import java.util.Arrays;
+import java.util.Objects;
 
 /**
  * @author Francesco Masala (francesco.masala@buonarroti.tn.it)
  */
 
 public class Valutazione {
-    private Integer lunghezzaMax;
+    private final Integer lunghezzaMax;
     private Integer indice = 0;
-    private Float[] voti;
-    private String[] alunni;
+    private final Float[] voti;
+    private final String[] alunni;
 
     public Valutazione(Integer lunghezza) {
         this.lunghezzaMax = lunghezza + 1;
@@ -28,8 +29,8 @@ public class Valutazione {
      *
      *               <blockquote>
      *               <pre>
-     *                             aggiungiValutazione(Mario Rossi, 7.75f);
-     *               </pre>
+     *                                           aggiungiValutazione(Mario Rossi, 7.75f);
+     *                             </pre>
      *               </blockquote>
      */
     public Boolean aggiungiValutazione(String alunno, Float voto) {
@@ -107,7 +108,7 @@ public class Valutazione {
         String result = "";
 
         for (int index = 0; index < this.indice; index++) {
-            if (this.voti[index] == voto) {
+            if (Objects.equals(this.voti[index], voto)) {
                 result += "Alunno: " + this.alunni[index] + "\n" +
                         "Voto: " + this.voti[index] + "\n";
             }
@@ -118,9 +119,9 @@ public class Valutazione {
     /**
      * Effettua una media globale dei voti di tutti gli alunni
      */
-    public Float mediaDeiVoti() {
-        Integer index = 0; // Variabile locale per l'indice
-        Float media = 0.0f;// Variabile per contenere la media
+    public float mediaDeiVoti() {
+        int index = 0; // Variabile locale per l'indice
+        float media = 0.0f;// Variabile per contenere la media
 
         while (index <= this.indice) {
             media = media + this.voti[index];
@@ -134,7 +135,7 @@ public class Valutazione {
 
     public String nAlunniSufficientiEInsufficienti() {
         String result = "";
-        Integer sufficienti = 0, insufficienti = 0;
+        int sufficienti = 0, insufficienti = 0;
 
         for (int index = 0; index < this.indice; index++) {
             if (this.voti[index] < 6.0f) {
@@ -150,7 +151,7 @@ public class Valutazione {
 
     public String AlunniSufficientiEInsufficienti() {
         String result = "Alunni sufficienti: \n";
-        Integer indexOne = 0, indexTwo = 0;
+        int indexOne = 0, indexTwo = 0;
         String[] sufficienti = new String[this.lunghezzaMax];
         String[] insufficienti = new String[this.lunghezzaMax];
 
