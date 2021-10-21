@@ -50,7 +50,8 @@ public class Persona {
         this.cognome = cognome;
         this.nome = nome;
         this.peso = peso;
-        this.dataDiNascita = dataDiNascita;
+
+        this.setDataDiNascita(dataDiNascita);
     }
 
     /**
@@ -60,7 +61,11 @@ public class Persona {
      *
      */
     public String info(){
-        return null;
+        return "Cognome         :" + this.cognome       + "\n"
+             + "Nome            :" + this.nome          + "\n"
+             + "Altezza         :" + this.altezza       + "\n"
+             + "Peso            :" + this.peso          + "\n"
+             + "Data Di Nascita :" + this.dataDiNascita + "\n";
     }
 }
 
