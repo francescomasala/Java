@@ -1,7 +1,6 @@
 package it.tn.buonarroti.masala.quarta.segmento;
 
 import lombok.Getter;
-import lombok.Setter;
 
 /**
  * @author Francesco Masala (francesco.masala@buonarroti.tn.it)
@@ -20,7 +19,6 @@ public class Punto {
      *
      * @param x Valore all'interno dell'asse delle ascisse
      * @param y Valore all'interno dell'asse delle ordinate
-     *
      * @author Francesco Masala (francesco.masala@buonarroti.tn.it)
      */
     public Punto(Double x, Double y) {
@@ -32,7 +30,6 @@ public class Punto {
      * Costruttore della classe
      *
      * @param p Valore all'interno di un grafico seguendo l'ordine: (x;y)
-     *
      * @author Francesco Masala (francesco.masala@buonarroti.tn.it)
      */
     public Punto(Punto p) {
@@ -44,7 +41,6 @@ public class Punto {
      * Trasla x
      *
      * @param dx Trasla il valore di X dato un valore double come parametro
-     *
      * @author Francesco Masala (francesco.masala@buonarroti.tn.it)
      */
     public void traslaX(Double dx) {
@@ -55,7 +51,6 @@ public class Punto {
      * Trasla y
      *
      * @param dy Trasla il valore di Y dato un valore double come parametro
-     *
      * @author Francesco Masala (francesco.masala@buonarroti.tn.it)
      */
     public void traslaY(Double dy) {
@@ -66,7 +61,6 @@ public class Punto {
      * ToString della classe
      *
      * @return Il valore del punto in questo formato: x;y
-     *
      * @author Francesco Masala (francesco.masala@buonarroti.tn.it)
      */
     @Override

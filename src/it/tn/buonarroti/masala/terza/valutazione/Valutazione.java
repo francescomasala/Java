@@ -11,9 +11,9 @@ import java.util.Objects;
 
 public class Valutazione {
     private final Integer lunghezzaMax;
-    private Integer indice = 0;
     private final Float[] voti;
     private final String[] alunni;
+    private Integer indice = 0;
 
     public Valutazione(Integer lunghezza) {
         this.lunghezzaMax = lunghezza + 1;
@@ -29,8 +29,8 @@ public class Valutazione {
      *
      *               <blockquote>
      *               <pre>
-     *                                           aggiungiValutazione(Mario Rossi, 7.75f);
-     *                             </pre>
+     *                                                         aggiungiValutazione(Mario Rossi, 7.75f);
+     *                                           </pre>
      *               </blockquote>
      */
     public Boolean aggiungiValutazione(String alunno, Float voto) {

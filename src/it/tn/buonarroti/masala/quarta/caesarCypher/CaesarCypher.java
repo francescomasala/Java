@@ -11,8 +11,8 @@ import java.util.Locale;
 
 public class CaesarCypher {
     @Getter
-    private final Character[] alphabet_ita = {'a','b','c','d','e','f','g','h','i','j','k'
-            ,'l','m','n','o','p','q','r','s','t','u','v','w','x','y','z'};
+    private final Character[] alphabet_ita = {'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k'
+            , 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'};
     @Getter
     @Setter
     private Integer key;
@@ -26,6 +26,7 @@ public class CaesarCypher {
     public CaesarCypher(Integer key) {
         this.key = key;
     }
+
     /**
      * Metodo per criptare un messaggio attraverso il cifrario di cesare
      *
@@ -33,11 +34,11 @@ public class CaesarCypher {
      * @return Il messaggio cifrato utilizzando la chiave indicata nel costruttore
      * @author Francesco Masala (francesco.masala@buonarroti.tn.it)
      */
-    public String crypt(String messaggio){
+    public String crypt(String messaggio) {
         String mex = messaggio;
 
         for (int i = 0; i < 26; i++) {
-            int key_2 = i+this.key;
+            int key_2 = i + this.key;
             key_2 %= 26;
             mex = mex.replace(this.alphabet_ita[i],
                     Character.toUpperCase(this.alphabet_ita[key_2]));
@@ -53,24 +54,25 @@ public class CaesarCypher {
      * @return Il messaggio decifrato utilizzando la chiave indicata nel costruttore
      * @author Francesco Masala (francesco.masala@buonarroti.tn.it)
      */
-    public String decrypt(String messaggio){
+    public String decrypt(String messaggio) {
         String mex = messaggio;
 
         for (int i = 0; i < 26; i++) {
-            int key_2 = i+this.key;
+            int key_2 = i + this.key;
             key_2 %= 26;
             mex = mex.replace(this.alphabet_ita[key_2],
                     Character.toUpperCase(this.alphabet_ita[i]));
         }
         return mex.toLowerCase(Locale.ROOT);
     }
+
     /**
      * Metodo per restitutire l'alfabero
      *
      * @return L'alfabeto utilizzato dal nostro cifrario
      * @author Francesco Masala (francesco.masala@buonarroti.tn.it)
      */
-    public Character[] stringAlfabeto(){
+    public Character[] stringAlfabeto() {
 
         return this.alphabet_ita;
     }

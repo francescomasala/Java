@@ -1,4 +1,5 @@
 package it.tn.buonarroti.masala.quarta.persona;
+
 import lombok.Getter;
 import lombok.Setter;
 import org.jetbrains.annotations.NotNull;
@@ -27,7 +28,6 @@ public class Persona1 {
 
     /**
      * Primo costruttore del metodo
-     *
      */
     public Persona1() {
 
@@ -36,16 +36,15 @@ public class Persona1 {
     /**
      * Secondo costruttore del metodo
      *
-     * @param altezza Inserire l'altezza come un double - Es. 1.75
-     * @param cognome Inserire il cognome come una stringa - Es. Masala
-     * @param nome Inserire il nome come una stringa - Es. Francesco
-     * @param peso Inserire il peso come un float - Es. 72.450
+     * @param altezza       Inserire l'altezza come un double - Es. 1.75
+     * @param cognome       Inserire il cognome come una stringa - Es. Masala
+     * @param nome          Inserire il nome come una stringa - Es. Francesco
+     * @param peso          Inserire il peso come un float - Es. 72.450
      * @param dataDiNascita Inserire la data di nascita come una stringa - Es. 27/02/2002
-     *
      */
     public Persona1(Double altezza, String cognome,
-                   String nome, Float peso,
-                   String dataDiNascita) {
+                    String nome, Float peso,
+                    String dataDiNascita) {
         this.altezza = altezza;
         this.cognome = cognome;
         this.nome = nome;
@@ -75,18 +74,18 @@ public class Persona1 {
                 case 8:
                 case 10:
                 case 12:
-                    if (giornoDiNascita <=1){
+                    if (giornoDiNascita <= 1) {
                         valida = Boolean.TRUE;
                     }
                 case 4:
                 case 6:
                 case 9:
                 case 11:
-                    if (giornoDiNascita <=30){
+                    if (giornoDiNascita <= 30) {
                         valida = Boolean.TRUE;
                     }
                 case 2:
-                    if (giornoDiNascita <=28){
+                    if (giornoDiNascita <= 28) {
                         valida = Boolean.TRUE;
                     }
             }
@@ -100,13 +99,12 @@ public class Persona1 {
      * Metodo Info
      *
      * @return null
-     *
      */
-    public String info(){
-        return "Cognome         :" + this.cognome       + "\n"
-                + "Nome            :" + this.nome          + "\n"
-                + "Altezza         :" + this.altezza       + "\n"
-                + "Peso            :" + this.peso          + "\n"
+    public String info() {
+        return "Cognome         :" + this.cognome + "\n"
+                + "Nome            :" + this.nome + "\n"
+                + "Altezza         :" + this.altezza + "\n"
+                + "Peso            :" + this.peso + "\n"
                 + "Data Di Nascita :" + this.dataDiNascita + "\n";
     }
 }

@@ -2,10 +2,10 @@ package it.tn.buonarroti.masala.quarta.segmento;
 
 public class main {
     public static void main(String[] args) {
-        Punto p1 = new Punto(16.0,12.0);
-        Punto p2 = new Punto(8.0,5.0);
+        Punto p1 = new Punto(16.0, 12.0);
+        Punto p2 = new Punto(8.0, 5.0);
 
-        Segmento seg = new Segmento(p1,p2);
+        Segmento seg = new Segmento(p1, p2);
 
         System.out.println(seg.trovaLung());
 

@@ -4,6 +4,6 @@ public class main {
     public static void main(String[] args) {
         orario ora = new orario(16, 54, 24);
         System.out.println(ora.ToSecFromMidnight());
-        System.out.println(ora.toString());
+        System.out.println(ora);
     }
 }

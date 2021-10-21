@@ -5,56 +5,56 @@ public class orario {
     private Integer MM;
     private Integer HH;
 
-    public orario(){
+    public orario() {
         this.SS = 00;
         this.MM = 00;
         this.HH = 00;
 
     }
 
-    public orario(Integer HH, Integer MM, Integer SS){
+    public orario(Integer HH, Integer MM, Integer SS) {
         this.SS = SS;
         this.MM = MM;
         this.HH = HH;
     }
 
-    public void AddSS(Integer New_Sec){
+    public void AddSS(Integer New_Sec) {
 
         this.SS = this.SS + New_Sec;
 
     }
 
-    public void AddMM(Integer New_Min){
+    public void AddMM(Integer New_Min) {
 
         this.MM = this.MM + New_Min;
 
     }
 
-    public void AddHH(Integer New_Hour){
+    public void AddHH(Integer New_Hour) {
 
         this.HH = this.HH + New_Hour;
 
     }
 
-    public void RmSS(Integer New_Sec){
+    public void RmSS(Integer New_Sec) {
 
         this.SS = this.SS - New_Sec;
 
     }
 
-    public void RmMM(Integer New_Min){
+    public void RmMM(Integer New_Min) {
 
         this.MM = this.MM - New_Min;
 
     }
 
-    public void RmHH(Integer New_Hour){
+    public void RmHH(Integer New_Hour) {
 
         this.HH = this.HH - New_Hour;
 
     }
 
-    public Integer ToSecFromMidnight(){
+    public Integer ToSecFromMidnight() {
         Integer result = 0;
 
         result = this.HH * 60;
@@ -64,7 +64,7 @@ public class orario {
         return result;
     }
 
-    public Integer ToMinFromMidnight(){
+    public Integer ToMinFromMidnight() {
         Integer result;
 
         result = (this.HH * 60);
@@ -78,7 +78,7 @@ public class orario {
 
     }
 
-    public Integer ToHourFromMidnight(){
+    public Integer ToHourFromMidnight() {
 
         Integer result;
 
@@ -91,7 +91,7 @@ public class orario {
         return result;
     }
 
-    public Integer ToSecToMidnight(){
+    public Integer ToSecToMidnight() {
         Integer result;
 
         result = this.ToMinToMidnight() * 60;
@@ -100,7 +100,7 @@ public class orario {
         return result;
     }
 
-    public Integer ToMinToMidnight(){
+    public Integer ToMinToMidnight() {
         Integer result;
 
         result = this.ToHourToMidnight() * 60;
@@ -109,7 +109,7 @@ public class orario {
         return result;
     }
 
-    public Integer ToHourToMidnight(){
+    public Integer ToHourToMidnight() {
         Integer result;
 
         result = 24 - this.HH;
@@ -117,18 +117,18 @@ public class orario {
         return result;
     }
 
-    private void SecondsToTime(Integer sec){
-        if (sec > 86400){
+    private void SecondsToTime(Integer sec) {
+        if (sec > 86400) {
             sec -= 86400;
         }
 
         this.HH = sec / 3600;
         this.MM = sec / 60;
-        this.SS = sec %60;
+        this.SS = sec % 60;
     }
 
     @Override
-    public String toString(){
+    public String toString() {
         String result = this.HH + ":" + this.MM + ":" + this.SS;
         return result;
     }

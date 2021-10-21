@@ -1,4 +1,5 @@
 package it.tn.buonarroti.masala.quarta.persona;
+
 import lombok.Getter;
 import lombok.Setter;
 
@@ -27,7 +28,6 @@ public class Persona {
 
     /**
      * Primo costruttore del metodo
-     *
      */
     public Persona() {
 
@@ -36,12 +36,11 @@ public class Persona {
     /**
      * Secondo costruttore del metodo
      *
-     * @param altezza Inserire l'altezza come un double - Es. 1.75
-     * @param cognome Inserire il cognome come una stringa - Es. Masala
-     * @param nome Inserire il nome come una stringa - Es. Francesco
-     * @param peso Inserire il peso come un float - Es. 72.450
+     * @param altezza       Inserire l'altezza come un double - Es. 1.75
+     * @param cognome       Inserire il cognome come una stringa - Es. Masala
+     * @param nome          Inserire il nome come una stringa - Es. Francesco
+     * @param peso          Inserire il peso come un float - Es. 72.450
      * @param dataDiNascita Inserire la data di nascita come una stringa - Es. 27/02/2002
-     *
      */
     public Persona(Double altezza, String cognome,
                    String nome, Float peso,
@@ -58,14 +57,13 @@ public class Persona {
      * Metodo Info
      *
      * @return null
-     *
      */
-    public String info(){
-        return "Cognome         :" + this.cognome       + "\n"
-             + "Nome            :" + this.nome          + "\n"
-             + "Altezza         :" + this.altezza       + "\n"
-             + "Peso            :" + this.peso          + "\n"
-             + "Data Di Nascita :" + this.dataDiNascita + "\n";
+    public String info() {
+        return "Cognome         :" + this.cognome + "\n"
+                + "Nome            :" + this.nome + "\n"
+                + "Altezza         :" + this.altezza + "\n"
+                + "Peso            :" + this.peso + "\n"
+                + "Data Di Nascita :" + this.dataDiNascita + "\n";
     }
 }
 
