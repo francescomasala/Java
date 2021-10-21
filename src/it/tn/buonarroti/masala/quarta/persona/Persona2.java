@@ -4,6 +4,9 @@ import lombok.Getter;
 import lombok.Setter;
 import org.jetbrains.annotations.NotNull;
 
+import java.util.Calendar;
+import java.util.GregorianCalendar;
+
 /**
  * La classe persona definisce le caratteristiche e comportamenti di una persona
  *
@@ -98,6 +101,26 @@ public class Persona2 {
     }
 
     private void CalcoloEta(){
+        String annoDiNascitaString, meseDiNascitaString, giornoDiNascitaString;
+        Integer annoDiNascita, meseDiNascita, giornoDiNascita;
+        Integer annoAttuale, meseAttuale, giornoAttuale;
+        Integer eta;
+
+        giornoDiNascitaString = this.dataDiNascita.substring(0, 2);
+        meseDiNascitaString = this.dataDiNascita.substring(3, 5);
+        annoDiNascitaString = this.dataDiNascita.substring(6, 10);
+
+        giornoDiNascita = Integer.parseInt(giornoDiNascitaString);
+        meseDiNascita = Integer.parseInt(meseDiNascitaString);
+        annoDiNascita = Integer.parseInt(annoDiNascitaString);
+
+        GregorianCalendar dataOdierna = new GregorianCalendar();
+
+        annoAttuale = dataOdierna.get(Calendar.YEAR);
+        meseAttuale = dataOdierna.get(Calendar.MONTH) + 1;
+        giornoAttuale = dataOdierna.get(Calendar.DAY_OF_MONTH);
+
+
 
     }
 }
