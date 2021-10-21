@@ -75,8 +75,24 @@ public class Persona1 {
                 case 8:
                 case 10:
                 case 12:
-
+                    if (giornoDiNascita <=1){
+                        valida = Boolean.TRUE;
+                    }
+                case 4:
+                case 6:
+                case 9:
+                case 11:
+                    if (giornoDiNascita <=30){
+                        valida = Boolean.TRUE;
+                    }
+                case 2:
+                    if (giornoDiNascita <=28){
+                        valida = Boolean.TRUE;
+                    }
             }
+        }
+        if (valida) {
+            this.dataDiNascita = dataDiNascita;
         }
     }
 
