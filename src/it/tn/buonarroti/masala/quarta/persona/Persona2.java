@@ -33,7 +33,6 @@ public class Persona2 {
 
     /**
      * Primo costruttore del metodo
-     *
      */
     public Persona2() {
 
@@ -42,12 +41,11 @@ public class Persona2 {
     /**
      * Secondo costruttore del metodo
      *
-     * @param altezza Inserire l'altezza come un double - Es. 1.75
-     * @param cognome Inserire il cognome come una stringa - Es. Masala
-     * @param nome Inserire il nome come una stringa - Es. Francesco
-     * @param peso Inserire il peso come un float - Es. 72.450
+     * @param altezza       Inserire l'altezza come un double - Es. 1.75
+     * @param cognome       Inserire il cognome come una stringa - Es. Masala
+     * @param nome          Inserire il nome come una stringa - Es. Francesco
+     * @param peso          Inserire il peso come un float - Es. 72.450
      * @param dataDiNascita Inserire la data di nascita come una stringa - Es. 27/02/2002
-     *
      */
     public Persona2(Double altezza, String cognome,
                     String nome, Float peso,
@@ -81,18 +79,18 @@ public class Persona2 {
                 case 8:
                 case 10:
                 case 12:
-                    if (giornoDiNascita <=1){
+                    if (giornoDiNascita <= 1) {
                         valida = Boolean.TRUE;
                     }
                 case 4:
                 case 6:
                 case 9:
                 case 11:
-                    if (giornoDiNascita <=30){
+                    if (giornoDiNascita <= 30) {
                         valida = Boolean.TRUE;
                     }
                 case 2:
-                    if (giornoDiNascita <=28){
+                    if (giornoDiNascita <= 28) {
                         valida = Boolean.TRUE;
                     }
             }
@@ -106,35 +104,38 @@ public class Persona2 {
      * Metodo Info
      *
      * @return null
-     *
      */
-    public String info(){
-        return "Cognome         :" + this.cognome       + "\n"
-                + "Nome            :" + this.nome          + "\n"
-                + "Altezza         :" + this.altezza       + "\n"
-                + "Peso            :" + this.peso          + "\n"
+    public String info() {
+        return "Cognome         :" + this.cognome + "\n"
+                + "Nome            :" + this.nome + "\n"
+                + "Altezza         :" + this.altezza + "\n"
+                + "Peso            :" + this.peso + "\n"
                 + "Data Di Nascita :" + this.dataDiNascita + "\n";
     }
 
-    private void CalcoloEta(){
+    private void CalcoloEta() {
         String annoDiNascitaString, meseDiNascitaString, giornoDiNascitaString;
         Integer annoDiNascita, meseDiNascita, giornoDiNascita;
+        Integer annoDifferenza, meseDifferenza, giornoDifferenza;
         Integer annoAttuale, meseAttuale, giornoAttuale;
         Integer eta;
+        Boolean valida;
 
         giornoDiNascitaString = this.dataDiNascita.substring(0, 2);
         meseDiNascitaString = this.dataDiNascita.substring(3, 5);
         annoDiNascitaString = this.dataDiNascita.substring(6, 10);
 
-        giornoDiNascita = Integer.parseInt(giornoDiNascitaString);
-        meseDiNascita = Integer.parseInt(meseDiNascitaString);
         annoDiNascita = Integer.parseInt(annoDiNascitaString);
+        meseDiNascita = Integer.parseInt(meseDiNascitaString);
+        giornoDiNascita = Integer.parseInt(giornoDiNascitaString);
+
 
         GregorianCalendar dataOdierna = new GregorianCalendar();
 
         annoAttuale = dataOdierna.get(Calendar.YEAR);
         meseAttuale = dataOdierna.get(Calendar.MONTH) + 1;
         giornoAttuale = dataOdierna.get(Calendar.DAY_OF_MONTH);
+
 
 
 
