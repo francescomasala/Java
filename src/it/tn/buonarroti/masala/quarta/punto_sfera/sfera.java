@@ -36,6 +36,7 @@ public class sfera {
         return (float) (Math.PI*Math.pow(this.getRaggio(), 2)*4);
     }
 
+    @Override
     public String toString(){
         return  "X: " + this.centro.getX() + "\n" +
                 "Y: " + this.centro.getY() + "\n" +
