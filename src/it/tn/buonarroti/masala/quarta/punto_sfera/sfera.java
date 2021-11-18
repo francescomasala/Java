@@ -23,6 +23,10 @@ public class sfera {
         this.raggio = raggio;
     }
 
+    public sfera(punto3d centro) {
+        this.centro = new punto3d(centro.getX(), centro.getY(), centro.getZ());
+    }
+
     public void trasla(Float dx, Float dy) {
         centro.trasla(dx, dy);
     }
@@ -36,7 +40,7 @@ public class sfera {
     }
 
     public Float volume() {
-        return (float) ((4 / 3) * Math.PI * Math.pow(this.raggio, 3));
+        return (float) (4 * (Math.PI * Math.pow(this.raggio, 3))/3);
     }
 
     public Float superficie() {
@@ -45,7 +49,7 @@ public class sfera {
 
     @Override
     public String toString() {
-        return this.centro.toString() + "\n" +
+        return this.centro + "\n" +
                 "Raggio: " + this.raggio + "\n" +
                 "Superficie: " + this.superficie() + "\n" +
                 "Volume: " + this.volume() + "\n";

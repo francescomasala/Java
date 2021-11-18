@@ -9,5 +9,11 @@ public class MainPuntoSfera {
         sfera s = new sfera(p, 5f);
 
         System.out.println("Sfera s: \n" + s);
+
+        p.trasla(4f,-6f);
+        System.out.println("Punto P: \n" + p);
+
+        s.trasla(4f,-6f);
+        System.out.println("Sfera s: \n" + s);
     }
 }
