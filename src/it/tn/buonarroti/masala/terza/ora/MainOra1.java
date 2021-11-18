@@ -40,12 +40,6 @@ public class MainOra1 {
         //System.out.println();
 
         // Esecuzione di tutti i metodi get*
-        //System.out.println("[~] Esecuzione di getOre: " +
-        //        ora.getOre());
-        //System.out.println("[~] Esecuzione di getMinuti: " +
-        //        ora.getMinuti());
-        //System.out.println("[~] Esecuzione di getSecondi: " +
-        //        ora.getSecondi());
 
         System.out.println(ora.differenzaInOreMinutiSecondi());
     }

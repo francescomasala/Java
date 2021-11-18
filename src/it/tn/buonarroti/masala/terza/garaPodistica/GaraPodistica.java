@@ -11,7 +11,6 @@ public class GaraPodistica {
     private Integer numeroEffettivoPartecipanti;
 
     /**
-     * @param numeroPartecipanti
      */
     public GaraPodistica(Integer numeroPartecipanti) {
         this.numeroMaxPartecipanti = numeroPartecipanti;
@@ -48,9 +47,9 @@ public class GaraPodistica {
      * @author Francesco Masala (francesco.masala@buonarroti.tn.it)
      */
     public boolean cancellaPartecipante(String nomeAtleta) {
-        Boolean result = Boolean.FALSE;
+        boolean result = Boolean.FALSE;
 
-        for (Integer i = 0; i < this.numeroMaxPartecipanti; i++) {
+        for (int i = 0; i < this.numeroMaxPartecipanti; i++) {
             if (this.nome[i].equals(nomeAtleta)) {
                 this.nome[i] = "";
                 this.tempoImpiegato[i] = 0;
@@ -70,9 +69,9 @@ public class GaraPodistica {
      * @author Francesco Masala (francesco.masala@buonarroti.tn.it)
      */
     public boolean assegnaTempoImpiegato(String nomeAtleta, Integer tempoAtleta) {
-        Boolean result = Boolean.FALSE;
+        boolean result = Boolean.FALSE;
 
-        for (Integer i = 0; i < this.numeroMaxPartecipanti; i++) {
+        for (int i = 0; i < this.numeroMaxPartecipanti; i++) {
             if (this.nome[i].equals(nomeAtleta)) {
                 this.tempoImpiegato[i] = tempoAtleta;
                 result = Boolean.TRUE;
@@ -80,13 +79,6 @@ public class GaraPodistica {
         }
 
         return result;
-    }
-
-    /**
-     *
-     */
-    public void stilaLaClassifica() {
-
     }
 
     /**
@@ -98,15 +90,14 @@ public class GaraPodistica {
      * @author Francesco Masala (francesco.masala@buonarroti.tn.it)
      */
     public String ricercaPerNome(String nomeAtleta) {
-        String output = "Ricerca per atleta:\n";
+        StringBuilder output = new StringBuilder("Ricerca per atleta:\n");
 
-        for (Integer i = 0; i < this.numeroMaxPartecipanti; i++) {
+        for (int i = 0; i < this.numeroMaxPartecipanti; i++) {
             if (this.nome[i].equals(nomeAtleta)) {
-                output += "Atleta:\t" + this.nome[i]
-                        + "\nTempo:\t" + this.tempoImpiegato[i];
+                output.append("Atleta:\t").append(this.nome[i]).append("\nTempo:\t").append(this.tempoImpiegato[i]);
             }
         }
-        return output;
+        return output.toString();
     }
 
     /**
@@ -116,16 +107,14 @@ public class GaraPodistica {
      * @author Francesco Masala (francesco.masala@buonarroti.tn.it)
      */
     public String elencoPartecipanti() {
-        String output = "Elenco Atleti:\n";
+        StringBuilder output = new StringBuilder("Elenco Atleti:\n");
 
-        for (Integer i = 0; i < this.numeroMaxPartecipanti; i++) {
-            output += "Atleta:\t" + this.nome[i]
-                    + "\tTempo:\t" + this.tempoImpiegato[i]
-                    + "\n";
+        for (int i = 0; i < this.numeroMaxPartecipanti; i++) {
+            output.append("Atleta:\t").append(this.nome[i]).append("\tTempo:\t").append(this.tempoImpiegato[i]).append("\n");
 
         }
 
-        return output;
+        return output.toString();
     }
 
     /**
@@ -136,10 +125,10 @@ public class GaraPodistica {
      */
     public String partecipantePiuLento() {
         String result = "Il partecipante più lento è:\t";
-        Integer athlete = 0;
+        int athlete = 0;
         Integer max = this.tempoImpiegato[0];
 
-        for (Integer i = 0; i < this.numeroMaxPartecipanti; i++) {
+        for (int i = 0; i < this.numeroMaxPartecipanti; i++) {
             if (max <= this.tempoImpiegato[i]) {
                 max = this.tempoImpiegato[i];
                 athlete = i;
@@ -160,7 +149,7 @@ public class GaraPodistica {
     public Integer nPartecipantiAlDiSopraDiTotSecondi(Integer secondi) {
         Integer index = 0;
 
-        for (Integer i = 0; i < this.numeroMaxPartecipanti; i++) {
+        for (int i = 0; i < this.numeroMaxPartecipanti; i++) {
             if (this.tempoImpiegato[i] > secondi) {
                 index++;
             }
@@ -177,9 +166,9 @@ public class GaraPodistica {
      */
     public float tempoMedio() {
         float somma = (float) 0.0;
-        float media = (float) 0.0;
+        float media;
 
-        for (Integer i = 0; i < this.numeroMaxPartecipanti; i++) {
+        for (int i = 0; i < this.numeroMaxPartecipanti; i++) {
             somma = somma + this.tempoImpiegato[i];
         }
 
@@ -203,7 +192,7 @@ public class GaraPodistica {
      * @author Francesco Masala (francesco.masala@buonarroti.tn.it)
      */
     private void inizializzaVettori() {
-        for (Integer i = 0; i < this.numeroMaxPartecipanti; i++) {
+        for (int i = 0; i < this.numeroMaxPartecipanti; i++) {
             this.nome[i] = "";
             this.tempoImpiegato[i] = 0;
         }

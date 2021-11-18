@@ -29,7 +29,7 @@ public class TrisGUI extends JDialog {
         setModal(true);
         getRootPane().setDefaultButton(mainbutton);
         mainbutton.setText("Premi qua per giocare!");
-        this.changeButtonText("Cliccami!");
+        this.changeButtonText();
         this.blocksVisibility(false);
 
         mainbutton.addActionListener(e -> {
@@ -174,16 +174,16 @@ public class TrisGUI extends JDialog {
         row3col3.setEnabled(value);
     }
 
-    private void changeButtonText(String value) {
-        row1col1.setText(value);
-        row1col2.setText(value);
-        row1col3.setText(value);
-        row2col1.setText(value);
-        row2col2.setText(value);
-        row2col3.setText(value);
-        row3col1.setText(value);
-        row3col2.setText(value);
-        row3col3.setText(value);
+    private void changeButtonText() {
+        row1col1.setText("Cliccami!");
+        row1col2.setText("Cliccami!");
+        row1col3.setText("Cliccami!");
+        row2col1.setText("Cliccami!");
+        row2col2.setText("Cliccami!");
+        row2col3.setText("Cliccami!");
+        row3col1.setText("Cliccami!");
+        row3col2.setText("Cliccami!");
+        row3col3.setText("Cliccami!");
     }
 
     private void onCancel() {

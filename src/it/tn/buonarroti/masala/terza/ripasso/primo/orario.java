@@ -6,9 +6,9 @@ public class orario {
     private Integer HH;
 
     public orario() {
-        this.SS = 00;
-        this.MM = 00;
-        this.HH = 00;
+        this.SS = 0;
+        this.MM = 0;
+        this.HH = 0;
 
     }
 
@@ -55,7 +55,7 @@ public class orario {
     }
 
     public Integer ToSecFromMidnight() {
-        Integer result = 0;
+        int result;
 
         result = this.HH * 60;
         result = result + (this.MM * 60);
@@ -65,7 +65,7 @@ public class orario {
     }
 
     public Integer ToMinFromMidnight() {
-        Integer result;
+        int result;
 
         result = (this.HH * 60);
         result = result + this.MM;
@@ -92,7 +92,7 @@ public class orario {
     }
 
     public Integer ToSecToMidnight() {
-        Integer result;
+        int result;
 
         result = this.ToMinToMidnight() * 60;
         result = result + (60 - this.SS);
@@ -101,7 +101,7 @@ public class orario {
     }
 
     public Integer ToMinToMidnight() {
-        Integer result;
+        int result;
 
         result = this.ToHourToMidnight() * 60;
         result = result + (60 - this.MM);
@@ -110,7 +110,7 @@ public class orario {
     }
 
     public Integer ToHourToMidnight() {
-        Integer result;
+        int result;
 
         result = 24 - this.HH;
 
@@ -129,7 +129,6 @@ public class orario {
 
     @Override
     public String toString() {
-        String result = this.HH + ":" + this.MM + ":" + this.SS;
-        return result;
+        return this.HH + ":" + this.MM + ":" + this.SS;
     }
 }

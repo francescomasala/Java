@@ -29,8 +29,8 @@ public class Valutazione {
      *
      *               <blockquote>
      *               <pre>
-     *                                                         aggiungiValutazione(Mario Rossi, 7.75f);
-     *                                           </pre>
+     *                                                                                                   aggiungiValutazione(Mario Rossi, 7.75f);
+     *                                                                                     </pre>
      *               </blockquote>
      */
     public Boolean aggiungiValutazione(String alunno, Float voto) {
@@ -72,15 +72,14 @@ public class Valutazione {
      * @param alunno Nome dell'alunno
      */
     public String ricercaPerAlunno(String alunno) {
-        String result = "";
+        StringBuilder result = new StringBuilder();
 
         for (int index = 0; index < this.indice; index++) {
             if (this.alunni[index].equals(alunno)) {
-                result += "Alunno: " + this.alunni[index] + "\n" +
-                        "Voto: " + this.voti[index] + "\n";
+                result.append("Alunno: ").append(this.alunni[index]).append("\n").append("Voto: ").append(this.voti[index]).append("\n");
             }
         }
-        return result;
+        return result.toString();
     }
 
     /**
@@ -90,30 +89,14 @@ public class Valutazione {
      * @param voto Nome dell'alunno
      */
     public String ricercaPerVoto(Float voto) {
-        /*
-        Boolean queryExec = Boolean.FALSE;
-        String query = "Alunni con il seguente voto:" + "\n";
-        int index; // Variabile locale per l'indice
-
-        for (index = 0; Objects.equals(this.voti[index], Voto); index++) {
-            queryExec = Boolean.TRUE;
-            query += this.voti[index] + "\n";
-        }
-        if (queryExec) {
-            return query;
-        } else {
-            return "La ricerca non ha portato alcun risultato.\n";
-        }
-        */
-        String result = "";
+        StringBuilder result = new StringBuilder();
 
         for (int index = 0; index < this.indice; index++) {
             if (Objects.equals(this.voti[index], voto)) {
-                result += "Alunno: " + this.alunni[index] + "\n" +
-                        "Voto: " + this.voti[index] + "\n";
+                result.append("Alunno: ").append(this.alunni[index]).append("\n").append("Voto: ").append(this.voti[index]).append("\n");
             }
         }
-        return result;
+        return result.toString();
     }
 
     /**
@@ -150,7 +133,7 @@ public class Valutazione {
     }
 
     public String AlunniSufficientiEInsufficienti() {
-        String result = "Alunni sufficienti: \n";
+        StringBuilder result = new StringBuilder("Alunni sufficienti: \n");
         int indexOne = 0, indexTwo = 0;
         String[] sufficienti = new String[this.lunghezzaMax];
         String[] insufficienti = new String[this.lunghezzaMax];
@@ -166,35 +149,35 @@ public class Valutazione {
         }
 
         for (int index = 0; index != indexOne; index++) {
-            result += sufficienti[index] + "\n";
+            result.append(sufficienti[index]).append("\n");
         }
-        result += "Alunni insufficienti: \n";
+        result.append("Alunni insufficienti: \n");
         for (int index = 0; index != indexTwo; index++) {
-            result += sufficienti[index] + "\n";
+            result.append(sufficienti[index]).append("\n");
         }
-        return result;
+        return result.toString();
     }
 
     @Override
     public String toString() {
 
-        String ris = "";
-        ris += "ARR. VOT: ";
+        StringBuilder ris = new StringBuilder();
+        ris.append("ARR. VOT: ");
 
         for (int i = 0; i < indice; i++) {
-            ris += voti[i] + " ";
+            ris.append(voti[i]).append(" ");
         }
 
-        ris += "ARR. STD: ";
+        ris.append("ARR. STD: ");
 
         for (int i = 0; i < indice; i++) {
-            ris += alunni[i] + " ";
+            ris.append(alunni[i]).append(" ");
         }
 
-        ris += "LUN. MAX: " + lunghezzaMax;
-        ris += "IND. ARR: " + indice;
+        ris.append("LUN. MAX: ").append(lunghezzaMax);
+        ris.append("IND. ARR: ").append(indice);
 
-        return ris;
+        return ris.toString();
     }
 
     private void incrementIndex() {

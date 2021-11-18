@@ -54,7 +54,7 @@ public class Persona1 {
 
     public void setDataDiNascita(@NotNull String dataDiNascita) {
         String annoDiNascitaString, meseDiNascitaString, giornoDiNascitaString;
-        Integer annoDiNascita, meseDiNascita, giornoDiNascita;
+        int annoDiNascita, meseDiNascita, giornoDiNascita;
         Boolean valida = Boolean.FALSE;
 
         giornoDiNascitaString = dataDiNascita.substring(0, 2);

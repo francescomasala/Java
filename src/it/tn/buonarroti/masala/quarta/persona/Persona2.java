@@ -59,7 +59,7 @@ public class Persona2 {
 
     public void setDataDiNascita(@NotNull String dataDiNascita) {
         String annoDiNascitaString, meseDiNascitaString, giornoDiNascitaString;
-        Integer annoDiNascita, meseDiNascita, giornoDiNascita;
+        int annoDiNascita, meseDiNascita, giornoDiNascita;
         Boolean valida = Boolean.FALSE;
 
         giornoDiNascitaString = dataDiNascita.substring(0, 2);
@@ -115,9 +115,9 @@ public class Persona2 {
 
     private void CalcoloEta() {
         String annoDiNascitaString, meseDiNascitaString, giornoDiNascitaString;
-        Integer annoDiNascita, meseDiNascita, giornoDiNascita;
+        int annoDiNascita, meseDiNascita, giornoDiNascita;
         Integer annoDifferenza, meseDifferenza, giornoDifferenza;
-        Integer annoAttuale, meseAttuale, giornoAttuale;
+        int annoAttuale, meseAttuale, giornoAttuale;
         Integer eta;
         Boolean valida;
 
@@ -135,8 +135,6 @@ public class Persona2 {
         annoAttuale = dataOdierna.get(Calendar.YEAR);
         meseAttuale = dataOdierna.get(Calendar.MONTH) + 1;
         giornoAttuale = dataOdierna.get(Calendar.DAY_OF_MONTH);
-
-
 
 
     }

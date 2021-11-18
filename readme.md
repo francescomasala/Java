@@ -1,6 +1,7 @@
 **Repository dedicated to class Exerc.**
 
 Tree of the directory:
+
 ```
  ├───.idea
  │   ├───artifacts

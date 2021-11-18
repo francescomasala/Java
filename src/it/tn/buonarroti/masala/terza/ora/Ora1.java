@@ -158,7 +158,7 @@ public class Ora1 {
      * @return La differenza in una stringa
      */
     public String differenzaInOreMinutiSecondi() {
-        String stringDifferenza = null;
+        String stringDifferenza;
         Integer ore = differenzaInOre(), minuti = differenzaInMinuti(), secondi = differenzaInSecondi();
         stringDifferenza = "Ore: " + ore.toString() + "\nMinuti: " + minuti.toString() +
                 "\nSecondi: " + secondi.toString();

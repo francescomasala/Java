@@ -197,15 +197,6 @@ public class Ora2 {
         }
     }
 
-    /*
-    public Integer[] secondiToOraCompleta(Integer secondi) {
-        Integer[] oraCompleta = new Integer[3];
-        oraCompleta[0] = (secondi / 3600) % 24; //ORA CORRETTA IN AUTOMATICO
-        oraCompleta[1] = (secondi % 3600) / 60;
-        oraCompleta[2] = ((secondi % 3600) % 60);
-        return oraCompleta;
-    } */
-
     /**
      * Metodo migliorato per aggiungere secondi nell'attributo iniziale
      *
