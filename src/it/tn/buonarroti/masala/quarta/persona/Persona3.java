@@ -7,9 +7,11 @@ import java.time.LocalDate;
 import java.time.temporal.ChronoUnit;
 import java.util.Calendar;
 import java.util.GregorianCalendar;
+
 import static java.lang.Math.toIntExact;
 
 public class Persona3 {
+    private static Integer numeroIstanze;
     @Getter
     @Setter
     public Double altezza;
@@ -26,7 +28,6 @@ public class Persona3 {
     private String dataDiNascita;
     @Getter
     private Integer eta;
-    private static Integer numeroIstanze;
 
     public Persona3() {
     }
@@ -44,9 +45,9 @@ public class Persona3 {
     private void calcolaEta() {
         GregorianCalendar data = new GregorianCalendar();
 
-        String s1 = dataDiNascita.substring(0,2);
-        String s2 = dataDiNascita.substring(3,5);
-        String s3 = dataDiNascita.substring(6,10);
+        String s1 = dataDiNascita.substring(0, 2);
+        String s2 = dataDiNascita.substring(3, 5);
+        String s3 = dataDiNascita.substring(6, 10);
 
         int g = Integer.parseInt(s1);
         int m = Integer.parseInt(s2);
@@ -113,24 +114,23 @@ public class Persona3 {
         }
     }
 
-        public Boolean verificaOmonimia(Persona3 persona){
-            Boolean valida2 = Boolean.FALSE;
-            if(this.nome.equals(persona.getNome())&&this.cognome.equals(persona.getCognome())){
-                valida2 = Boolean.TRUE;
-            }
-            return valida2;
+    public Boolean verificaOmonimia(Persona3 persona) {
+        Boolean valida2 = Boolean.FALSE;
+        if (this.nome.equals(persona.getNome()) && this.cognome.equals(persona.getCognome())) {
+            valida2 = Boolean.TRUE;
         }
-
-
-
-        public String info(){
-            return "altezza = " + altezza
-                    + "\ncognome = " + cognome
-                    + "\nnome = " + nome
-                    + "\npeso = " + peso
-                    + "\ndataDiNascita = " + dataDiNascita
-                    + "\netà = " + eta;
-        }
+        return valida2;
     }
+
+
+    public String info() {
+        return "altezza = " + altezza
+                + "\ncognome = " + cognome
+                + "\nnome = " + nome
+                + "\npeso = " + peso
+                + "\ndataDiNascita = " + dataDiNascita
+                + "\netà = " + eta;
+    }
+}
 
 

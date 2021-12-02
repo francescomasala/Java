@@ -10,7 +10,7 @@ import java.util.GregorianCalendar;
 
 import static java.lang.Math.toIntExact;
 
-public class Persona4{
+public class Persona4 {
     private static Integer numeroIstanze;
     @Getter
     public Double altezza;
@@ -109,13 +109,13 @@ public class Persona4{
             if (valida) {
                 this.dataDiNascita = dataDiNascita;
                 calcolaEta();
-            }  else
+            } else
                 throw new Exception("Data errata!");
         } catch (StringIndexOutOfBoundsException e) {
 
         } catch (NumberFormatException e) {
 
-        } catch (NullPointerException e){
+        } catch (NullPointerException e) {
 
         } catch (Exception e) {
             e.printStackTrace();
@@ -164,15 +164,16 @@ public class Persona4{
             throw new Exception("L'attributo non deve essere nullo");
         }
     }
-     public void setPeso (Float peso) throws Exception {
+
+    public void setPeso(Float peso) throws Exception {
         try {
-            if(peso > 0) {
+            if (peso > 0) {
                 this.peso = peso;
             } else throw new Exception("Il peso è minore di 0");
         } catch (NullPointerException e) {
             throw new NullPointerException("Il valore di peso è nullo");
-         }
-     }
+        }
+    }
 }
 
 
