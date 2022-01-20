@@ -74,12 +74,12 @@ public class Persona6 {
 
 	public void setDataDiNascita(String dataDiNascita) throws Exception {
 		try {
-			if (DateValidator.getInstance().isValid(dataDiNascita)){
+			if (DateValidator.getInstance().isValid(dataDiNascita)) {
 				this.dataDiNascita = dataDiNascita;
 				calcolaEta();
 			} else throw new Exception("Formato della data errato!");
 		} catch (NullPointerException e) {
-		} catch ( Exception e) {
+		} catch (Exception e) {
 			e.printStackTrace();
 		}
 	}
@@ -98,7 +98,7 @@ public class Persona6 {
 				this.email = email;
 			} else throw new Exception("Formato della mail errato!");
 		} catch (NullPointerException e) {
-		} catch ( Exception e) {
+		} catch (Exception e) {
 			e.printStackTrace();
 		}
 	}
@@ -119,7 +119,7 @@ public class Persona6 {
 				this.password = password;
 			} else throw new Exception("Requisiti della password insufficienti!");
 		} catch (NullPointerException e) {
-		} catch ( Exception e) {
+		} catch (Exception e) {
 			e.printStackTrace();
 		}
 	}
