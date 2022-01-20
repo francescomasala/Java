@@ -128,6 +128,8 @@
     <inspection_tool class="scwbasic-protection-set_XXEDocumentBuilderFactorySetfeaturestofalse" enabled="true" level="SENSEI ERROR" enabled_by_default="true" />
     <inspection_tool class="scwbasic-protection-set_XXEDocumentBuilderFactorySetfeaturestotrue" enabled="true" level="SENSEI ERROR" enabled_by_default="true" />
     <inspection_tool class="scwbasic-protection-set_XXEDocumentBuilderFactorySetterstofalse" enabled="true" level="SENSEI ERROR" enabled_by_default="true" />
+    <inspection_tool class="scwbasic-protection-set_XXESetmissingsecureprocessingfeature" enabled="true" level="SENSEI ERROR" enabled_by_default="true" />
+    <inspection_tool class="scwbasic-protection-set_XXESetsecureprocessingfeaturetotrue" enabled="true" level="SENSEI ERROR" enabled_by_default="true" />
     <inspection_tool class="scwbasic-protection-set_XXEXMLInputFactoryAddIS_SUPPORTING_EXTERNAL_ENTITIESfeature" enabled="true" level="SENSEI ERROR" enabled_by_default="true" />
     <inspection_tool class="scwbasic-protection-set_XXEXMLInputFactoryAddSUPPORT_DTDfeature" enabled="true" level="SENSEI ERROR" enabled_by_default="true" />
     <inspection_tool class="scwbasic-protection-set_XXEXMLInputFactorySetfeaturestofalse" enabled="true" level="SENSEI ERROR" enabled_by_default="true" />
