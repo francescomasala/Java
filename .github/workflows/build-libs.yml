@@ -1,0 +1,28 @@
+name: "Build Libs"
+
+on:
+  schedule:
+    - cron: '* 5 * * *'
+
+jobs:
+  LibBuild:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Download Repository
+        uses: actions/checkout@v2
+
+      # Initializes the CodeQL tools for scanning.
+      - name: Build Lib
+        run: javac src/it/tn/buonarroti/masala/utils/Data.java
+
+      - name: Compress lib
+        uses: jar cf FraLibs.jar src/it/tn/buonarroti/masala/utils/Data.class
+
+      - uses: "marvinpinto/action-automatic-releases@latest"
+          with:
+            repo_token: "${{ secrets.GITHUB_TOKEN }}"
+            draft: false
+            prerelease: true
+            automatic_release_tag: CI
+            title: Libs
+            files: FraLibs.jar
