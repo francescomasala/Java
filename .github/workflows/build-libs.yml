@@ -11,18 +11,14 @@ jobs:
       - name: Download Repository
         uses: actions/checkout@v2
 
-      # Initializes the CodeQL tools for scanning.
       - name: Build Lib
         run: javac src/it/tn/buonarroti/masala/utils/Data.java
 
       - name: Compress lib
         run: jar cf FraLibs.jar src/it/tn/buonarroti/masala/utils/Data.class
-
-      - uses: "marvinpinto/action-automatic-releases@latest"
-          with:
-            repo_token: "${{ secrets.GITHUB_TOKEN }}"
-            draft: false
-            prerelease: true
-            automatic_release_tag: CI
-            title: Libs
-            files: FraLibs.jar
+      
+      - name: Upload a Build Artifact
+        uses: actions/upload-artifact@v2.3.1
+        with:
+           name: FraLibs.jar
+           path: FraLibs.jar
