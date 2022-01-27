@@ -16,7 +16,7 @@ jobs:
         run: javac src/it/tn/buonarroti/masala/utils/Data.java
 
       - name: Compress lib
-        uses: jar cf FraLibs.jar src/it/tn/buonarroti/masala/utils/Data.class
+        run: jar cf FraLibs.jar src/it/tn/buonarroti/masala/utils/Data.class
 
       - uses: "marvinpinto/action-automatic-releases@latest"
           with:
