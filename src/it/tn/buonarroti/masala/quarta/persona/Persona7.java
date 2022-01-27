@@ -149,12 +149,12 @@ public class Persona7 {
 
 	public String info() {
 		return "altezza = " + altezza
-				+ "\ncognome = " + cognome
-				+ "\nnome = " + nome
-				+ "\npeso = " + peso
-				+ "\ndataDiNascita = " + dataDiNascita
-				+ "\nEmail = " + email
-				+ "\nPassword = " + password
-				+ "\netà = " + eta;
+			+ "\ncognome = " + cognome
+			+ "\nnome = " + nome
+			+ "\npeso = " + peso
+			+ "\ndataDiNascita = " + dataDiNascita
+			+ "\nEmail = " + email
+			+ "\nPassword = " + password
+			+ "\netà = " + eta;
 	}
 }
