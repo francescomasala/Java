@@ -24,3 +24,13 @@ jobs:
         with:
            name: FraLibs.jar
            path: FraLibs.jar
+           
+      - name: Upload artifact to release
+        uses: "marvinpinto/action-automatic-releases@latest"
+        with:
+          repo_token: "${{ secrets.GITHUB_TOKEN }}"
+          draft: false
+          prerelease: true
+          automatic_release_tag: CI
+          title: Autobuild Libs
+          files: FraLibs.jar
