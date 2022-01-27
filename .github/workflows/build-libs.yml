@@ -1,6 +1,8 @@
 name: "Build Libs"
 
 on:
+  push:
+    branches: [ master ]
   schedule:
     - cron: '* 5 * * *'
 
