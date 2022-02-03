@@ -56,8 +56,8 @@ jobs:
       - name: Build tris
         run: javac src/it/tn/buonarroti/masala/terza/tris/*.java
 
-      - name: Build trisGui
-        run: javac src/it/tn/buonarroti/masala/terza/trisGui/*.java
+      #- name: Build trisGui
+      #  run: javac src/it/tn/buonarroti/masala/terza/trisGui/*.java
 
       - name: Build vacanze
         run: javac src/it/tn/buonarroti/masala/terza/vacanze/*.java
@@ -110,8 +110,8 @@ jobs:
       - name: Compress tris
         run: jar cf tris.jar src/it/tn/buonarroti/masala/terza/tris/*
 
-      - name: Compress trisGui
-        run: jar cf trisGui.jar src/it/tn/buonarroti/masala/terza/trisGui/*
+    # - name: Compress trisGui
+    #   run: jar cf trisGui.jar src/it/tn/buonarroti/masala/terza/trisGui/*
 
       - name: Compress vacanze
         run: jar cf vacanze.jar src/it/tn/buonarroti/masala/terza/vacanze/*
