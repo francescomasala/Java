@@ -1,4 +1,4 @@
-package it.tn.buonarroti.masala.utils;
+package me.francescomasala.school.libs.utils;
 
 public class Data {
 	private String data;
