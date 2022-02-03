@@ -1,7 +1,5 @@
 package it.tn.buonarroti.masala.terza.valutazione;
 
-import it.tn.buonarroti.masala.terza.exceptions.DesiredIndexSmallerThanDeclared;
-
 import java.util.Arrays;
 import java.util.Objects;
 
