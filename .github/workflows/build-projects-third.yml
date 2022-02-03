@@ -63,7 +63,7 @@ jobs:
       #  run: javac src/it/tn/buonarroti/masala/terza/vacanze/*.java
 
       - name: Build valutazione
-        run: javac src/it/tn/buonarroti/masala/valutazione/*.java
+        run: javac src/it/tn/buonarroti/masala/terza/valutazione/*.java
 
       - name: Compress ByteScuola
         run: jar cf ByteScuola.jar src/it/tn/buonarroti/masala/terza/byteScuola/*
