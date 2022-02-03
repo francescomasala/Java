@@ -1,11 +1,11 @@
-name: "Build Libs"
+name: "Build Third Class Excercises"
 
 on:
   push:
     branches: [ master ]
 
 jobs:
-  LibBuild:
+  BuildAndCompress:
     runs-on: ubuntu-latest
     steps:
       - name: Download Repository
