@@ -12,112 +12,112 @@ jobs:
         uses: actions/checkout@v2
 
       - name: Build ByteScuola
-        run: javac src/me/francescomasala/school/terza/byteScuola/*.java
+        run: javac src/it/tn/buonarroti/masala/terza/byteScuola/*.java
 
       - name: Build classi
-        run: javac src/me/francescomasala/school/terza/classi/*.java
+        run: javac src/it/tn/buonarroti/masala/terza/classi/*.java
 
       - name: Build dado
-        run: javac src/me/francescomasala/school/terza/dado/*.java
+        run: javac src/it/tn/buonarroti/masala/terza/dado/*.java
 
       - name: Build date
-        run: javac src/me/francescomasala/school/terza/date/*.java
+        run: javac src/it/tn/buonarroti/masala/terza/date/*.java
 
       - name: Build elenco
-        run: javac src/me/francescomasala/school/terza/elenco/*.java
+        run: javac src/it/tn/buonarroti/masala/terza/elenco/*.java
 
       - name: Build esercizi
-        run: javac src/me/francescomasala/school/terza/esercizi/*.java
+        run: javac src/it/tn/buonarroti/masala/terza/esercizi/*.java
 
       - name: Build exceptions
-        run: javac src/me/francescomasala/school/terza/exceptions/*.java
+        run: javac src/it/tn/buonarroti/masala/terza/exceptions/*.java
 
       - name: Build frazione
-        run: javac src/me/francescomasala/school/terza/frazione/*.java
+        run: javac src/it/tn/buonarroti/masala/terza/frazione/*.java
 
       - name: Build garaPodistica
-        run: javac src/me/francescomasala/school/terza/garaPodistica/*.java
+        run: javac src/it/tn/buonarroti/masala/terza/garaPodistica/*.java
 
       - name: Build lanci
-        run: javac src/me/francescomasala/school/terza/lanci/*.java
+        run: javac src/it/tn/buonarroti/masala/terza/lanci/*.java
 
       - name: Build number
-        run: javac src/me/francescomasala/school/terza/number/*.java
+        run: javac src/it/tn/buonarroti/masala/terza/number/*.java
 
       - name: Build ora
-        run: javac src/me/francescomasala/school/terza/ora/*.java
+        run: javac src/it/tn/buonarroti/masala/terza/ora/*.java
 
       - name: Build punto
-        run: javac src/me/francescomasala/school/terza/punto/*.java
+        run: javac src/it/tn/buonarroti/masala/terza/punto/*.java
 
       - name: Build ripasso-primo
-        run: javac src/me/francescomasala/school/terza/ripasso/primo/*.java
+        run: javac src/it/tn/buonarroti/masala/terza/ripasso/primo/*.java
 
       - name: Build tris
-        run: javac src/me/francescomasala/school/terza/tris/*.java
+        run: javac src/it/tn/buonarroti/masala/terza/tris/*.java
 
       - name: Build trisGui
-        run: javac src/me/francescomasala/school/terza/trisGui/*.java
+        run: javac src/it/tn/buonarroti/masala/terza/trisGui/*.java
 
       - name: Build vacanze
-        run: javac src/me/francescomasala/school/terza/vacanze/*.java
+        run: javac src/it/tn/buonarroti/masala/terza/vacanze/*.java
 
       - name: Build valutazione
-        run: javac src/me/francescomasala/school/terza/valutazione/*.java
+        run: javac src/it/tn/buonarroti/masala/valutazione/*.java
 
       - name: Compress ByteScuola
-        run: jar cf ByteScuola.jar src/me/francescomasala/school/terza/byteScuola/*
+        run: jar cf ByteScuola.jar src/it/tn/buonarroti/masala/terza/byteScuola/*
 
       - name: Compress classi
-        run: jar cf classi.jar src/me/francescomasala/school/terza/classi/*
+        run: jar cf classi.jar src/it/tn/buonarroti/masala/terza/classi/*
 
       - name: Compress dado
-        run: jar cf dado.jar src/me/francescomasala/school/terza/dado/*
+        run: jar cf dado.jar src/it/tn/buonarroti/masala/terza/dado/*
 
       - name: Compress date
-        run: jar cf date.jar src/me/francescomasala/school/terza/date/*
+        run: jar cf date.jar src/it/tn/buonarroti/masala/terza/date/*
 
       - name: Compress elenco
-        run: jar cf elenco.jar src/me/francescomasala/school/terza/elenco/*
+        run: jar cf elenco.jar src/it/tn/buonarroti/masala/terza/elenco/*
 
       - name: Compress esercizi
-        run: jar cf esercizi.jar src/me/francescomasala/school/terza/esercizi/*
+        run: jar cf esercizi.jar src/it/tn/buonarroti/masala/terza/esercizi/*
 
       - name: Compress exceptions
-        run: jar cf exceptions.jar src/me/francescomasala/school/terza/exceptions/*
+        run: jar cf exceptions.jar src/it/tn/buonarroti/masala/terza/exceptions/*
 
       - name: Compress frazione
-        run: jar cf frazione.jar src/me/francescomasala/school/terza/frazione/*
+        run: jar cf frazione.jar src/it/tn/buonarroti/masala/terza/frazione/*
 
       - name: Compress garaPodistica
-        run: jar cf garaPodistica.jar src/me/francescomasala/school/terza/garaPodistica/*
+        run: jar cf garaPodistica.jar src/it/tn/buonarroti/masala/terza/garaPodistica/*
 
       - name: Compress lanci
-        run: jar cf lanci.jar src/me/francescomasala/school/terza/lanci/*
+        run: jar cf lanci.jar src/it/tn/buonarroti/masala/terza/lanci/*
 
       - name: Compress number
-        run: jar cf number.jar src/me/francescomasala/school/terza/number/*
+        run: jar cf number.jar src/it/tn/buonarroti/masala/terza/number/*
 
       - name: Compress ora
-        run: jar cf ora.jar src/me/francescomasala/school/terza/ora/*
+        run: jar cf ora.jar src/it/tn/buonarroti/masala/terza/ora/*
 
       - name: Compress punto
-        run: jar cf punto.jar src/me/francescomasala/school/terza/punto/*
+        run: jar cf punto.jar src/it/tn/buonarroti/masala/terza/punto/*
 
       - name: Compress ripasso-primo
-        run: jar cf ripassoPrimo.jar src/me/francescomasala/school/terza/ripasso/primo/*
+        run: jar cf ripassoPrimo.jar src/it/tn/buonarroti/masala/terza/ripasso/primo/*
 
       - name: Compress tris
-        run: jar cf tris.jar src/me/francescomasala/school/terza/tris/*
+        run: jar cf tris.jar src/it/tn/buonarroti/masala/terza/tris/*
 
       - name: Compress trisGui
-        run: jar cf trisGui.jar src/me/francescomasala/school/terza/trisGui/*
+        run: jar cf trisGui.jar src/it/tn/buonarroti/masala/terza/trisGui/*
 
       - name: Compress vacanze
-        run: jar cf vacanze.jar src/me/francescomasala/school/terza/vacanze/*
+        run: jar cf vacanze.jar src/it/tn/buonarroti/masala/terza/vacanze/*
 
       - name: Compress valutazione
-        run: jar cf valutazione.jar src/me/francescomasala/school/terza/valutazione/*
+        run: jar cf valutazione.jar src/it/tn/buonarroti/masala/terza/valutazione/*
 
       - uses: "marvinpinto/action-automatic-releases@latest"
         with:
