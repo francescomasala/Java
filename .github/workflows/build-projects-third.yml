@@ -1,0 +1,146 @@
+name: "Build Libs"
+
+on:
+  push:
+    branches: [ master ]
+
+jobs:
+  LibBuild:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Download Repository
+        uses: actions/checkout@v2
+
+      - name: Build ByteScuola
+        run: javac src/me/francescomasala/school/terza/byteScuola/*.java
+
+      - name: Build classi
+        run: javac src/me/francescomasala/school/terza/classi/*.java
+
+      - name: Build dado
+        run: javac src/me/francescomasala/school/terza/dado/*.java
+
+      - name: Build date
+        run: javac src/me/francescomasala/school/terza/date/*.java
+
+      - name: Build elenco
+        run: javac src/me/francescomasala/school/terza/elenco/*.java
+
+      - name: Build esercizi
+        run: javac src/me/francescomasala/school/terza/esercizi/*.java
+
+      - name: Build exceptions
+        run: javac src/me/francescomasala/school/terza/exceptions/*.java
+
+      - name: Build frazione
+        run: javac src/me/francescomasala/school/terza/frazione/*.java
+
+      - name: Build garaPodistica
+        run: javac src/me/francescomasala/school/terza/garaPodistica/*.java
+
+      - name: Build lanci
+        run: javac src/me/francescomasala/school/terza/lanci/*.java
+
+      - name: Build number
+        run: javac src/me/francescomasala/school/terza/number/*.java
+
+      - name: Build ora
+        run: javac src/me/francescomasala/school/terza/ora/*.java
+
+      - name: Build punto
+        run: javac src/me/francescomasala/school/terza/punto/*.java
+
+      - name: Build ripasso-primo
+        run: javac src/me/francescomasala/school/terza/ripasso/primo/*.java
+
+      - name: Build tris
+        run: javac src/me/francescomasala/school/terza/tris/*.java
+
+      - name: Build trisGui
+        run: javac src/me/francescomasala/school/terza/trisGui/*.java
+
+      - name: Build vacanze
+        run: javac src/me/francescomasala/school/terza/vacanze/*.java
+
+      - name: Build valutazione
+        run: javac src/me/francescomasala/school/terza/valutazione/*.java
+
+      - name: Compress ByteScuola
+        run: jar cf ByteScuola.jar src/me/francescomasala/school/terza/byteScuola/*
+
+      - name: Compress classi
+        run: jar cf classi.jar src/me/francescomasala/school/terza/classi/*
+
+      - name: Compress dado
+        run: jar cf dado.jar src/me/francescomasala/school/terza/dado/*
+
+      - name: Compress date
+        run: jar cf date.jar src/me/francescomasala/school/terza/date/*
+
+      - name: Compress elenco
+        run: jar cf elenco.jar src/me/francescomasala/school/terza/elenco/*
+
+      - name: Compress esercizi
+        run: jar cf esercizi.jar src/me/francescomasala/school/terza/esercizi/*
+
+      - name: Compress exceptions
+        run: jar cf exceptions.jar src/me/francescomasala/school/terza/exceptions/*
+
+      - name: Compress frazione
+        run: jar cf frazione.jar src/me/francescomasala/school/terza/frazione/*
+
+      - name: Compress garaPodistica
+        run: jar cf garaPodistica.jar src/me/francescomasala/school/terza/garaPodistica/*
+
+      - name: Compress lanci
+        run: jar cf lanci.jar src/me/francescomasala/school/terza/lanci/*
+
+      - name: Compress number
+        run: jar cf number.jar src/me/francescomasala/school/terza/number/*
+
+      - name: Compress ora
+        run: jar cf ora.jar src/me/francescomasala/school/terza/ora/*
+
+      - name: Compress punto
+        run: jar cf punto.jar src/me/francescomasala/school/terza/punto/*
+
+      - name: Compress ripasso-primo
+        run: jar cf ripassoPrimo.jar src/me/francescomasala/school/terza/ripasso/primo/*
+
+      - name: Compress tris
+        run: jar cf tris.jar src/me/francescomasala/school/terza/tris/*
+
+      - name: Compress trisGui
+        run: jar cf trisGui.jar src/me/francescomasala/school/terza/trisGui/*
+
+      - name: Compress vacanze
+        run: jar cf vacanze.jar src/me/francescomasala/school/terza/vacanze/*
+
+      - name: Compress valutazione
+        run: jar cf valutazione.jar src/me/francescomasala/school/terza/valutazione/*
+
+      - uses: "marvinpinto/action-automatic-releases@latest"
+        with:
+            repo_token: "${{ secrets.GITHUB_TOKEN }}"
+            draft: false
+            prerelease: false
+            automatic_release_tag: Terza-Superiore
+            title: Esercizi Terza Superiore
+            files: |
+              ByteScuola.jar
+              classi.jar
+              dado.jar
+              date.jar
+              elenco.jar
+              esercizi.jar
+              frazione.jar
+              garaPodistica.jar
+              lanci.jar
+              number.jar
+              ora.jar
+              punto.jar
+              ripassoPrimo.jar
+              tris.jar
+              trisGui.jar
+              vacanze.jar
+              valutazione.jar

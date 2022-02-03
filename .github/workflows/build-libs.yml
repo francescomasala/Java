@@ -24,7 +24,7 @@ jobs:
         with:
             repo_token: "${{ secrets.GITHUB_TOKEN }}"
             draft: false
-            prerelease: true
+            prerelease: false
             automatic_release_tag: CI
             title: Libs
             files: Libs.jar
