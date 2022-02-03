@@ -10,12 +10,17 @@ public class Data {
 
 	}
 
-	public Data(Data data) {
-
+	public Data(Data dataInput) {
+		this.data = dataInput.getData();
+		this.giorno = dataInput.getGiorno();
+		this.mese = dataInput.getMese();
+		this.anno = dataInput.getAnno();
 	}
 
 	public Data(Integer giorno, Integer mese, Integer anno) {
-
+		this.giorno=giorno;
+		this.mese=mese;
+		this.anno=anno;
 	}
 
 	public String giornoDellaSettimana() {
