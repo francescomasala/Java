@@ -13,10 +13,10 @@ jobs:
 
       # Initializes the CodeQL tools for scanning.
       - name: Build Lib
-        run: javac src/me/francescomasala/school/libs/utils/Data.java
+        run: javac src/me/francescomasala/school/libs/utils/*.java
 
       - name: Compress lib
-        run: jar cf FraLibs.jar src/me/francescomasala/school/libs/utils/Data.class
+        run: jar cf Libs.jar src/me/francescomasala/school/libs/utils/*.class
 
       - uses: "marvinpinto/action-automatic-releases@latest"
         with:
@@ -25,4 +25,4 @@ jobs:
             prerelease: true
             automatic_release_tag: CI
             title: Libs
-            files: FraLibs.jar
+            files: Libs.jar
