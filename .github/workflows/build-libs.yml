@@ -16,7 +16,7 @@ jobs:
         run: javac src/me/francescomasala/school/libs/utils/*.java
 
       - name: Compress lib
-        run: jar cf Libs.jar src/me/francescomasala/school/libs/utils/*.class
+        run: jar cf Libs.jar src/me/francescomasala/school/libs/utils/*
 
       - uses: "marvinpinto/action-automatic-releases@latest"
         with:

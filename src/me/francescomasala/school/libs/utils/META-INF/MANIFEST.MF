@@ -1,2 +1,12 @@
 Manifest-Version: 1.0
-
+Bundle-License: https://raw.githubusercontent.com/francescomasala/Java/master/LICENSE
+Bundle-SymbolicName: me.francescomasala.school.libs.utils
+Built-By: Francesco Masala
+Implementation-Vendor-Id: me.francescomasala
+Specification-Title: Fra Libs
+Bundle-DocURL: https://java-doc.buonarroti.francescomasala.me/
+Bundle-Name: Fra Libs
+Build-Jdk-Spec: 1.8
+Implementation-Title: Fra Libs
+Bundle-Description: Some libs for helping my mental health while I'm coding
+Build-Jdk: 1.8.0_261
