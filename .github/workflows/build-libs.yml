@@ -19,7 +19,7 @@ jobs:
         run: jar cf FraLibs.jar src/me/francescomasala/school/libs/utils/Data.class
 
       - uses: "marvinpinto/action-automatic-releases@latest"
-          with:
+        with:
             repo_token: "${{ secrets.GITHUB_TOKEN }}"
             draft: false
             prerelease: true
