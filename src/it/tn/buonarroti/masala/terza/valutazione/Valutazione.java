@@ -184,11 +184,4 @@ public class Valutazione {
         this.indice++;
     }
 
-    private void indexCheck(Integer index) throws DesiredIndexSmallerThanDeclared {
-        if (index < this.indice) {
-            throw new DesiredIndexSmallerThanDeclared("L'indice inserito è più piccolo di quello attuale:\n" +
-                    "Indice desiderato: " + index + "\nIndice Attuale: " + this.indice);
-        }
-    }
-
 }
