@@ -1,6 +1,6 @@
 package it.tn.buonarroti.masala.quarta.stack.linkedList;
 
-public class linkedList<T> {
+public class LinkedList<T> {
 	public Node head;
 
 	public void append(T element) {
@@ -34,5 +34,22 @@ public class linkedList<T> {
 				}
 			}
 		}
+	}
+	public T getHead(){
+		Node newHead = head.next;
+		Node returnHead = head;
+		head = newHead;
+		return (T)returnHead.data;
+
+	}
+
+	public Integer count() {
+		Node slide = head;
+		Integer ctn = 0;
+		while (!slide.next.equals(null)) { //Scorri tutto finche non trovo elemento
+			slide = slide.next;
+			ctn++;
+		}
+		return ctn;
 	}
 }
