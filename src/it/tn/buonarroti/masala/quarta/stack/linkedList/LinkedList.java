@@ -3,6 +3,10 @@ package it.tn.buonarroti.masala.quarta.stack.linkedList;
 public class LinkedList<T> {
 	public Node head;
 
+	public LinkedList(){
+		this.head=null;
+	}
+
 	public void append(T element) {
 		if (this.head.equals(null)) {
 			this.head = new Node<>(element);
