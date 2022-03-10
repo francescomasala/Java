@@ -3,8 +3,8 @@ package it.tn.buonarroti.masala.quarta.stack.linkedList;
 public class LinkedList<T> {
 	public Node head;
 
-	public LinkedList(){
-		this.head=null;
+	public LinkedList() {
+		this.head = null;
 	}
 
 	public void append(T element) {
@@ -39,11 +39,12 @@ public class LinkedList<T> {
 			}
 		}
 	}
-	public T getHead(){
+
+	public T getHead() {
 		Node newHead = head.next;
 		Node returnHead = head;
 		head = newHead;
-		return (T)returnHead.data;
+		return (T) returnHead.data;
 
 	}
 

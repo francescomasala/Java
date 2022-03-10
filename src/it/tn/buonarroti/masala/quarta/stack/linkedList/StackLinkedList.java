@@ -6,13 +6,13 @@ public class StackLinkedList<T> implements Stack<T> {
 	LinkedList<T> stack;
 
 	//Metodi implementati da Stack
-	public void push(T element){
-		if(element != null){
+	public void push(T element) {
+		if (element != null) {
 			stack.prepend(element);
 		}
 	}
 
-	public T pop(){
+	public T pop() {
 
 		T data = stack.getHead();
 		stack.deleteWithValue(data); //Ottengo la testa ed elimino
@@ -20,17 +20,16 @@ public class StackLinkedList<T> implements Stack<T> {
 		return data;
 	}
 
-	public T peek(){
+	public T peek() {
 
 		T data = stack.getHead();
 
 		return data;
 	}
 
-	public int count(){
+	public int count() {
 		return stack.count();
 	}
-
 
 
 }
