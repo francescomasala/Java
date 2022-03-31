@@ -45,10 +45,22 @@ public class SetArray <T> implements SetInterface<T> {
 	 */
 	@Override
 	public Integer isIn(T data) throws Exception {
-		for(int i=0;i<cardinality;i++){
-			if(set[i] == data)
-		}
+		Integer pos = -1, i=0;
+		Boolean found = Boolean.FALSE;
 
+		while((i < set.length) && !found){
+			if(set[i] == data){
+				found = Boolean.TRUE;
+			} else{
+				i++;
+			}
+		}
+		if (found)
+			pos = i;
+		else
+			pos = -1;
+
+		return pos;
 	}
 
 	/**
