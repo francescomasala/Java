@@ -3,6 +3,7 @@ package it.tn.buonarroti.masala.quarta.caesarCypher;
 import lombok.Getter;
 import lombok.Setter;
 
+import java.util.Arrays;
 import java.util.Locale;
 
 /**
@@ -74,6 +75,6 @@ public class CaesarCypher {
      */
     public Character[] stringAlfabeto() {
 
-        return this.alphabet_ita;
+        return Arrays.copyOf(this.alphabet_ita, this.alphabet_ita.length);
     }
 }

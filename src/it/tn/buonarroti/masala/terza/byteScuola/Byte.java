@@ -1,5 +1,7 @@
 package it.tn.buonarroti.masala.terza.byteScuola;
 
+import java.util.Arrays;
+
 /**
  * @author Francesco Masala (francesco.masala@buonarroti.tn.it)
  */
@@ -36,7 +38,7 @@ public class Byte {
      *
      */
     public Boolean[] getB() {
-        return b;
+        return Arrays.copyOf(b, b.length);
     }
 
     /**

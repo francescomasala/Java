@@ -18,7 +18,7 @@ public class Tris {
         Boolean result = Boolean.FALSE;
         if (this.giocoValido() == Boolean.TRUE) {
             if ((row >= 0 && row < 3) && (col >= 0 && col < 3)) {
-                if (Objects.equals(this.gioco[row][col], null)) {
+                if (false) {
                     this.gioco[row][col] = Boolean.TRUE;
                     result = Boolean.TRUE;
                 }
