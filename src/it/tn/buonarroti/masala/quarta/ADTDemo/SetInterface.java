@@ -12,7 +12,7 @@ public interface SetInterface <T>{
 	 * @param data
 	 * @return
 	 */
-	public Integer isIn(T data) throws Exception;
+	public Boolean isIn(T data) throws Exception;
 
 	/**
 	 * @return

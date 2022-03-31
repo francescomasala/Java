@@ -44,7 +44,7 @@ public class SetArray <T> implements SetInterface<T> {
 	 * @return
 	 */
 	@Override
-	public Integer isIn(T data) throws Exception {
+	public Boolean isIn(T data) throws Exception {
 		Integer pos = -1, i=0;
 		Boolean found = Boolean.FALSE;
 
@@ -67,11 +67,21 @@ public class SetArray <T> implements SetInterface<T> {
 	 * @return
 	 */
 	@Override
-	public Integer cardinality() throws Exception {
-
+	public Integer cardinality(){
+		return cardinality;
 	}
 
-	private void resize() throws Exception {}
+	private void resize(){
+		T[] support = (T[]) new Object[set.length^2];
+		for(int i=0;i< set.length;i++){
+			support[i] = set[i];
+		}
+		set = support.clone();
+	}
 
-	private void shiftSX(Integer pos) throws Exception{}
+	private void shiftSX(Integer pos){
+		for(int i=pos;i<set.length-1;i++){
+			set[i] = set[i+1];
+		}
+	}
 }
