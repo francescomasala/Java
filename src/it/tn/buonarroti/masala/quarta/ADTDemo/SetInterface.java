@@ -1,6 +1,6 @@
 package it.tn.buonarroti.masala.quarta.ADTDemo;
 
-public interface SetInterface <T>{
+public interface SetInterface<T>{
 	/**
 	 * @param data
 	 */
@@ -12,10 +12,7 @@ public interface SetInterface <T>{
 	 * @param data
 	 * @return
 	 */
-	public Boolean isIn(T data) throws Exception;
+	public Integer isIn(T data);
 
-	/**
-	 * @return
-	 */
 	public Integer cardinality() throws Exception;
 }

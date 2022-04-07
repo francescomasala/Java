@@ -13,12 +13,11 @@ public class SetArray <T> implements SetInterface<T> {
 	/**
 	 * @param data
 	 */
-	@Override
-	public void insert(T data) throws Exception {
+	public void insert(Object data) throws Exception {
 		if (isIn(data) < 0){
 			if(this.cardinality >= set.length)
 				resize();
-			this.set[this.cardinality] = data;
+			this.set[this.cardinality] = (T) data;
 			cardinality++;
 		} else {
 			throw new Exception("The element is already in the list");
@@ -27,9 +26,10 @@ public class SetArray <T> implements SetInterface<T> {
 
 	/**
 	 *
+	 * @param data
 	 */
 	@Override
-	public void delete(T data) throws Exception {
+	public void delete(Object data) throws Exception {
 		Integer pos = isIn(data);
 		if (pos >= 0){
 			shiftSX(pos);
@@ -44,22 +44,19 @@ public class SetArray <T> implements SetInterface<T> {
 	 * @return
 	 */
 	@Override
-	public Boolean isIn(T data) throws Exception {
-		Integer pos = -1, i=0;
-		Boolean found = Boolean.FALSE;
+	public Integer isIn(Object data) {
+		Integer pos = -1, i = 0;
+		Boolean found = false;
 
-		while((i < set.length) && !found){
+		while(i < set.length && !found){
 			if(set[i] == data){
-				found = Boolean.TRUE;
-			} else{
+				found = true;
+			} else {
 				i++;
 			}
 		}
-		if (found)
-			pos = i;
-		else
-			pos = -1;
 
+		if(found) pos = i; else pos = -1;
 		return pos;
 	}
 
