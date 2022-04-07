@@ -45,16 +45,42 @@ public class LinkedList<T> {
 		Node returnHead = head;
 		head = newHead;
 		return (T) returnHead.data;
-
 	}
 
 	public Integer count() {
 		Node slide = head;
 		Integer ctn = 0;
-		while (!slide.next.equals(null)) { //Scorri tutto finche non trovo elemento
+		while (!slide.next.equals(null)) {
 			slide = slide.next;
 			ctn++;
 		}
 		return ctn;
+	}
+
+	public Boolean search(T element) {
+		Boolean found = false;
+		Node slide = head;
+		while (slide.next != null) {
+			slide = slide.next;
+			if (slide.data == element) {
+				found = true;
+				break;
+			}
+		}
+
+		return found;
+
+	}
+
+	public String toString() {
+		String buff = "";
+		Node slide = head;
+		while (slide.next != null) {
+			buff += slide.data + " ";
+			slide = slide.next;
+		}
+
+		return buff;
+
 	}
 }
