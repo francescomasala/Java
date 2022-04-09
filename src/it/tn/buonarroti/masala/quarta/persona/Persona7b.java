@@ -105,7 +105,7 @@ public final class Persona7b {
 	}
 
 	public void setNome(String nome) throws Exception{
-		if (cognome == null & cognome.length() < 1) throw new Exception("Nome assegnato via stringa vuota o valore nullo.");
+		if (nome == null & nome.length() < 1) throw new Exception("Nome assegnato via stringa vuota o valore nullo.");
 		else{
 			Pattern pattern = Pattern.compile("[a-zA-Zèòàù]+");
 			Matcher matcher = pattern.matcher(nome);
