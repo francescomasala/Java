@@ -13,10 +13,14 @@ public class Studente2 extends Persona7a {
 	private ArrayList<Float> voti = new ArrayList<>();
 
 	//Costruttore
-	public Studente2(Integer classe, Boolean ripetente, Float[] voti, Double altezza, String cognome, String nome, Float peso, String dataDiNascita, String password, String email) throws Exception {
+	public Studente2(Integer classe, Boolean ripetente, Double altezza, String cognome, String nome, Float peso, String dataDiNascita, String password, String email) throws Exception {
 		super(altezza, cognome, nome, peso, dataDiNascita, password, email);
 		this.classe = classe;
 		this.isRipetente = ripetente;
+	}
+
+	public Studente2() {
+
 	}
 
 	//Get e Set
