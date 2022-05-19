@@ -7,5 +7,6 @@ public abstract class FiguraGeometrica {
 	@Getter
 	@Setter
 	protected String colore;
+
 	public abstract Integer numeroLati();
 }

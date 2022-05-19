@@ -1,8 +1,9 @@
 package it.tn.buonarroti.masala.quarta.CallCenter;
+
 import it.tn.buonarroti.masala.quarta.stack.linkedList.LinkedList;
 
 
-public class LinkedListCallers<T extends CallCenterCaller>{
+public class LinkedListCallers<T extends CallCenterCaller> {
 	LinkedList<T> List;
 
 	public LinkedListCallers(LinkedList set) {
@@ -11,7 +12,7 @@ public class LinkedListCallers<T extends CallCenterCaller>{
 
 	public void insert(T data) throws Exception {
 		Integer isIn = isIn(data);
-		if(isIn.equals(0)){
+		if (isIn.equals(0)) {
 			this.List.append(data);
 		} else {
 			throw new Exception("The element is already in the set.");
@@ -20,8 +21,8 @@ public class LinkedListCallers<T extends CallCenterCaller>{
 
 	public void delete(T data) throws Exception {
 		Integer isIn = isIn(data);
-		if (isIn==0){
-			List.deleteWithValue((T) data);
+		if (isIn == 0) {
+			List.deleteWithValue(data);
 		} else {
 			throw new Exception("The element is not in the set.");
 		}
@@ -33,7 +34,7 @@ public class LinkedListCallers<T extends CallCenterCaller>{
 		return (isIn ? 0 : -1);
 	}
 
-	public Integer cardinality(){
+	public Integer cardinality() {
 		return List.count();
 	}
 }

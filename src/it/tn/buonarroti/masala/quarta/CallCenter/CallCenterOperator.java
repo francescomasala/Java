@@ -13,7 +13,7 @@ public class CallCenterOperator {
 	public CallCenterOperator() {
 	}
 
-	public CallCenterOperator(String FamilyName, String PersonName,String email, Integer CallCenterID)
+	public CallCenterOperator(String FamilyName, String PersonName, String email, Integer CallCenterID)
 			throws Exception {
 		this();
 		this.setFamilyName(FamilyName);
@@ -22,12 +22,16 @@ public class CallCenterOperator {
 		this.setEmail(email);
 	}
 
+	public Boolean getOperatorFree() {
+		return isOperatorFree;
+	}
+
 	public void setOperatorFree(Boolean operatorFree) {
 		isOperatorFree = operatorFree;
 	}
 
-	public Boolean getOperatorFree() {
-		return isOperatorFree;
+	public String getEmail() {
+		return email;
 	}
 
 	//nuovo in persona 6
@@ -36,24 +40,20 @@ public class CallCenterOperator {
 		Pattern pattern = Pattern.compile("[a-z0-9._-]+@[a-z0-9._-]+.[a-z]");
 		Matcher matcher = pattern.matcher(email);
 
-		if(matcher.matches()){
+		if (matcher.matches()) {
 			this.email = email;
-		}else{
+		} else {
 			throw new Exception("L'email non rispetta il formato richiesto");
 		}
 	}
 
-	//Nuovo in persona 7
-	public void setCallCenterID(Integer callCenterID) throws Exception {
-			this.CallCenterID = callCenterID;	}
-
-
-	public String getEmail() {
-		return email;
-	}
-
 	public Integer getCallCenterID() {
 		return CallCenterID;
+	}
+
+	//Nuovo in persona 7
+	public void setCallCenterID(Integer callCenterID) throws Exception {
+		this.CallCenterID = callCenterID;
 	}
 
 	public String getFamilyName() {
@@ -63,13 +63,13 @@ public class CallCenterOperator {
 	public void setFamilyName(String familyName) throws Exception {
 
 		if (familyName == null & familyName.length() < 1) throw new Exception("Surname has empty or null value");
-		else{
+		else {
 			Pattern pattern = Pattern.compile("[a-zA-Zèòàù]+");
 			Matcher matcher = pattern.matcher(familyName);
 
-			if(matcher.matches()){
+			if (matcher.matches()) {
 				this.FamilyName = familyName;
-			}else{
+			} else {
 				throw new Exception("This surname does not respect regex parameters: [a-zA-Zèòàù]");
 			}
 		}
@@ -79,15 +79,15 @@ public class CallCenterOperator {
 		return PersonName;
 	}
 
-	public void setPersonName(String personName) throws Exception{
+	public void setPersonName(String personName) throws Exception {
 		if (FamilyName == null & FamilyName.length() < 1) throw new Exception("Name has empty or null value");
-		else{
+		else {
 			Pattern pattern = Pattern.compile("[a-zA-Zèòàù]+");
 			Matcher matcher = pattern.matcher(personName);
 
-			if(matcher.matches()){
+			if (matcher.matches()) {
 				this.PersonName = personName;
-			}else{
+			} else {
 				throw new Exception("This surname does not respect regex parameters: [a-zA-Zèòàù]");
 			}
 		}

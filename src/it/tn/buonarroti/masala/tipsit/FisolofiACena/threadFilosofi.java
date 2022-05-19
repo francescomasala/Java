@@ -1,6 +1,6 @@
 package it.tn.buonarroti.masala.tipsit.FisolofiACena;
 
-public class threadFilosofi implements Runnable{
+public class threadFilosofi implements Runnable {
 
 	private final Object ForchettaDX, ForchettaSX;
 
@@ -9,7 +9,7 @@ public class threadFilosofi implements Runnable{
 		ForchettaSX = sinistra;
 	}
 
-	private void esegui(String azione){
+	private void esegui(String azione) {
 		System.out.println(Thread.currentThread().getName() + " " + azione);
 	}
 
@@ -26,9 +26,9 @@ public class threadFilosofi implements Runnable{
 							esegui(": Mangio");
 							esegui(": Rilascio la forchetta di destra");
 						}
-						esegui(": Rilascio la forchetta di sinistra");
-						esegui(": Penso");
 					}
+					esegui(": Rilascio la forchetta di sinistra");
+					esegui(": Penso");
 				}
 			}
 		} catch (Exception e) {

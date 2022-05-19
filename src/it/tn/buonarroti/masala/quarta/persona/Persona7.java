@@ -51,44 +51,44 @@ public class Persona7 {
 
 	}
 
-	final public void setCognome(String cognome) throws Exception{
-		try{
+	final public void setCognome(String cognome) throws Exception {
+		try {
 			Pattern pattern = Pattern.compile("[a-zA-Zàèìòù' ]+");
 			Matcher matcher = pattern.matcher(cognome);
 
-			if(matcher.matches()){
+			if (matcher.matches()) {
 				this.cognome = cognome;
 			} else {
 				throw new Exception("Il cognome non riespetta gli attributi richiesti");
 			}
-		} catch (Exception e){
+		} catch (Exception e) {
 			e.printStackTrace();
 		}
 	}
 
-	final public void setNome(String nome) throws Exception{
-		try{
+	final public void setNome(String nome) throws Exception {
+		try {
 			Pattern pattern = Pattern.compile("[a-zA-Zàèìòù' ]+");
 			Matcher matcher = pattern.matcher(nome);
 
-			if(matcher.matches()){
+			if (matcher.matches()) {
 				this.nome = nome;
 			} else {
 				throw new Exception("Il cognome non riespetta gli attributi richiesti");
 			}
-		} catch (Exception e){
+		} catch (Exception e) {
 			e.printStackTrace();
 		}
 	}
 
 	public void setDataDiNascita(String dataDiNascita) throws Exception {
 		try {
-			if (DateValidator.getInstance().isValid(dataDiNascita)){
+			if (DateValidator.getInstance().isValid(dataDiNascita)) {
 				this.dataDiNascita = dataDiNascita;
 				calcolaEta();
 			} else throw new Exception("Formato della data errato!");
 		} catch (NullPointerException e) {
-		} catch ( Exception e) {
+		} catch (Exception e) {
 			e.printStackTrace();
 		}
 	}
@@ -99,21 +99,21 @@ public class Persona7 {
 				this.email = email;
 			} else throw new Exception("Formato della mail errato!");
 		} catch (NullPointerException e) {
-		} catch ( Exception e) {
+		} catch (Exception e) {
 			e.printStackTrace();
 		}
 	}
 
 	public void setPassword(String password) throws Exception {
-		try{
+		try {
 			Pattern pattern = Pattern.compile("[a-zA-Z0-9-_*%!$@&]{8,32}");
 			Matcher matcher = pattern.matcher(password);
 
-			if(matcher.matches()){
+			if (matcher.matches()) {
 				this.password = password;
 			} else throw new Exception("Requisiti della password insufficienti!");
 		} catch (NullPointerException e) {
-		} catch ( Exception e) {
+		} catch (Exception e) {
 			e.printStackTrace();
 		}
 	}
@@ -149,12 +149,12 @@ public class Persona7 {
 
 	public String info() {
 		return "altezza = " + altezza
-			+ "\ncognome = " + cognome
-			+ "\nnome = " + nome
-			+ "\npeso = " + peso
-			+ "\ndataDiNascita = " + dataDiNascita
-			+ "\nEmail = " + email
-			+ "\nPassword = " + password
-			+ "\netà = " + eta;
+				+ "\ncognome = " + cognome
+				+ "\nnome = " + nome
+				+ "\npeso = " + peso
+				+ "\ndataDiNascita = " + dataDiNascita
+				+ "\nEmail = " + email
+				+ "\nPassword = " + password
+				+ "\netà = " + eta;
 	}
 }

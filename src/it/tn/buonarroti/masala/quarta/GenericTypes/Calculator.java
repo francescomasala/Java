@@ -11,29 +11,30 @@ public class Calculator<Calc extends Number> {
 	@Setter
 	Calc SecondVal;
 
-	public Calculator(Calc FirstVal, Calc SecondVal){
+	public Calculator(Calc FirstVal, Calc SecondVal) {
 		this.FirstVal = FirstVal;
 		this.SecondVal = SecondVal;
 	}
-	public Calc Sum(){
+
+	public Calc Sum() {
 		Double calc = FirstVal.doubleValue() + SecondVal.doubleValue();
 		Calc calc2 = (Calc) calc;
 		return calc2;
 	}
 
-	public Calc Sub(){
+	public Calc Sub() {
 		Double calc = FirstVal.doubleValue() - SecondVal.doubleValue();
 		Calc calc2 = (Calc) calc;
 		return calc2;
 	}
 
-	public Calc Mul(){
+	public Calc Mul() {
 		Double calc = FirstVal.doubleValue() * SecondVal.doubleValue();
 		Calc calc2 = (Calc) calc;
 		return calc2;
 	}
 
-	public Calc Div(){
+	public Calc Div() {
 		Double calc = FirstVal.doubleValue() / SecondVal.doubleValue();
 		Calc calc2 = (Calc) calc;
 		return calc2;

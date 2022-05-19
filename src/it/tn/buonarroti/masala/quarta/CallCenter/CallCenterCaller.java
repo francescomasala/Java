@@ -21,30 +21,30 @@ public class CallCenterCaller {
 		this.setEmail(email);
 	}
 
+	public String getEmail() {
+		return email;
+	}
+
 	//nuovo in persona 6
 	public void setEmail(String email) throws Exception {
 		//Dichiarazione pattern e matcher
 		Pattern pattern = Pattern.compile("[a-z0-9._-]+@[a-z0-9._-]+.[a-z]");
 		Matcher matcher = pattern.matcher(email);
 
-		if(matcher.matches()){
+		if (matcher.matches()) {
 			this.email = email;
-		}else{
+		} else {
 			throw new Exception("L'email non rispetta il formato richiesto");
 		}
 	}
 
-	//Nuovo in persona 7
-	public void setCallerID(Integer callCenterCaller) {
-			this.CallerID = CallerID;	}
-
-
-	public String getEmail() {
-		return email;
-	}
-
 	public Integer getCallerID() {
 		return CallerID;
+	}
+
+	//Nuovo in persona 7
+	public void setCallerID(Integer callCenterCaller) {
+		this.CallerID = CallerID;
 	}
 
 	public String getFamilyName() {
@@ -54,13 +54,13 @@ public class CallCenterCaller {
 	public void setFamilyName(String familyName) throws Exception {
 
 		if (familyName == null & familyName.length() < 1) throw new Exception("Surname has empty or null value");
-		else{
+		else {
 			Pattern pattern = Pattern.compile("[a-zA-Zèòàù]+");
 			Matcher matcher = pattern.matcher(familyName);
 
-			if(matcher.matches()){
+			if (matcher.matches()) {
 				this.FamilyName = familyName;
-			}else{
+			} else {
 				throw new Exception("This surname does not respect regex parameters: [a-zA-Zèòàù]");
 			}
 		}
@@ -70,15 +70,15 @@ public class CallCenterCaller {
 		return PersonName;
 	}
 
-	public void setPersonName(String personName) throws Exception{
+	public void setPersonName(String personName) throws Exception {
 		if (FamilyName == null & FamilyName.length() < 1) throw new Exception("Name has empty or null value");
-		else{
+		else {
 			Pattern pattern = Pattern.compile("[a-zA-Zèòàù]+");
 			Matcher matcher = pattern.matcher(personName);
 
-			if(matcher.matches()){
+			if (matcher.matches()) {
 				this.PersonName = personName;
-			}else{
+			} else {
 				throw new Exception("This surname does not respect regex parameters: [a-zA-Zèòàù]");
 			}
 		}

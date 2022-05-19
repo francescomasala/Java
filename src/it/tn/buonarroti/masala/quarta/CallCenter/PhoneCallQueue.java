@@ -11,7 +11,7 @@ public class PhoneCallQueue<T> {
 
 	public void insert(T data) throws Exception {
 		Integer isIn = isIn(data);
-		if(isIn.equals(0)){
+		if (isIn.equals(0)) {
 			this.set.append(data);
 		} else {
 			throw new Exception("The element is already in the set.");
@@ -20,7 +20,7 @@ public class PhoneCallQueue<T> {
 
 	public void delete(T data) throws Exception {
 		Integer isIn = isIn(data);
-		if (isIn==0){
+		if (isIn == 0) {
 			set.deleteWithValue(data);
 		} else {
 			throw new Exception("The element is not in the set.");

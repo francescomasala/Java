@@ -5,13 +5,13 @@ package it.tn.buonarroti.masala.terza.classi;
  */
 public class MainEs02 {
 
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String[] args) {
-        Es02 es01 = new Es02(50, 40, 30);
+	/**
+	 * @param args the command line arguments
+	 */
+	public static void main(String[] args) {
+		Es02 es01 = new Es02(50, 40, 30);
 
-        es01.ordina();
-    }
+		es01.ordina();
+	}
 
 }

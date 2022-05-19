@@ -2,24 +2,24 @@ package it.tn.buonarroti.masala.quarta.puntaTrapano;
 
 public class Punta {
 
-    //Attrb.
-    protected Float diametroPunta;
-    protected Integer durabilitaPunta;
+	//Attrb.
+	protected Float diametroPunta;
+	protected Integer durabilitaPunta;
 
-    //Costr
-    public Punta(Float diametroPunta, Integer durabilitaPunta) {
-        this.diametroPunta = diametroPunta;
-        this.durabilitaPunta = durabilitaPunta;
-    }
+	//Costr
+	public Punta(Float diametroPunta, Integer durabilitaPunta) {
+		this.diametroPunta = diametroPunta;
+		this.durabilitaPunta = durabilitaPunta;
+	}
 
-    //Get e Set
-    public Float getDiametroPunta() {
-        return diametroPunta;
-    }
+	//Get e Set
+	public Float getDiametroPunta() {
+		return diametroPunta;
+	}
 
-    public Integer getDurabilitaPunta() {
-        return durabilitaPunta;
-    }
+	public Integer getDurabilitaPunta() {
+		return durabilitaPunta;
+	}
 
 
 }

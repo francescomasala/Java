@@ -1,16 +1,16 @@
 package it.tn.buonarroti.masala.tipsit.semafori;
 
 public class Mensa implements Runnable {
-	private Cesto cestino;
+	private final Cesto cestino;
 
-	public Mensa(Cesto cestino){
+	public Mensa(Cesto cestino) {
 		this.cestino = cestino;
 	}
 
-	public void run(){
-		try{
+	public void run() {
+		try {
 			run1();
-		} catch (Exception e){
+		} catch (Exception e) {
 			e.printStackTrace();
 		}
 	}
@@ -18,9 +18,9 @@ public class Mensa implements Runnable {
 	public void run1() throws Exception {
 		boolean run = true;
 
-		while(run){
+		while (run) {
 			cestino.p();
-			if(cestino.getFruttaCount() >0){
+			if (cestino.getFruttaCount() > 0) {
 				cestino.togliFrutta();
 			} else {
 				run = false;
@@ -32,7 +32,7 @@ public class Mensa implements Runnable {
 	public void run2() throws Exception {
 		while (cestino.getFruttaCount() > 0) {
 			cestino.p();
-			cestino.togliFrutta();;
+			cestino.togliFrutta();
 			cestino.v();
 		}
 	}

@@ -6,12 +6,12 @@ public class TestArrayList {
 	public static void main(String[] args) {
 		ArrayList<String> list = new ArrayList<>();
 		list.add("Demo");
-		list.set(0,"Hola!");
+		list.set(0, "Hola!");
 		list.get(0);
 
-		try{
+		try {
 			list.remove(10);
-		} catch (IndexOutOfBoundsException e){
+		} catch (IndexOutOfBoundsException e) {
 			System.out.println(e.getMessage());
 		}
 
@@ -21,10 +21,10 @@ public class TestArrayList {
 
 		System.out.println(list.indexOf("Hola!"));
 
-		for (int i=0; i<=list.size(); i++){
-			try{
-			System.out.println(list.get(i));
-			} catch (IndexOutOfBoundsException e){
+		for (int i = 0; i <= list.size(); i++) {
+			try {
+				System.out.println(list.get(i));
+			} catch (IndexOutOfBoundsException e) {
 				System.out.println(e.getMessage());
 			}
 		}
@@ -39,9 +39,9 @@ public class TestArrayList {
 		}
 		 */
 
-		list.set(0,"Hola!");
+		list.set(0, "Hola!");
 
-		System.out.println("");
+		System.out.println();
 
 		list.clear();
 

@@ -5,11 +5,11 @@ public class mainFilosofi {
 		threadFilosofi[] filosofi = new threadFilosofi[5];
 		Object[] forchette = new Object[filosofi.length];
 
-		for (int i=0; i < forchette.length; i++){
+		for (int i = 0; i < forchette.length; i++) {
 			forchette[i] = new Object();
 		}
 
-		for (int i=0; i < filosofi.length; i++){
+		for (int i = 0; i < filosofi.length; i++) {
 			Object sinistra = forchette[i];
 			Object destra = forchette[(i + 1) % forchette.length];
 

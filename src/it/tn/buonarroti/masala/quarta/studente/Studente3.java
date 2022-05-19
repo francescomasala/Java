@@ -2,56 +2,55 @@ package it.tn.buonarroti.masala.quarta.studente;
 
 public class Studente3 extends Studente2 implements Cloneable {
 
+	public Studente3() {
+		super();
+	}
 
-    //Costruttori
-    public Studente3() {
-        super();
-    }
+	public Studente3(Integer classe, Boolean isRipetente, Double altezza, String cognome, String nome, Float peso, String dataDiNascita, String password, String email) throws Exception {
+		super(classe, isRipetente, altezza, cognome, nome, peso, dataDiNascita, password, email);
+	}
 
-    public Studente3(Integer classe, Boolean isRipetente, Double altezza, String cognome, String nome, Float peso, String dataDiNascita, String password, String email) throws Exception {
-        super(classe, isRipetente, altezza, cognome, nome, peso, dataDiNascita, password, email);
-    }
+	//Metodi
+	public Studente3 clone() {
 
-    //Metodi
-    public Studente3 clone() {
+		Studente3 voidClone = new Studente3();
+		Studente3 returnObject;
 
-        Studente3 voidClone = new Studente3();
-        Studente3 returnObject;
+		try {
+			returnObject = (Studente3) super.clone();
+		} catch (Exception e) {
+			returnObject = voidClone;
+		}
 
-        try {
-            returnObject = (Studente3)super.clone();
-        } catch(Exception e) {
-            returnObject = voidClone;
-        }
+		return returnObject;
 
-        return returnObject;
+	}
 
-    }
+	public boolean equals(Object oggetto) {
 
-    public boolean equals(Object oggetto){
+		Boolean result;
 
-        Boolean result;
+		result = oggetto.equals(this);
 
-        if(oggetto.equals(this)){
-            result = true;
-        } else {
-            result = false;
-        }
+		return result;
+	}
 
-        return result;
-    }
+	public String toString() {
+		try {
+			return super.toString();
+		} catch (Exception e) {
+			return null;
+		}
 
-    public String toString(){
-        return super.toString();
-    }
+	}
 
-    public int hashCode(){
-        return super.hashCode();
-    }
+	public int hashCode() {
+		return super.hashCode();
+	}
 
-    protected void finalize() throws Throwable {
-        super.finalize();
-    }
+	protected void finalize() throws Throwable {
+		super.finalize();
+	}
 
 
 }

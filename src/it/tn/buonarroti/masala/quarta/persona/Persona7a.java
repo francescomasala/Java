@@ -1,14 +1,13 @@
 package it.tn.buonarroti.masala.quarta.persona;
 
-import static java.lang.Math.*;
-import java.util.*;
-import java.time.*;
-import java.util.regex.*;
-import org.apache.commons.validator.routines.EmailValidator;
 import me.francescomasala.school.libs.utils.DataHard;
+
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 public class Persona7a {
 
+	static private int numeroIstanze;
 	public Double altezza;
 	public String cognome;
 	public String nome;
@@ -17,7 +16,6 @@ public class Persona7a {
 	protected Integer eta;
 	protected String email;
 	protected String password;
-	static private int numeroIstanze;
 
 	public Persona7a() {
 	}
@@ -34,17 +32,25 @@ public class Persona7a {
 		this.setEmail(email);
 	}
 
+	public String getEmail() {
+		return email;
+	}
+
 	//nuovo in persona 6
 	public void setEmail(String email) throws Exception {
 		//Dichiarazione pattern e matcher
 		Pattern pattern = Pattern.compile("[a-z0-9._-]+@[a-z0-9._-]+.[a-z]");
 		Matcher matcher = pattern.matcher(email);
 
-		if(matcher.matches()){
+		if (matcher.matches()) {
 			this.email = email;
-		}else{
+		} else {
 			throw new Exception("L'email non rispetta il formato richiesto");
 		}
+	}
+
+	public String getPassword() {
+		return password;
 	}
 
 	//Nuovo in persona 7
@@ -54,30 +60,20 @@ public class Persona7a {
 		Pattern pattern = Pattern.compile("[a-zA-Z0-9!%&=?-_.><*]{8,64}");
 		Matcher matcher = pattern.matcher(password);
 
-		if(matcher.matches()){
+		if (matcher.matches()) {
 			this.password = password;
-		}else{
+		} else {
 			throw new Exception("La password non rispetta il formato richiesto");
 		}
 
 	}
-
-
-	public String getEmail() {
-		return email;
-	}
-
-	public String getPassword() {
-		return password;
-	}
-
 
 	public Double getAltezza() {
 		return altezza;
 	}
 
 	public void setAltezza(Double altezza) throws Exception {
-		if(altezza != null && (altezza < 230 && altezza > 30)) this.altezza = altezza;
+		if (altezza != null && (altezza < 230 && altezza > 30)) this.altezza = altezza;
 		else throw new Exception("Altezza fuori dal range oppure valore nullo.");
 	}
 
@@ -87,14 +83,15 @@ public class Persona7a {
 
 	public void setCognome(String cognome) throws Exception {
 
-		if (cognome == null & cognome.length() < 1) throw new Exception("Cognome assegnato via stringa vuota o valore nullo.");
-		else{
+		if (cognome == null & cognome.length() < 1)
+			throw new Exception("Cognome assegnato via stringa vuota o valore nullo.");
+		else {
 			Pattern pattern = Pattern.compile("[a-zA-Zèòàù]+");
 			Matcher matcher = pattern.matcher(cognome);
 
-			if(matcher.matches()){
+			if (matcher.matches()) {
 				this.cognome = cognome;
-			}else{
+			} else {
 				throw new Exception("Il cognome non rispetta il formato.");
 			}
 		}
@@ -104,15 +101,16 @@ public class Persona7a {
 		return nome;
 	}
 
-	public void setNome(String nome) throws Exception{
-		if (cognome == null & cognome.length() < 1) throw new Exception("Nome assegnato via stringa vuota o valore nullo.");
-		else{
+	public void setNome(String nome) throws Exception {
+		if (cognome == null & cognome.length() < 1)
+			throw new Exception("Nome assegnato via stringa vuota o valore nullo.");
+		else {
 			Pattern pattern = Pattern.compile("[a-zA-Zèòàù]+");
 			Matcher matcher = pattern.matcher(nome);
 
-			if(matcher.matches()){
+			if (matcher.matches()) {
 				this.nome = nome;
-			}else{
+			} else {
 				throw new Exception("Il nome non rispetta il formato.");
 			}
 		}
@@ -124,12 +122,12 @@ public class Persona7a {
 
 
 	public void setPeso(Float peso) {
-		if(peso > 1 && peso < 636) this.peso = peso;
+		if (peso > 1 && peso < 636) this.peso = peso;
 	}
 
 	//aggiornato per persona 6
 	public String getDataDiNascita() {
-		return dataDiNascita.toString();
+		return dataDiNascita;
 	}
 
 	//aggiornato per persona 7 NEW
@@ -138,17 +136,17 @@ public class Persona7a {
 		DataHard data = new DataHard(dataDiNascita);
 		DataHard current = new DataHard();
 
-		if(data.differenzaInGiorni(data, current) < 0){
+		if (data.differenzaInGiorni(data, current) < 0) {
 			throw new Exception("La data non può essere successiva a quella odierna.");
-		}else{
+		} else {
 			this.dataDiNascita = data.toString();
 		}
 
 	}
 
 	//aggiornato per persona 7
-	public Boolean verificaOmonimia(Persona7a persona){
-		if(persona.equals(this)) return true; else return false;
+	public Boolean verificaOmonimia(Persona7a persona) {
+		return persona.equals(this);
 	}
 
 	//Aggiornato per persona 7
@@ -172,7 +170,7 @@ public class Persona7a {
 		return "== Informazioni su: " + nome + " " + cognome + " =="
 				+ "\nAltezza:  " + altezza
 				+ "\nPeso: " + peso
-				+ "\nData di Nascita: " + dataDiNascita.toString()
+				+ "\nData di Nascita: " + dataDiNascita
 				+ "\nEta: " + eta
 				+ "\nEmail: " + email
 				+ "\nPassword: **********";
