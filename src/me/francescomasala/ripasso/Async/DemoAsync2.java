@@ -13,7 +13,7 @@ public class DemoAsync2 implements Runnable{
 		for (int i = pari ? 0 : 1; i < 100; ) {
 			synchronized (ordine) {
 				if (ordine.getOrdine() == pari) {
-					System.out.println(i);
+					System.out.println(i + " Il numero è pari: " + pari);
 					ordine.setOrdine(!ordine.getOrdine());
 					i += 2;
 				}

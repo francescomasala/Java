@@ -24,7 +24,7 @@ public class DataHard {
 
 		if (validaData(data)) {
 
-			String dataA[] = data.split("/");
+			String[] dataA = data.split("/");
 			giorno = Integer.parseInt(dataA[0]);
 			mese = Integer.parseInt(dataA[1]);
 			anno = Integer.parseInt(dataA[2]);
@@ -55,7 +55,7 @@ public class DataHard {
 	public void setData(String data) throws Exception {
 		if (validaData(data)) {
 
-			String dataA[] = data.split("/");
+			String[] dataA = data.split("/");
 			giorno = Integer.parseInt(dataA[0]);
 			mese = Integer.parseInt(dataA[1]);
 			anno = Integer.parseInt(dataA[2]);
@@ -358,7 +358,7 @@ public class DataHard {
 	private Boolean validaData(String data) {
 
 		Integer giorni, mesi, anni;
-		String dataA[] = data.split("/");
+		String[] dataA = data.split("/");
 		giorni = Integer.parseInt(dataA[0]);
 		mesi = Integer.parseInt(dataA[1]);
 		anni = Integer.parseInt(dataA[2]);

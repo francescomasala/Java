@@ -1,14 +1,7 @@
 package me.francescomasala.school.libs.utils;
 
-import java.util.Calendar;
-import java.util.GregorianCalendar;
-import java.util.Locale;
 import java.time.LocalDate;
-import java.time.Month;
-import java.time.Period;
 import java.time.format.DateTimeFormatter;
-import java.time.format.TextStyle;
-import java.time.temporal.ChronoUnit;
 
 public class DataEasy {
 
@@ -33,7 +26,7 @@ public class DataEasy {
 			DateTimeFormatter formatter = DateTimeFormatter.ofPattern("d/MM/yyyy");
 			LocalDate date = LocalDate.parse(data, formatter);
 
-			String dataA[] = data.split("/");
+			String[] dataA = data.split("/");
 			giorno = Integer.parseInt(dataA[0]);
 			mese = Integer.parseInt(dataA[1]);
 			anno = Integer.parseInt(dataA[2]);
@@ -64,7 +57,7 @@ public class DataEasy {
 			DateTimeFormatter formatter = DateTimeFormatter.ofPattern("d/MM/yyyy");
 			LocalDate date = LocalDate.parse(data, formatter);
 
-			String dataA[] = data.split("/");
+			String[] dataA = data.split("/");
 			giorno = Integer.parseInt(dataA[0]);
 			mese = Integer.parseInt(dataA[1]);
 			anno = Integer.parseInt(dataA[2]);
@@ -371,7 +364,7 @@ public class DataEasy {
 	private Boolean validaData(String data){
 
 		Integer giorni, mesi, anni;
-		String dataA[] = data.split("/");
+		String[] dataA = data.split("/");
 		giorni = Integer.parseInt(dataA[0]);
 		mesi = Integer.parseInt(dataA[1]);
 		anni = Integer.parseInt(dataA[2]);
