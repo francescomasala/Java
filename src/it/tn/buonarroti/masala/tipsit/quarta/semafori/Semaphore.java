@@ -8,6 +8,7 @@ public class Semaphore {
 			throw new IllegalArgumentException("Il valore del semaforo non può essere negativo");
 		}
 		this.value = value;
+
 	}
 
 	public synchronized void P() {
