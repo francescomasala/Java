@@ -10,12 +10,12 @@ public class DemoAsync2 implements Runnable{
 	}
 
 	public void run(){
-		for (int i=pari?0:1; i<10;){
-			synchronized (ordine){
+		for (int i = pari ? 0 : 1; i < 100; ) {
+			synchronized (ordine) {
 				if (ordine.getOrdine() == pari) {
 					System.out.println(i);
 					ordine.setOrdine(!ordine.getOrdine());
-					i+=2;
+					i += 2;
 				}
 			}
 		}

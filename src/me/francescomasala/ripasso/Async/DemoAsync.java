@@ -8,7 +8,7 @@ public class DemoAsync implements Runnable{
 	}
 
 	public void run(){
-		for (int i=pari?0:1; i<10; i+=2){
+		for (int i = pari ? 0 : 1; i < 100; i += 2) {
 			System.out.println(i);
 		}
 	}
