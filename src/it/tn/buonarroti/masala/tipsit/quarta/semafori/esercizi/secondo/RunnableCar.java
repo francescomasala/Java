@@ -14,6 +14,7 @@ public class RunnableCar implements Runnable {
 
 	@Override
 	public void run() {
-
+		System.out.println("Car: " + CarNumber + " with ID: " + CarID + " is started");
+		System.out.println("Car: " + CarNumber + " is going to refill");
 	}
 }
