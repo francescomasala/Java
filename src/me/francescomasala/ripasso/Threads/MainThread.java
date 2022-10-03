@@ -1,8 +1,8 @@
 package me.francescomasala.ripasso.Threads;
 
-public class ThreadMain {
+public class MainThread {
 	public static void main(String[] args) {
-		ThreadDemo t1 = new ThreadDemo(1, "Test"), t2 = new ThreadDemo(2, "Test2");
+		DemoThread t1 = new DemoThread(1, "Test"), t2 = new DemoThread(2, "Test2");
 		/*
 		 * Con t*.run i thread partiranno in maniera sincrona e non asincrona
 		 */
