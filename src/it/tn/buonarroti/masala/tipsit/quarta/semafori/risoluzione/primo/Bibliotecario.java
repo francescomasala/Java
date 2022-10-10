@@ -30,7 +30,8 @@ public class Bibliotecario {
 			System.out.println(tName + "Ha trovato il libro");
 		} catch (InterruptedException e) {
 			System.out.println(tName + "Thread Interrotto");
-
+		} finally {
+			sem.release();
 		}
 
 	}
