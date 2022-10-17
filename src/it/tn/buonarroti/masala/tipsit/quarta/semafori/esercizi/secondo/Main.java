@@ -7,9 +7,12 @@ public class Main {
 		Thread car3 = new Thread(new RunnableCar(3));
 		Thread car4 = new Thread(new RunnableCar(4));
 
+        Thread car5 = new Thread(new RunnableCar(5));
+
 		car1.start();
 		car2.start();
 		car3.start();
 		car4.start();
+        car5.start();
 	}
 }
