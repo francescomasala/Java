@@ -9,12 +9,13 @@ public class FraThread extends Thread {
 
 	@Override
 	public void run() {
+        System.out.println("Thread: " + currentThread().getId() + "; ThreadState: " + currentThread().getState());
 		while (true) {
             try {
 			Semaforo.p();
-			System.out.println("Ho preso un posto nel semaforo!, ora aspetto, il mio ID è: " + Thread.currentThread().getId());
+			System.out.println("Ho preso un posto nel semaforo!, ora aspetto, il mio ID e': " + currentThread().getId());
             Thread.sleep(5000);
-            System.out.println("Ho lasciato un posto nel semaforo!, ora aspetto, il mio ID è: " + Thread.currentThread().getId());
+            System.out.println("Ho lasciato un posto nel semaforo!, ora aspetto, il mio ID e': " + currentThread().getId());
             Semaforo.v();
 			} catch (Exception e) {
 				e.getStackTrace();
