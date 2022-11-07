@@ -14,7 +14,7 @@ public class FraThread extends Thread {
             try {
 			Semaforo.p();
 			System.out.println("Ho preso un posto nel semaforo!, ora aspetto, il mio ID e': " + currentThread().getId());
-            Thread.sleep(5000);
+            Thread.sleep(1000);
             System.out.println("Ho lasciato un posto nel semaforo!, ora aspetto, il mio ID e': " + currentThread().getId());
             Semaforo.v();
 			} catch (Exception e) {
