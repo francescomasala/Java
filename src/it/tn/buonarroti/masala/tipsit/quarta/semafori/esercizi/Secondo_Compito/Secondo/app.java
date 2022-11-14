@@ -60,10 +60,12 @@ class Consumatore implements Runnable {
 			try {
 				Thread.sleep(4000);
 				semPosti.acquire();
+				
 				int benzina = new Random().nextInt(MAX-MIN) + MIN;
 				semBenzina.acquire(benzina);
 				Thread.sleep(benzina*100);
 				semSerbatoio.release(benzina);
+				semPosti.release();
 			} catch (InterruptedException e) {
 				e.printStackTrace();
 			}
