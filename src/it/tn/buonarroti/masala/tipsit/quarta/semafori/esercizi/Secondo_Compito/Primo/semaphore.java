@@ -46,7 +46,7 @@ public class semaphore {
 		CheckMaxValue(Cycles);
 		while (!Cycles.equals(i)) {
 			value++;
-			i++;
+			i++;\ 
 		}
 		notifyAll();
 	}
