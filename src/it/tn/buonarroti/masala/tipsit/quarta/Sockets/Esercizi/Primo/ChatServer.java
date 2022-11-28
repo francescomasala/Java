@@ -6,26 +6,24 @@ import java.awt.event.*;
 
 public class ChatServer extends JDialog {
 	private JPanel contentPane;
-	private JButton buttonCancel;
+	private JButton cancelButton;
+	private JButton connectButton;
 	private JCheckBox broadcastCheckBox;
 	private JButton stopButton;
-	private JButton startButton;
 	private JTextField serverIPAddrTextField;
 	private JButton serverStatusButton;
 	private JTextPane ServerLogField;
-	private JScrollPane ServerLog;
+	private JTextPane chatServerFrancescoMasala5INATextPane;
+	private JTextField portaTextField;
 
 	public ChatServer() {
 		setContentPane(contentPane);
 		setModal(true);
-		getRootPane().setDefaultButton(buttonCancel);
-		serverStatusButton.setBackground(Color.RED);
-		serverStatusButton.setText("Server Status: OFF");
-		ServerLogField.setText("Server Logs: \n");
+		getRootPane().setDefaultButton(cancelButton);
 
-		buttonCancel.addActionListener(e -> onCancel());
+		cancelButton.addActionListener(e -> onCancel());
 
-		startButton.addActionListener(e -> onStart());
+		connectButton.addActionListener(e -> onStart());
 
 		stopButton.addActionListener(e -> onStop());
 
