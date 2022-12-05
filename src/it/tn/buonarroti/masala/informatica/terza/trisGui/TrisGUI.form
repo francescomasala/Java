@@ -110,7 +110,6 @@
         </constraints>
         <properties>
           <horizontalAlignment value="2"/>
-          <icon value="it/tn/buonarroti/masala/terza/trisGui/logo.png"/>
           <text value=""/>
         </properties>
       </component>
