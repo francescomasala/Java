@@ -2,7 +2,6 @@ package it.tn.buonarroti.masala.tipsit.quarta.semafori.esercizi.Secondo_Compito.
 
 import java.util.Random;
 import java.util.concurrent.Semaphore;
-import java.util.Stack;
 
 public class app {
 	public static void main(String[] args) throws Exception {
@@ -13,12 +12,12 @@ public class app {
 	}
 }
 
-class Produttore implements Runnable{
+class Produttore implements Runnable {
+	private final int MAX = 40;
+	private final int MIN = 20;
 	Semaphore semSerbatoio;
 	Semaphore semBenzina;
 	int delay;
-	private final int MAX = 40;
-	private final int MIN = 20;
 
 	public Produttore(Semaphore semSerbatoio, Semaphore semBenzina, int delay) {
 		this.semSerbatoio = semSerbatoio;
@@ -28,7 +27,7 @@ class Produttore implements Runnable{
 
 	@Override
 	public void run() {
-		while(!Thread.interrupted()) {
+		while (!Thread.interrupted()) {
 			try {
 				int benzina = new Random().nextInt(MAX - MIN) + MIN;
 				semSerbatoio.acquire(benzina);
@@ -42,11 +41,11 @@ class Produttore implements Runnable{
 }
 
 class Consumatore implements Runnable {
+	private final int MAX = 30;
+	private final int MIN = 5;
 	Semaphore semSerbatoio;
 	Semaphore semBenzina;
 	Semaphore semPosti;
-	private final int MAX = 30;
-	private final int MIN = 5;
 
 	public Consumatore(Semaphore semSerbatoio, Semaphore semBenzina, Semaphore semPosti) {
 		this.semSerbatoio = semSerbatoio;
@@ -56,14 +55,14 @@ class Consumatore implements Runnable {
 
 	@Override
 	public void run() {
-		while(!Thread.interrupted()) {
+		while (!Thread.interrupted()) {
 			try {
 				Thread.sleep(4000);
 				semPosti.acquire();
-				
-				int benzina = new Random().nextInt(MAX-MIN) + MIN;
+
+				int benzina = new Random().nextInt(MAX - MIN) + MIN;
 				semBenzina.acquire(benzina);
-				Thread.sleep(benzina*100);
+				Thread.sleep(benzina * 100);
 				semSerbatoio.release(benzina);
 				semPosti.release();
 			} catch (InterruptedException e) {

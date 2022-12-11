@@ -12,7 +12,7 @@ public class DataEasy {
 	private Integer anno;
 
 	//Costruttori
-	public DataEasy(){
+	public DataEasy() {
 		LocalDate objDate = LocalDate.now();
 		giorno = objDate.getDayOfMonth();
 		mese = objDate.getMonthValue();
@@ -22,7 +22,7 @@ public class DataEasy {
 
 
 	public DataEasy(String data) throws Exception {
-		try{
+		try {
 			DateTimeFormatter formatter = DateTimeFormatter.ofPattern("d/MM/yyyy");
 			LocalDate date = LocalDate.parse(data, formatter);
 
@@ -31,19 +31,19 @@ public class DataEasy {
 			mese = Integer.parseInt(dataA[1]);
 			anno = Integer.parseInt(dataA[2]);
 			this.data = toString();
-		}catch(Exception e){
+		} catch (Exception e) {
 			throw new Exception(e.getMessage());
 		}
 	}
 
 	public DataEasy(Integer giorno, Integer mese, Integer anno) throws Exception {
-		try{
+		try {
 			LocalDate date = LocalDate.of(anno, mese, giorno);
 			this.giorno = giorno;
 			this.mese = mese;
 			this.anno = anno;
 			this.data = toString();
-		}catch(Exception e){
+		} catch (Exception e) {
 			throw new Exception(e.getMessage());
 		}
 	}
@@ -52,8 +52,9 @@ public class DataEasy {
 	public String getData() {
 		return data;
 	}
+
 	public void setData(String data) throws Exception {
-		try{
+		try {
 			DateTimeFormatter formatter = DateTimeFormatter.ofPattern("d/MM/yyyy");
 			LocalDate date = LocalDate.parse(data, formatter);
 
@@ -62,7 +63,7 @@ public class DataEasy {
 			mese = Integer.parseInt(dataA[1]);
 			anno = Integer.parseInt(dataA[2]);
 			this.data = toString();
-		}catch(Exception e){
+		} catch (Exception e) {
 			throw new Exception(e.getMessage());
 		}
 	}
@@ -71,11 +72,12 @@ public class DataEasy {
 	public Integer getGiorno() {
 		return giorno;
 	}
+
 	public void setGiorno(Integer giorno) throws Exception {
-		try{
+		try {
 			LocalDate date = LocalDate.of(giorno, mese, anno);
 			this.giorno = giorno;
-		}catch(Exception e){
+		} catch (Exception e) {
 			throw new Exception(e.getMessage());
 		}
 	}
@@ -83,11 +85,12 @@ public class DataEasy {
 	public Integer getMese() {
 		return mese;
 	}
+
 	public void setMese(Integer mese) throws Exception {
-		try{
+		try {
 			LocalDate date = LocalDate.of(giorno, mese, anno);
 			this.mese = mese;
-		}catch(Exception e){
+		} catch (Exception e) {
 			throw new Exception(e.getMessage());
 		}
 	}
@@ -95,29 +98,30 @@ public class DataEasy {
 	public Integer getAnno() {
 		return anno;
 	}
+
 	public void setAnno(Integer anno) throws Exception {
-		try{
+		try {
 			LocalDate date = LocalDate.of(giorno, mese, anno);
 			this.anno = anno;
-		}catch(Exception e){
+		} catch (Exception e) {
 			throw new Exception(e.getMessage());
 		}
 	}
 
 	//Metodi della classe
-	public String giornoDellaSettimana(){
+	public String giornoDellaSettimana() {
 
 		Integer giornoS;
 		String giornoReturn = "";
 
-		giornoS = ((giorno + ((13*(mese+1))/5) + (anno%100) + ((anno%100)/4) + ((anno/100)/4) - (2*(anno/100))) % 7);
+		giornoS = ((giorno + ((13 * (mese + 1)) / 5) + (anno % 100) + ((anno % 100) / 4) + ((anno / 100) / 4) - (2 * (anno / 100))) % 7);
 
-		switch (giornoS){
+		switch (giornoS) {
 			case 0:
 				giornoReturn = "Sabato";
 				break;
 			case 1:
-				giornoReturn ="Domenica";
+				giornoReturn = "Domenica";
 				break;
 			case 2:
 				giornoReturn = "Lunedì";
@@ -141,11 +145,11 @@ public class DataEasy {
 
 	}
 
-	public Integer ultimoGiornoMese(Integer mese){
+	public Integer ultimoGiornoMese(Integer mese) {
 
 		Integer uG = 0;
 
-		switch (mese){
+		switch (mese) {
 			case 1:
 				uG = 31;
 				break;
@@ -190,15 +194,15 @@ public class DataEasy {
 
 	}
 
-	public Boolean isBisestile(Integer anno){
+	public Boolean isBisestile(Integer anno) {
 
 		Boolean bis = false;
-		if(anno%4==0){
-			if(anno%100==0){
-				if(anno%400==0){
+		if (anno % 4 == 0) {
+			if (anno % 100 == 0) {
+				if (anno % 400 == 0) {
 					bis = true;
 				}
-			}else{
+			} else {
 				bis = true;
 			}
 		}
@@ -207,11 +211,11 @@ public class DataEasy {
 	}
 
 
-	public String meseDellAnno(){
+	public String meseDellAnno() {
 
 		String meseS = "";
 
-		switch (mese){
+		switch (mese) {
 			case 1:
 				meseS = "Gennaio";
 				break;
@@ -256,7 +260,7 @@ public class DataEasy {
 	}
 
 	@Override
-	public String toString(){
+	public String toString() {
 
 		String testo;
 
@@ -265,11 +269,11 @@ public class DataEasy {
 		return testo;
 	}
 
-	public String toString(Integer giorno, Integer mese, Integer anno) throws Exception{
+	public String toString(Integer giorno, Integer mese, Integer anno) throws Exception {
 		String testo;
 
 		testo = (giorno <= 9 ? "0" : "") + giorno + "/" + (mese <= 9 ? "0" : "") + mese + "/" + anno;
-		if(!validaData(testo)){
+		if (!validaData(testo)) {
 			throw new Exception("Formato data non valido");
 		}
 
@@ -277,26 +281,26 @@ public class DataEasy {
 	}
 
 
-	public Integer differenzaInGiorni(DataEasy dataAtecedente, DataEasy dataSuccessiva){
+	public Integer differenzaInGiorni(DataEasy dataAtecedente, DataEasy dataSuccessiva) {
 
 		Integer differenzaUno;
 		Integer differenzaDue;
 
 		differenzaUno = dataAtecedente.getGiorno();
-		for(int i = dataAtecedente.getAnno(); i > 0; i--){
+		for (int i = dataAtecedente.getAnno(); i > 0; i--) {
 			differenzaUno += (dataAtecedente.isBisestile(i) ? 366 : 365);
 		}
 
-		for(int i = dataAtecedente.getMese(); i > 0; i--){
+		for (int i = dataAtecedente.getMese(); i > 0; i--) {
 			differenzaUno += dataAtecedente.ultimoGiornoMese(i);
 		}
 
 		differenzaDue = dataSuccessiva.getGiorno();
-		for(int i = dataSuccessiva.getAnno(); i > 0; i--){
+		for (int i = dataSuccessiva.getAnno(); i > 0; i--) {
 			differenzaDue += (dataSuccessiva.isBisestile(i) ? 366 : 365);
 		}
 
-		for(int i = dataSuccessiva.getMese(); i > 0; i--){
+		for (int i = dataSuccessiva.getMese(); i > 0; i--) {
 			differenzaDue += dataSuccessiva.ultimoGiornoMese(i);
 		}
 
@@ -306,7 +310,7 @@ public class DataEasy {
 
 	}
 
-	public Integer differenzaInSettimane(DataEasy dataAtecedente, DataEasy dataSuccessiva){
+	public Integer differenzaInSettimane(DataEasy dataAtecedente, DataEasy dataSuccessiva) {
 
 		Integer differenza = differenzaInGiorni(dataAtecedente, dataSuccessiva);
 		differenza /= 7;
@@ -315,17 +319,17 @@ public class DataEasy {
 
 	}
 
-	public Integer differenzaInMesi(DataEasy dataAtecedente, DataEasy dataSuccessiva){
+	public Integer differenzaInMesi(DataEasy dataAtecedente, DataEasy dataSuccessiva) {
 
 		Integer differenzaUno = 0, differenzaDue = 0;
-		for(int j = dataAtecedente.getAnno(); j > 0; j--){
-			for(int i = dataAtecedente.getMese(); i > 0; i--){
+		for (int j = dataAtecedente.getAnno(); j > 0; j--) {
+			for (int i = dataAtecedente.getMese(); i > 0; i--) {
 				differenzaUno += 1;
 			}
 		}
 
-		for(int j = dataSuccessiva.getAnno(); j > 0; j--){
-			for(int i = dataSuccessiva.getMese(); i > 0; i--){
+		for (int j = dataSuccessiva.getAnno(); j > 0; j--) {
+			for (int i = dataSuccessiva.getMese(); i > 0; i--) {
 				differenzaDue += 1;
 			}
 		}
@@ -335,14 +339,14 @@ public class DataEasy {
 
 	}
 
-	public Integer differenzaInAnni(DataEasy dataAtecedente, DataEasy dataSuccessiva){
+	public Integer differenzaInAnni(DataEasy dataAtecedente, DataEasy dataSuccessiva) {
 
 		Integer differenzaUno = 0, differenzaDue = 0;
-		for(int j = dataAtecedente.getAnno(); j > 0; j--){
+		for (int j = dataAtecedente.getAnno(); j > 0; j--) {
 			differenzaUno += 1;
 		}
 
-		for(int j = dataSuccessiva.getAnno(); j > 0; j--){
+		for (int j = dataSuccessiva.getAnno(); j > 0; j--) {
 			differenzaDue += 1;
 		}
 
@@ -351,17 +355,17 @@ public class DataEasy {
 
 	}
 
-	public String differenzaInGiorniMesiAnni(DataEasy dataAntecedente, DataEasy dataSuccessiva){
+	public String differenzaInGiorniMesiAnni(DataEasy dataAntecedente, DataEasy dataSuccessiva) {
 		Integer anni = differenzaInAnni(dataAntecedente, dataSuccessiva);
-		Integer mesi = differenzaInMesi(dataAntecedente, dataSuccessiva)%12;
-		Integer giorni = differenzaInGiorni(dataAntecedente, dataSuccessiva)%this.ultimoGiornoMese(mesi);
+		Integer mesi = differenzaInMesi(dataAntecedente, dataSuccessiva) % 12;
+		Integer giorni = differenzaInGiorni(dataAntecedente, dataSuccessiva) % this.ultimoGiornoMese(mesi);
 
 		String s = "Differenza: " + anni + " anni, " + mesi + " mesi e " + giorni + " giorni.";
 		return s;
 
 	}
 
-	private Boolean validaData(String data){
+	private Boolean validaData(String data) {
 
 		Integer giorni, mesi, anni;
 		String[] dataA = data.split("/");
@@ -370,10 +374,10 @@ public class DataEasy {
 		anni = Integer.parseInt(dataA[2]);
 
 		Boolean valid = true;
-		if(mesi < 0 && mesi > 12){
+		if (mesi < 0 && mesi > 12) {
 			valid = false;
-		}else{
-			if(giorni < 0 || giorni+1 > this.ultimoGiornoMese(mesi)) valid = false;
+		} else {
+			if (giorni < 0 || giorni + 1 > this.ultimoGiornoMese(mesi)) valid = false;
 		}
 
 		return valid;

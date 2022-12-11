@@ -1,6 +1,6 @@
 package me.francescomasala.ripasso.Runnable;
 
-public class DemoRunnable implements Runnable{
+public class DemoRunnable implements Runnable {
 
 	@Override
 	public void run() {

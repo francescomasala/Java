@@ -3,6 +3,8 @@ package it.tn.buonarroti.masala.tipsit.quarta.Sockets.Esercizi.Primo;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
+import java.net.InetAddress;
+import java.net.UnknownHostException;
 
 public class ChatServer extends JDialog {
 	private JPanel contentPane;
@@ -15,11 +17,14 @@ public class ChatServer extends JDialog {
 	private JTextPane ServerLogField;
 	private JTextPane chatServerFrancescoMasala5INATextPane;
 	private JTextField portaTextField;
+	private ThreadServer server;
 
-	public ChatServer() {
+	public ChatServer() throws UnknownHostException {
 		setContentPane(contentPane);
 		setModal(true);
 		getRootPane().setDefaultButton(cancelButton);
+
+		serverIPAddrTextField.setText(InetAddress.getLocalHost().getHostAddress());
 
 		cancelButton.addActionListener(e -> onCancel());
 
@@ -41,6 +46,17 @@ public class ChatServer extends JDialog {
 				onCancel();
 			}
 		}, KeyStroke.getKeyStroke(KeyEvent.VK_ESCAPE, 0), JComponent.WHEN_ANCESTOR_OF_FOCUSED_COMPONENT);
+
+		serverStatusButton.setText("Server offline");
+		serverStatusButton.setBackground(Color.RED);
+
+	}
+
+	public static void main(String[] args) throws UnknownHostException {
+		ChatServer dialog = new ChatServer();
+		dialog.pack();
+		dialog.setVisible(true);
+		System.exit(0);
 	}
 
 	private void onOK() {
@@ -54,33 +70,18 @@ public class ChatServer extends JDialog {
 	}
 
 	private void onStart() {
-		// add your code here if necessary
-		String IPAddr = serverIPAddrTextField.getText();
-		Boolean IsBroadcast = broadcastCheckBox.isSelected();
-		if (IsBroadcast && IPAddr.isBlank()) {
-			IPAddr = "255.255.255.255";
-			ServerLogField.setText(ServerLogField.getText() + "[!] Server Started in Broadcast Mode on :" + IPAddr +"\n");
-		} else if (IsBroadcast && !IPAddr.isEmpty()) {
-			IPAddr = "255.255.255.255";
-			ServerLogField.setText(ServerLogField.getText() + "[!] Server Started in Broadcast Mode and the inserted IP is ignored\n");
-		} else {
-			ServerLogField.setText(ServerLogField.getText() + "[!] Server Started with IP: " + IPAddr +"\n");
-			ServerLogField.setText(ServerLogField.getText() + "[!] Server Started in Unicast Mode\n");
-		}
-		serverStatusButton.setBackground(Color.GREEN);
-		serverStatusButton.setText("Server Status: ON");
+		server = new ThreadServer(serverIPAddrTextField.getText(),
+				broadcastCheckBox.isSelected(),
+				Integer.parseInt(portaTextField.getText()),
+				ServerLogField,
+				serverStatusButton);
+		server.run();
 	}
 
-	private void onStop(){
-		// add your code here if necessary
+	private void onStop() {
+		server.interrupt();
 		ServerLogField.setText(ServerLogField.getText() + "Server Stopped\n");
 		serverStatusButton.setBackground(Color.RED);
 		serverStatusButton.setText("Server Status: OFF");
-	}
-	public static void main(String[] args) {
-		ChatServer dialog = new ChatServer();
-		dialog.pack();
-		dialog.setVisible(true);
-		System.exit(0);
 	}
 }

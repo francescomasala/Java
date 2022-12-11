@@ -27,8 +27,8 @@ public class Valutazione {
 	 *
 	 *               <blockquote>
 	 *               <pre>
-	 *                                                                                                                 aggiungiValutazione(Mario Rossi, 7.75f);
-	 *                                                                                                   </pre>
+	 *                                                                                                                               aggiungiValutazione(Mario Rossi, 7.75f);
+	 *                                                                                                                 </pre>
 	 *               </blockquote>
 	 */
 	public Boolean aggiungiValutazione(String alunno, Float voto) {

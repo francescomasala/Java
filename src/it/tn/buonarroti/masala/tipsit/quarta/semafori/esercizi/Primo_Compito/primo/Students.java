@@ -2,7 +2,7 @@ package it.tn.buonarroti.masala.tipsit.quarta.semafori.esercizi.primo;
 
 import java.util.concurrent.Semaphore;
 
-public class Students implements Runnable{
+public class Students implements Runnable {
 	protected Semaphore BookBorrow;
 	protected Semaphore BookSearch;
 	protected Integer BooksToRead;

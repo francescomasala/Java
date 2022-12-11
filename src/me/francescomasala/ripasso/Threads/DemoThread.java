@@ -11,7 +11,7 @@ public class DemoThread extends Thread {
 
 	@Override
 	public void run() {
-		System.out.println("Ehi ciao sono un thread!\nNumero thread: " + this.Demo );
+		System.out.println("Ehi ciao sono un thread!\nNumero thread: " + this.Demo);
 		try {
 			Thread.sleep(1500);
 		} catch (InterruptedException e) {

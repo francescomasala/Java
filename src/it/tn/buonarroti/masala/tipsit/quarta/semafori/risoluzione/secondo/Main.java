@@ -4,12 +4,12 @@ import java.util.concurrent.Semaphore;
 
 public class Main {
 	public static void main(String[] args) {
-		Benzinaio b = new Benzinaio(2,2000);
+		Benzinaio b = new Benzinaio(2, 2000);
 		Thread threads[] = {
-				new Thread(new Auto(b,50,20, "a1")),
-				new Thread(new Auto(b,50,20, "a2")),
-				new Thread(new Auto(b,50,20, "a3")),
-				new Thread(new Auto(b,50,20, "a4")),
+				new Thread(new Auto(b, 50, 20, "a1")),
+				new Thread(new Auto(b, 50, 20, "a2")),
+				new Thread(new Auto(b, 50, 20, "a3")),
+				new Thread(new Auto(b, 50, 20, "a4")),
 
 		};
 		for (Thread t : threads) {
@@ -49,34 +49,35 @@ class Benzinaio {
 	private synchronized int getValue() {
 		return this.litri;
 	}
+
 	private synchronized void dimLitri(int litri) {
 		this.litri -= litri;
 	}
 }
 
-	class Auto implements Runnable {
-		int upperBound;
-		int lowerBound;
-		Benzinaio B;
-		String nome;
+class Auto implements Runnable {
+	int upperBound;
+	int lowerBound;
+	Benzinaio B;
+	String nome;
 
-		public Auto(Benzinaio B, int lowerBound, int upperBound, String name) {
-			this.B = B;
-			this.lowerBound = lowerBound;
-			this.upperBound = upperBound;
-			this.nome = name;
-		}
+	public Auto(Benzinaio B, int lowerBound, int upperBound, String name) {
+		this.B = B;
+		this.lowerBound = lowerBound;
+		this.upperBound = upperBound;
+		this.nome = name;
+	}
 
-		@Override
-		public void run() {
-			while(true) {
-				try {
-					int litri = (int) (Math.random() * (upperBound - lowerBound) + lowerBound);
-					B.rifornimento(this.nome, litri, Thread.currentThread());
-					Thread.sleep(litri * 100);
-				} catch (InterruptedException e) {
-					throw new RuntimeException(e);
-				}
+	@Override
+	public void run() {
+		while (true) {
+			try {
+				int litri = (int) (Math.random() * (upperBound - lowerBound) + lowerBound);
+				B.rifornimento(this.nome, litri, Thread.currentThread());
+				Thread.sleep(litri * 100);
+			} catch (InterruptedException e) {
+				throw new RuntimeException(e);
 			}
 		}
 	}
+}

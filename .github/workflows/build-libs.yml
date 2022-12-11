@@ -22,9 +22,9 @@ jobs:
 
       - uses: "marvinpinto/action-automatic-releases@latest"
         with:
-            repo_token: "${{ secrets.GITHUB_TOKEN }}"
-            draft: false
-            prerelease: false
-            automatic_release_tag: CI
-            title: Libs
-            files: Libs.jar
+          repo_token: "${{ secrets.GITHUB_TOKEN }}"
+          draft: false
+          prerelease: false
+          automatic_release_tag: CI
+          title: Libs
+          files: Libs.jar

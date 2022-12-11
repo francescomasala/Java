@@ -110,37 +110,37 @@ jobs:
       - name: Compress tris
         run: jar cf tris.jar src/it/tn/buonarroti/masala/terza/tris/*
 
-    # - name: Compress trisGui
-    #   run: jar cf trisGui.jar src/it/tn/buonarroti/masala/terza/trisGui/*
+      # - name: Compress trisGui
+      #   run: jar cf trisGui.jar src/it/tn/buonarroti/masala/terza/trisGui/*
 
-    #  - name: Compress vacanze
-    #    run: jar cf vacanze.jar src/it/tn/buonarroti/masala/terza/vacanze/*
+      #  - name: Compress vacanze
+      #    run: jar cf vacanze.jar src/it/tn/buonarroti/masala/terza/vacanze/*
 
       - name: Compress valutazione
         run: jar cf valutazione.jar src/it/tn/buonarroti/masala/terza/valutazione/*
 
       - uses: "marvinpinto/action-automatic-releases@latest"
         with:
-            repo_token: "${{ secrets.GITHUB_TOKEN }}"
-            draft: false
-            prerelease: false
-            automatic_release_tag: Terza-Superiore
-            title: Esercizi Terza Superiore
-            files: |
-              ByteScuola.jar
-              classi.jar
-              dado.jar
-              date.jar
-              elenco.jar
-              esercizi.jar
-              frazione.jar
-              garaPodistica.jar
-              lanci.jar
-              number.jar
-              ora.jar
-              punto.jar
-              ripassoPrimo.jar
-              tris.jar
-              trisGui.jar
-              vacanze.jar
-              valutazione.jar
+          repo_token: "${{ secrets.GITHUB_TOKEN }}"
+          draft: false
+          prerelease: false
+          automatic_release_tag: Terza-Superiore
+          title: Esercizi Terza Superiore
+          files: |
+            ByteScuola.jar
+            classi.jar
+            dado.jar
+            date.jar
+            elenco.jar
+            esercizi.jar
+            frazione.jar
+            garaPodistica.jar
+            lanci.jar
+            number.jar
+            ora.jar
+            punto.jar
+            ripassoPrimo.jar
+            tris.jar
+            trisGui.jar
+            vacanze.jar
+            valutazione.jar

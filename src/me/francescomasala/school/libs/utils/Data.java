@@ -18,9 +18,9 @@ public class Data {
 	}
 
 	public Data(Integer giorno, Integer mese, Integer anno) {
-		this.giorno=giorno;
-		this.mese=mese;
-		this.anno=anno;
+		this.giorno = giorno;
+		this.mese = mese;
+		this.anno = anno;
 	}
 
 	public String giornoDellaSettimana() {
@@ -68,28 +68,28 @@ public class Data {
 		return anno;
 	}
 
-	public Integer getMese() {
-		return mese;
-	}
-
-	public Integer getGiorno() {
-		return giorno;
-	}
-
-	public String getData() {
-		return data;
-	}
-
 	public void setAnno(Integer anno) {
 		this.anno = anno;
+	}
+
+	public Integer getMese() {
+		return mese;
 	}
 
 	public void setMese(Integer mese) {
 		this.mese = mese;
 	}
 
+	public Integer getGiorno() {
+		return giorno;
+	}
+
 	public void setGiorno(Integer giorno) {
 		this.giorno = giorno;
+	}
+
+	public String getData() {
+		return data;
 	}
 
 	public void setData(String data) {

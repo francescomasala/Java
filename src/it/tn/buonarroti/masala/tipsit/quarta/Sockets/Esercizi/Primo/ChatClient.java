@@ -53,6 +53,13 @@ public class ChatClient extends JDialog {
 		}, KeyStroke.getKeyStroke(KeyEvent.VK_ESCAPE, 0), JComponent.WHEN_ANCESTOR_OF_FOCUSED_COMPONENT);
 	}
 
+	public static void main(String[] args) {
+		ChatClient dialog = new ChatClient();
+		dialog.pack();
+		dialog.setVisible(true);
+		System.exit(0);
+	}
+
 	private void onOK() {
 		// add your code here
 		dispose();
@@ -84,12 +91,12 @@ public class ChatClient extends JDialog {
 			Boolean IsBroadcast = broadcastCheckBox.isSelected();
 			if (IsBroadcast && IPAddr.isBlank()) {
 				IPAddr = "255.255.255.255";
-				ServerLogField.setText(ServerLogField.getText() + "[!] Client Started in Broadcast Mode on :" + IPAddr +"\n");
+				ServerLogField.setText(ServerLogField.getText() + "[!] Client Started in Broadcast Mode on :" + IPAddr + "\n");
 			} else if (IsBroadcast && !IPAddr.isEmpty()) {
 				IPAddr = "255.255.255.255";
 				ServerLogField.setText(ServerLogField.getText() + "[!] Client Started in Broadcast Mode and the inserted IP is ignored\n");
 			} else {
-				ServerLogField.setText(ServerLogField.getText() + "[!] Client Started listening to IP: " + IPAddr +"\n");
+				ServerLogField.setText(ServerLogField.getText() + "[!] Client Started listening to IP: " + IPAddr + "\n");
 				ServerLogField.setText(ServerLogField.getText() + "[!] Client Started in Unicast Mode to port: " + Port + "\n");
 			}
 
@@ -102,12 +109,5 @@ public class ChatClient extends JDialog {
 			ServerLogField.setText(ServerLogField.getText() + "[!] Ricontrolla meglio i tuoi dati\n");
 			JOptionPane.showMessageDialog(getParent(), "[!] Error: \n" + e.getMessage());
 		}
-	}
-
-	public static void main(String[] args) {
-		ChatClient dialog = new ChatClient();
-		dialog.pack();
-		dialog.setVisible(true);
-		System.exit(0);
 	}
 }

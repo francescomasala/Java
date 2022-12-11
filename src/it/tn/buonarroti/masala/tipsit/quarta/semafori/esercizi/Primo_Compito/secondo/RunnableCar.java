@@ -22,7 +22,7 @@ public class RunnableCar implements Runnable {
 	public void run() {
 		getInfo();
 		Random rand = new Random();
-		while(true) {
+		while (true) {
 			try {
 				Integer Fuel = getRandomFuel();
 				System.out.println("[CAR] - Car " + CarNumber + " is refueling " + Fuel + " liters of fuel");
@@ -33,11 +33,11 @@ public class RunnableCar implements Runnable {
 		}
 	}
 
-	private String getInfo(){
+	private String getInfo() {
 		return "Car: " + CarNumber + " with ID: " + CarID + " is started";
 	}
 
-	private Integer getRandomFuel(){
+	private Integer getRandomFuel() {
 		while (true) {
 			Random rand = new Random();
 			rand.setSeed(System.currentTimeMillis() * rand.nextInt(54));

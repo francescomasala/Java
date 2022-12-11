@@ -14,7 +14,7 @@ public class Library implements Runnable {
 
 	@Override
 	public synchronized void run() {
-		while(true){
+		while (true) {
 			try {
 				System.out.println("[INFO] - There are: " + BookBorrow.getQueueLength() + " students waiting");
 				System.out.println("[INFO] - There are: " + BookSearch.getQueueLength() + " students searching");
