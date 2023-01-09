@@ -1,0 +1,2 @@
+un server spedisce a un client una bomba innescata con una miccia con valore random e il client la rispedisce successivamente al server.
+Ad ogni operazione, entrambi riducono la miccia finchè la bomba scoppia.
