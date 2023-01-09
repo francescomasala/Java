@@ -34,6 +34,7 @@ public class ReplaceLogic {
 			Scanner scan = new Scanner(file);
 			while (scan.hasNextLine()) {
 				String line = scan.next();
+				line = line.toLowerCase();
 				ActiveArray.add(line);
 				i++;
 			}
