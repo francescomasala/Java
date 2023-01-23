@@ -41,7 +41,7 @@ public class ServerUDP {
                 socket.receive(p);
                 System.out.println("Received: " + new String(p.getData()));
                 String date = new Date().toString();
-                String lock = "Il tuo IP e' stato bloccato, aggiorna al piano a pagamento";
+                String lock = "Il tuo IP e' stato bloccato aggiorna al piano a pagamento \n";
                 if (isIPLocked(p.getAddress())) {
                     DatagramPacket response = new DatagramPacket(date.getBytes(),
                         date.getBytes().length, p.getAddress(), p.getPort());
