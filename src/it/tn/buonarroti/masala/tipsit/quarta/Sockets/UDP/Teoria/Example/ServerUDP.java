@@ -20,7 +20,7 @@ public class ServerUDP {
         System.out.println("Ricevuto messaggio da: " + ipAddress.getHostAddress() + " '" + ipAddress.getHostName() + "'");
         if (IPList.containsKey(ipAddress)) {
             Integer Data = IPList.get(ipAddress);
-            if (Data == 10) {
+            if (Data >= 10) {
                 return true;
             } else {
                 IPList.replace(ipAddress, Data++);
