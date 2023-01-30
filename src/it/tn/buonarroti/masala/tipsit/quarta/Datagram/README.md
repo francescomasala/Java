@@ -1,2 +1,0 @@
-DatagramSocket -> Ascolta
-DatagramPacket -> Invia
