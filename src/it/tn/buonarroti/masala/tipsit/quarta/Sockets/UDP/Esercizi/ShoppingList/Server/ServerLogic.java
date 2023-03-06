@@ -16,6 +16,5 @@ public class ServerLogic {
         marketStructure.add(item);
     }
     public void removeItem(String name){
-        marketStructure.remove()
     }
 }
